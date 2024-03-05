@@ -1,6 +1,5 @@
 import "./App.css";
-import { Modal } from "../Modal/Modal";
-
+import { Header } from "../Header/Header";
 // put all consts, functions, and useEffects here
 // return
 // in return implement at least two routes
@@ -11,7 +10,7 @@ import { Modal } from "../Modal/Modal";
 // Protected Route path = "/profile" w Profile inside
 
 function App() {
-  return <Modal />;
+  return <Header />;
 }
 
 export default App;
