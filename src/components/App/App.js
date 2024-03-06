@@ -1,6 +1,7 @@
 import "./App.css";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
+import { Footer } from "../Footer/Footer";
 // put all consts, functions, and useEffects here
 // return
 // in return implement at least two routes
@@ -14,8 +15,8 @@ function App() {
   return (
     <div>
       <Header></Header>
-
       <Main></Main>
+      <Footer></Footer>
     </div>
   );
 }

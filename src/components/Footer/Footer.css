@@ -1,0 +1,27 @@
+.footer {
+  background-color: #1e2f48;
+  color: #e1be86;
+  display: flex;
+  position: absolute;
+  top: 100%;
+  justify-content: space-between;
+  padding: 20px 40px 20px 40px;
+  width: calc(100% - 80px);
+}
+
+.footer__options {
+  display: flex;
+  gap: 244px;
+}
+
+.footer_about {
+  cursor: pointer;
+}
+
+.footer_contact {
+  cursor: pointer;
+}
+
+.footer_X {
+  cursor: pointer;
+}

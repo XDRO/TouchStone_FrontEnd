@@ -1,17 +1,21 @@
 .header {
+  position: absolute;
   display: flex;
   align-items: center;
   padding: 32px 40px 0;
-  position: absolute;
+  background-color: #000;
+  justify-content: space-between;
+  z-index: 99;
 }
 
 .header__logo {
   display: flex;
   justify-content: space-between;
   gap: 24px;
+  height: 60px;
 }
 
 .header__title {
-  font-size: 30px;
   color: #e1be86;
+  height: 20px;
 }
