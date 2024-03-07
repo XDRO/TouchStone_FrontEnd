@@ -108,21 +108,25 @@
   border-radius: 10px;
 }
 
-.profile__searchbar-label {
-  position: relative;
-  left: 10px;
-  color: #dfbd69;
-  pointer-events: none;
-}
-
 .profile__searchbar-text {
+  position: relative;
+  display: block;
+  top: 12px;
   color: #dfbd69;
+  caret-color: #dfbd69;
   background: none;
   border: none;
+  outline: none;
   resize: none;
   width: 50vw;
   height: 40px;
   margin: 10px;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+.profile__searchbar-text::-webkit-input-placeholder {
+  font-size: 18px;
 }
 
 .profile__searchbar-speach {
@@ -132,4 +136,5 @@
   height: 40px;
   margin-right: 10px;
   padding: 0;
+  cursor: pointer;
 }
