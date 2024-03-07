@@ -4,6 +4,7 @@ export const Main = () => {
   return (
     <main className="main">
       <div className="main__content">
+        {/* potentailly turn this into a sidebar.js inside of main folder */}
         <div className="main__options">
           <button className="main__options-discover">
             Discover your new assistant

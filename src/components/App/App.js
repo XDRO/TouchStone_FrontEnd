@@ -1,7 +1,9 @@
 import "./App.css";
+import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
 import { Footer } from "../Footer/Footer";
+import { Profile } from "../Profile/Profile";
 // put all consts, functions, and useEffects here
 // return
 // in return implement at least two routes
@@ -13,10 +15,17 @@ import { Footer } from "../Footer/Footer";
 
 function App() {
   return (
-    <div>
-      <Header></Header>
-      <Main></Main>
-      <Footer></Footer>
+    <div className="App">
+      <Switch>
+        <Route exact path="/">
+          <Header></Header>
+          <Main></Main>
+        </Route>
+        <Route path="/profile">
+          <Profile></Profile>
+        </Route>
+      </Switch>
+      <Footer />
     </div>
   );
 }
