@@ -1,5 +1,6 @@
 .profile {
   display: flex;
+  justify-content: flex-end;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -37,27 +38,33 @@
 /* profile sidebar header elements */
 .profile__sidebar-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
   margin: 10px;
+  background: #1e2f48;
+  border: 1px solid #dfbd69;
+  border-radius: 10px;
 }
 
 .profile__sidebar-chat {
   color: #dfbd69;
+  margin: 10px;
 }
 
 .profile__sidebar-edit {
   background: none;
   border: none;
   cursor: pointer;
+  margin: 10px;
+  padding: 0;
 }
 
 /* profile questions content */
 .profile__sidebar-content {
   border-radius: 10px;
   margin: 10px;
-  width: 90%;
+  width: 100%;
   height: 100%;
 }
 
@@ -82,4 +89,47 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* profile searchbar */
+.profile__searchbar {
+  display: grid;
+  align-items: end;
+  justify-content: center;
+  width: 70vw;
+}
+
+.profile__searchbar-content {
+  display: flex;
+  align-items: center;
+  background: #1e2f48;
+  border: 1px solid #dfbd69;
+  margin: 0 0 100px 0;
+  border-radius: 10px;
+}
+
+.profile__searchbar-label {
+  position: relative;
+  left: 10px;
+  color: #dfbd69;
+  pointer-events: none;
+}
+
+.profile__searchbar-text {
+  color: #dfbd69;
+  background: none;
+  border: none;
+  resize: none;
+  width: 50vw;
+  height: 40px;
+  margin: 10px;
+}
+
+.profile__searchbar-speach {
+  background: none;
+  border: none;
+  width: 80px;
+  height: 40px;
+  margin-right: 10px;
+  padding: 0;
 }
