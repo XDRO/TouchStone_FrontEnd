@@ -75,6 +75,11 @@
 }
 
 .profile__sidebar-li_element {
-  color: aliceblue;
+  background: #1e2f48;
+  color: #dfbd69;
+  border-radius: 10px;
   height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
