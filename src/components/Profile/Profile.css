@@ -55,7 +55,6 @@
 
 /* profile questions content */
 .profile__sidebar-content {
-  /* border: 1px solid #dfbd69; */
   border-radius: 10px;
   margin: 10px;
   width: 90%;
@@ -79,8 +78,3 @@
   color: aliceblue;
   height: 30px;
 }
-
-/* .profile__sidebar-li_item {
-  border: 1px solid #dfbd69;
-  border-radius: 10px;
-} */
