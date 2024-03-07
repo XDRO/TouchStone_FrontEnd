@@ -8,6 +8,7 @@ export const Footer = () => {
         <div className="footer_contact">Contact</div>
       </div>
       <img className="footer_X" src={X} alt="Twitter-X"></img>
+      {/* if logged in add headphones vector */}
     </footer>
   );
 };

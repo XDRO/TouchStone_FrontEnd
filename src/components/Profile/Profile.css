@@ -52,23 +52,35 @@
   border: none;
   cursor: pointer;
 }
+
 /* profile questions content */
 .profile__sidebar-content {
-  background: aqua;
+  /* border: 1px solid #dfbd69; */
   border-radius: 10px;
   margin: 10px;
   width: 90%;
+  height: 100%;
 }
 
 .profile__sidebar-questions {
   margin: 10px;
+  cursor: pointer;
 }
 
+/* add display none for users who have no history */
 .profile__sidebar-ol {
-  background: aliceblue;
+  border: 1px solid #dfbd69;
+  border-radius: 10px;
+  list-style: none;
+  padding: 0;
 }
 
 .profile__sidebar-li_element {
-  background: black;
   color: aliceblue;
+  height: 30px;
 }
+
+/* .profile__sidebar-li_item {
+  border: 1px solid #dfbd69;
+  border-radius: 10px;
+} */

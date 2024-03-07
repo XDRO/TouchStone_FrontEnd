@@ -12,7 +12,9 @@ export const ProfileSideBar = () => {
       </div>
 
       <div className="profile__sidebar-content">
-        <span className="profile__sidebar-quesitons">
+        {/* add display: none if user has no history */}
+        <span className="profile__sidebar-questions">
+          {/* possibly add header for current dates */}
           <ol className="profile__sidebar-ol">
             <li className="profile__sidebar-li_element">
               <div>
