@@ -1,5 +1,6 @@
 import "./App.css";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
+import { NothingFound } from "../NothingFoundWPreloader/NothingFound";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
 import { Footer } from "../Footer/Footer";
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route path="/profile">
           <Profile></Profile>
+        </Route>
+        <Route path="/nothingfound">
+          <NothingFound></NothingFound>
         </Route>
       </Switch>
       <Footer />
