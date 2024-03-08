@@ -138,3 +138,25 @@
   padding: 0;
   cursor: pointer;
 }
+
+/* Profile Result */
+.profile__result {
+  background: none;
+  position: fixed;
+  display: grid;
+  justify-content: start;
+  width: 60vw;
+  height: 75vmin;
+}
+
+.profile__result-container {
+  display: grid;
+  justify-content: center;
+  width: 70vw;
+}
+
+.profile__result-text {
+  border-radius: 10px;
+  border: 1px solid #dfbd69;
+  width: 100vmin;
+}
