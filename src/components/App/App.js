@@ -5,6 +5,7 @@ import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
 import { Footer } from "../Footer/Footer";
 import { Profile } from "../Profile/Profile";
+import { ModalWForm } from "../ModalWForm/ModalWForm";
 // put all consts, functions, and useEffects here
 // return
 // in return implement at least two routes
@@ -28,9 +29,9 @@ function App() {
         <Route path="/nothingfound">
           <NothingFound></NothingFound>
         </Route>
-        {/* <Route path="/modal">
-          <Modal></Modal>
-        </Route> */}
+        <Route path="/modal">
+          <ModalWForm></ModalWForm>
+        </Route>
       </Switch>
       <Footer />
     </div>

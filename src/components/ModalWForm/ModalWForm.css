@@ -1,0 +1,34 @@
+.modal__title {
+  margin: 8px 0 24px 0;
+}
+
+.modal__button {
+  position: relative;
+  top: 32px;
+  border-radius: 4px;
+  width: 124px;
+  height: 36px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-family: Cabinet Grotesk;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.modal__button:hover {
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.modal__button:disabled {
+  background: rgba(0, 0, 0, 0.3);
+  cursor: not-allowed;
+}
+
+.modal__button:disabled:hover {
+  background: rgba(0, 0, 0, 0.3);
+  cursor: not-allowed;
+}

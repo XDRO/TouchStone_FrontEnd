@@ -30,7 +30,7 @@ export const ModalWForm = ({
               {children}
               <button
                 className={`modal__button modal__button_${name}`}
-                // disabled ={state}
+                disabled={state}
                 type="submit"
               >
                 {buttonText}
