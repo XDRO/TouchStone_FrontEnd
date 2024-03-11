@@ -1,0 +1,42 @@
+.navigation__options {
+  display: inline-grid;
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  align-content: space-between;
+  right: 0%;
+  background: linear-gradient(
+      0deg,
+      rgba(225, 190, 134, 0.8),
+      rgba(223, 189, 105, 0.6),
+      rgba(223, 189, 105, 0.4),
+      rgba(223, 189, 105, 0.2)
+    )
+    fixed no-repeat;
+}
+
+.navigation__options-discover {
+  margin: 70px 30px 10px 30px;
+  height: 45px;
+  color: #dfbd69;
+  background-color: #1e2f48;
+  border: none;
+  border-radius: 10px;
+}
+
+.navigation__options-start {
+  margin: 10px 30px 50px 30px;
+  height: 45px;
+  color: #dfbd69;
+  background-color: #1e2f48;
+  border: none;
+  border-radius: 10px;
+}
+
+.navigation__options-discover:hover {
+  cursor: pointer;
+}
+
+.navigation__options-start:hover {
+  cursor: pointer;
+}
