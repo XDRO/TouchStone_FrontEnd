@@ -28,6 +28,9 @@ function App() {
         <Route path="/nothingfound">
           <NothingFound></NothingFound>
         </Route>
+        {/* <Route path="/modal">
+          <Modal></Modal>
+        </Route> */}
       </Switch>
       <Footer />
     </div>
