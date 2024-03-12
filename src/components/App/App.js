@@ -5,7 +5,7 @@ import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
 import { Footer } from "../Footer/Footer";
 import { Profile } from "../Profile/Profile";
-import { Login } from "../ModalLogin/ModalLogin";
+import { Register } from "../ModalRegister/ModalRegister";
 // put all consts, functions, and useEffects here
 // return
 // in return implement at least two routes
@@ -30,7 +30,7 @@ function App() {
           <NothingFound></NothingFound>
         </Route>
         <Route path="/modal">
-          <Login></Login>
+          <Register></Register>
         </Route>
       </Switch>
       <Footer />
