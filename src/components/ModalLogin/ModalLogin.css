@@ -1,0 +1,18 @@
+.modal__content_login {
+  height: 50%;
+}
+
+.modal__form_login {
+  color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 10px;
+}
+
+.login__form-input {
+  background-color: #1e2f48;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}
