@@ -21,7 +21,7 @@ export const ModalWForm = ({
             type="button"
             onClick={onClose}
           />
-          <h3 className={`modal__title modal__title_${name}`}>{title}</h3>
+          {/* <h3 className={`modal__title modal__title_${name}`}>{title}</h3> */}
           {showForm && (
             <form
               className={`modal__form modal__form_${name}`}
@@ -30,7 +30,7 @@ export const ModalWForm = ({
               {children}
               <button
                 className={`modal__button modal__button_${name}`}
-                disabled={state}
+                // disabled={state}
                 type="submit"
               >
                 {buttonText}
