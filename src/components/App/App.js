@@ -6,6 +6,8 @@ import { Main } from "../Main/Main";
 import { Footer } from "../Footer/Footer";
 import { Profile } from "../Profile/Profile";
 import { Register } from "../ModalRegister/ModalRegister";
+import { Login } from "../ModalLogin/ModalLogin";
+import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // put all consts, functions, and useEffects here
 // return
 // in return implement at least two routes

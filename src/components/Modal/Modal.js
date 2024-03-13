@@ -5,7 +5,7 @@ export const Modal = ({ name, onClose, children }) => {
       <div className={`modal modal__type_${name}`}>
         <div className={`modal__content modal__content_${name}`}>
           <button
-            className={`modal__close-button modal__close-button${name}`}
+            className={`modal__close-button modal__close-button_${name}`}
             type="button"
             onClick={onClose}
           />

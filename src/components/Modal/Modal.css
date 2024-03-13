@@ -10,7 +10,7 @@
 }
 
 .modal__overlay {
-  background-color: rgba(225, 190, 134, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;

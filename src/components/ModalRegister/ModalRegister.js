@@ -4,7 +4,11 @@ import "./ModalRegister.css";
 // pass in arguments for events in register = ()
 export const Register = () => {
   return (
-    <ModalWForm name={`register`} buttonText={`Join Now`}>
+    <ModalWForm
+      title={`Acquire your new assistant today!`}
+      name={`register`}
+      buttonText={`Join Now`}
+    >
       <label htmlFor={`name`}>Name :</label>
       <input
         className={`register__form-input`}
