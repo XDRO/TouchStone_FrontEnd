@@ -5,22 +5,22 @@ import "./ModalRegister.css";
 export const Register = () => {
   return (
     <ModalWForm name={`register`} buttonText={`Join Now`}>
-      <label htmlFor={`name`}>{`Name :`}</label>
+      <label htmlFor={`name`}>Name :</label>
       <input
         className={`register__form-input`}
         name={`name`}
         id={`name`}
         required
       />
-
-      <label htmlFor={`email`}>{`Email :`}</label>
+      {/* send an email to user to verify user email */}
+      <label htmlFor={`email`}>Email :</label>
       <input
         className={`register__form-input`}
         name={`email`}
         id={`email`}
         required
       />
-      <label htmlFor={`password`}>{`Password :`}</label>
+      <label htmlFor={`password`}>Password :</label>
       <input
         className={`register__form-input`}
         name={`password`}
@@ -28,7 +28,7 @@ export const Register = () => {
         required
       />
 
-      <label htmlFor={`confirm password`}>{`Confirm Password :`}</label>
+      <label htmlFor={`confirm password`}>Confirm Password :</label>
       <input
         className={`register__form-input`}
         name={`confirm password`}

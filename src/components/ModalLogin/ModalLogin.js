@@ -7,14 +7,14 @@ export const Login = () => {
   return (
     // title={`Login`} removed from <ModalWForm/>
     <ModalWForm name={`login`} buttonText={`Login`}>
-      <label htmlFor={`email`}>{`Email :`}</label>
+      <label htmlFor={`email`}>Email :</label>
       <input
         className={`login__form-input`}
         name={`email`}
         id={`email`}
         required
       />
-      <label htmlFor={`password`}>{`Password :`}</label>
+      <label htmlFor={`password`}>Password :</label>
       <input
         className={`login__form-input`}
         name={`password`}
