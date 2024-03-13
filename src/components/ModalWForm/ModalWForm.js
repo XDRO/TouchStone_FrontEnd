@@ -9,7 +9,6 @@ export const ModalWForm = ({
   onClose,
   onSubmit,
   activeModal,
-  showForm = true,
   state = { disabled: true },
 }) => {
   return (
@@ -21,23 +20,19 @@ export const ModalWForm = ({
             type="button"
             onClick={onClose}
           />
-          {/* <h3 className={`modal__title modal__title_${name}`}>{title}</h3> */}
-          {showForm && (
-            <form
-              className={`modal__form modal__form_${name}`}
-              onSubmit={onSubmit}
+          <form
+            className={`modal__form modal__form_${name}`}
+            onSubmit={onSubmit}
+          >
+            {children}
+            <button
+              className={`modal__button modal__button_${name}`}
+              // disabled={state}
+              type="submit"
             >
-              {children}
-              <button
-                className={`modal__button modal__button_${name}`}
-                // disabled={state}
-                type="submit"
-              >
-                {buttonText}
-              </button>
-            </form>
-          )}
-          {!showForm && children}
+              {buttonText}
+            </button>
+          </form>
         </div>
       </div>
     </Modal>
