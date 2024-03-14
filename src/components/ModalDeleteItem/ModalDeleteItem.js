@@ -2,7 +2,8 @@ import "./ModalDeleteItem.css";
 import { Modal } from "../Modal/Modal";
 export const ModalDeleteItem = () => {
   return (
-    <Modal name={`delete`} buttonText={`Delete`}>
+    <Modal name={`delete`}>
+      {/* wondering if I can use this buttonText={`Delete`} */}
       {/* possibly just add <h3></h3> to modal.js */}
       {/* based on the chat they would like to
        delete I would like to change this {`chat`} text */}
