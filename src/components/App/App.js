@@ -7,7 +7,8 @@ import { Footer } from "../Footer/Footer";
 import { Profile } from "../Profile/Profile";
 // import { Register } from "../ModalRegister/ModalRegister";
 // import { Login } from "../ModalLogin/ModalLogin";
-import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
+// import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
+import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 
 // put all consts, functions, and useEffects here
 // return
@@ -33,7 +34,7 @@ function App() {
           <NothingFound></NothingFound>
         </Route>
         <Route path="/modal">
-          <ModalDeleteItem></ModalDeleteItem>
+          <ModalEditProfile></ModalEditProfile>
         </Route>
       </Switch>
       <Footer />
