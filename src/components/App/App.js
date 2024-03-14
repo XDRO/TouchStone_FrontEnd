@@ -32,7 +32,7 @@ function App() {
           <NothingFound></NothingFound>
         </Route>
         <Route path="/modal">
-          <Register></Register>
+          <ModalDeleteItem></ModalDeleteItem>
         </Route>
       </Switch>
       <Footer />
