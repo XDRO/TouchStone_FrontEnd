@@ -1,9 +1,12 @@
 .modal__title_register {
+  font-family: "Roboto Slab";
   margin-top: 0;
   color: #dfbd69;
   font-size: 24px;
 }
+
 .modal__form_register {
+  font-family: "Roboto Slab";
   color: #dfbd69;
   display: flex;
   flex-direction: column;
@@ -12,6 +15,7 @@
 }
 
 .modal__button_register {
+  font-family: "Roboto Slab";
   background-color: #1e2f48;
   color: #dfbd69;
   display: flex;
@@ -22,9 +26,12 @@
   width: 100%;
 }
 
+/* potentially change this to .modal__form_register-input BEM */
 .register__form-input {
+  font-family: "Roboto Slab";
   background-color: #1e2f48;
   border: none;
   border-radius: 5px;
   height: 30px;
+  color: #dfbd69;
 }

@@ -1,11 +1,5 @@
-.modal__content_delete {
-  height: 10vmin;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .modal__title_delete {
+  font-family: "Roboto Slab";
   display: flex;
   margin: 0;
   padding: 10px;
@@ -20,6 +14,7 @@
 }
 
 .modal__button_delete {
+  font-family: "Roboto Slab";
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +22,6 @@
   padding: 0.5rem;
   width: 70px;
   height: 30px;
-
   cursor: pointer;
   color: white;
   border: 1px solid rgba(255, 0, 0, 1);
@@ -42,6 +36,7 @@
 }
 
 .modal__button_cancel {
+  font-family: "Roboto Slab";
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,4 +56,11 @@
   transition-duration: 0.4s;
   background-color: rgba(30, 47, 72, 0.7);
   border: rgba(30, 47, 72, 0.7);
+}
+
+.modal__content_delete {
+  height: 15vmin;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

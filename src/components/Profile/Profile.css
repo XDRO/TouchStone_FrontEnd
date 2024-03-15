@@ -1,4 +1,5 @@
 .profile {
+  font-family: "Roboto Slab";
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -35,6 +36,7 @@
     )
     fixed no-repeat;
 }
+
 /* profile sidebar header elements */
 .profile__sidebar-header {
   display: flex;
@@ -100,6 +102,7 @@
 }
 
 .profile__searchbar-content {
+  font-family: "Roboto Slab";
   display: flex;
   align-items: center;
   background: #1e2f48;
@@ -127,6 +130,7 @@
 
 .profile__searchbar-text::-webkit-input-placeholder {
   font-size: 18px;
+  font-family: "Roboto Slab";
 }
 
 .profile__searchbar-speach {
@@ -140,6 +144,8 @@
 }
 
 /* Profile Result */
+/* come back to this */
+/* in order to make sure that Roboto Slab is rendering on this as well */
 .profile__result {
   background: none;
   position: fixed;
@@ -156,6 +162,7 @@
 }
 
 .profile__result-text {
+  font-family: "Roboto Slab";
   border-radius: 10px;
   border: 1px solid #dfbd69;
   width: 100vmin;
