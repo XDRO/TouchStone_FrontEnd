@@ -5,10 +5,12 @@ import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
 import { Footer } from "../Footer/Footer";
 import { Profile } from "../Profile/Profile";
-// import { Register } from "../ModalRegister/ModalRegister";
-// import { Login } from "../ModalLogin/ModalLogin";
+import { Register } from "../ModalRegister/ModalRegister";
+import { Login } from "../ModalLogin/ModalLogin";
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
+// import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
+import { useState } from "react";
 
 // put all consts, functions, and useEffects here
 // return
@@ -20,16 +22,35 @@ import { Profile } from "../Profile/Profile";
 // Protected Route path = "/profile" w Profile inside
 
 function App() {
+  const [activeModal, setActiveModal] = useState("");
+
+  const handleOpenModal = () => {
+    setActiveModal("register");
+  };
+
   return (
     <div className="App">
       <Switch>
+        {/* maybe remove exact if needed */}
         <Route exact path="/">
-          <Header></Header>
-          <Main></Main>
+          <Header />
+          <Main onClick={handleOpenModal} />
+          {activeModal === "register" && (
+            <Route path="/register">
+              <Register />
+            </Route>
+          )}
+          {activeModal === "login" && (
+            <Route path="/login">
+              <Login />
+            </Route>
+          )}
         </Route>
+        {/* loggedIn={loggedIn} */}
         <Route path="/profile">
           <Profile></Profile>
         </Route>
+
         <Route path="/nothingfound">
           <NothingFound></NothingFound>
         </Route>
