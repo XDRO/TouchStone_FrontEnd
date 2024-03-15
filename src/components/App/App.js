@@ -10,7 +10,7 @@ import { Login } from "../ModalLogin/ModalLogin";
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 // import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
-import { useState } from "react";
+import React, { useState } from "react";
 
 // put all consts, functions, and useEffects here
 // return
@@ -38,9 +38,9 @@ function App() {
         </Route>
 
         {activeModal === "register" && (
-          // <Route path="/register">
-          <Register />
-          // </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
         )}
 
         <Route path="/login">
