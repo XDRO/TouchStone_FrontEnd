@@ -1,5 +1,5 @@
 import "./Navigation.css";
-export const Navigation = () => {
+export const Navigation = ({ onClick }) => {
   return (
     <div className="navigation">
       {/* Currently navigation__content is not being used in css */}
@@ -8,7 +8,9 @@ export const Navigation = () => {
           <button className="navigation__options-discover">
             Discover your new assistant
           </button>
-          <button className="navigation__options-start">Get started</button>
+          <button onClick={onClick} className="navigation__options-start">
+            Get started
+          </button>
         </div>
       </div>
     </div>

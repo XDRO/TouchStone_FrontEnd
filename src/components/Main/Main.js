@@ -1,10 +1,10 @@
 import "./Main.css";
 import { Navigation } from "../Navigation/Navigation";
-export const Main = () => {
+export const Main = ({ onClick }) => {
   return (
     <main className="main">
       <div className="main__content">
-        <Navigation />
+        <Navigation onClick={() => onClick("register")} />
       </div>
     </main>
   );

@@ -24,35 +24,34 @@ import { useState } from "react";
 function App() {
   const [activeModal, setActiveModal] = useState("");
 
-  const handleOpenModal = () => {
-    setActiveModal("register");
+  const handleOpenModal = (modalType) => {
+    setActiveModal(modalType);
+    console.log(modalType);
   };
 
   return (
     <div className="App">
       <Switch>
-        {/* maybe remove exact if needed */}
         <Route exact path="/">
           <Header />
           <Main onClick={handleOpenModal} />
-          {activeModal === "register" && (
-            <Route path="/register">
-              <Register />
-            </Route>
-          )}
-          {activeModal === "login" && (
-            <Route path="/login">
-              <Login />
-            </Route>
-          )}
-        </Route>
-        {/* loggedIn={loggedIn} */}
-        <Route path="/profile">
-          <Profile></Profile>
         </Route>
 
+        {activeModal === "register" && (
+          // <Route path="/register">
+          <Register />
+          // </Route>
+        )}
+
+        <Route path="/login">
+          <Login />
+        </Route>
+
+        <Route path="/profile">
+          <Profile />
+        </Route>
         <Route path="/nothingfound">
-          <NothingFound></NothingFound>
+          <NothingFound />
         </Route>
       </Switch>
       <Footer />
