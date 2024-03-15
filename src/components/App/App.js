@@ -1,5 +1,9 @@
 import "./App.css";
-import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
+import {
+  Switch,
+  Route,
+  withRouter,
+} from "react-router-dom/cjs/react-router-dom.min";
 import { NothingFound } from "../NothingFoundWPreloader/NothingFound";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
@@ -59,4 +63,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
