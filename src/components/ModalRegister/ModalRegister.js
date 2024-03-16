@@ -2,12 +2,13 @@ import { ModalWForm } from "../ModalWForm/ModalWForm";
 import "./ModalRegister.css";
 
 // pass in arguments for events in register = ()
-export const Register = () => {
+export const Register = ({ handleCloseModal }) => {
   return (
     <ModalWForm
       title={`Acquire your new assistant today!`}
       name={`register`}
       buttonText={`Join Now`}
+      onClose={handleCloseModal}
     >
       <label htmlFor={`name`}>Name :</label>
       <input

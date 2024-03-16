@@ -57,7 +57,9 @@ function App() {
         </Route>
       </Switch>
       <Footer />
-      {activeModal === "register" && <Register />}
+      {activeModal === "register" && (
+        <Register handleCloseModal={handleCloseModal} />
+      )}
     </div>
   );
 }
