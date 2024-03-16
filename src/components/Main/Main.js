@@ -4,7 +4,7 @@ export const Main = ({ onClick }) => {
   return (
     <main className="main">
       <div className="main__content">
-        <Navigation onClick={() => onClick("register")} />
+        <Navigation onClick={onClick} />
       </div>
     </main>
   );

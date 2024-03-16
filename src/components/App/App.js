@@ -33,6 +33,10 @@ function App() {
     console.log(modalType);
   };
 
+  const handleCloseModal = () => {
+    setActiveModal("");
+  };
+
   return (
     <div className="App">
       <Switch>
@@ -40,12 +44,6 @@ function App() {
           <Header />
           <Main onClick={handleOpenModal} />
         </Route>
-
-        {activeModal === "register" && (
-          <Route path="/register">
-            <Register />
-          </Route>
-        )}
 
         <Route path="/login">
           <Login />
@@ -59,6 +57,7 @@ function App() {
         </Route>
       </Switch>
       <Footer />
+      {activeModal === "register" && <Register />}
     </div>
   );
 }

@@ -8,7 +8,10 @@ export const Navigation = ({ onClick }) => {
           <button className="navigation__options-discover">
             Discover your new assistant
           </button>
-          <button onClick={onClick} className="navigation__options-start">
+          <button
+            onClick={() => onClick("register")}
+            className="navigation__options-start"
+          >
             Get started
           </button>
         </div>

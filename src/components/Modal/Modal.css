@@ -36,7 +36,7 @@
 }
 
 .modal__close-button {
-  /* background-image: url("../../images/grey-x-button.svg"); */
+  background-image: url("../../images/close.svg");
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -44,9 +44,9 @@
   height: 20px;
   background-repeat: no-repeat;
   background-size: contain;
-  margin: 20px 0 0 448px;
+  margin: 20px 0 0 435px;
   position: relative;
   left: 28px;
-  color: #0000004d;
+  filter: invert(50%) hue-rotate(180deg);
   opacity: 1;
 }
