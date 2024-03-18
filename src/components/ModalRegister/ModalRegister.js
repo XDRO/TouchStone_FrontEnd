@@ -1,8 +1,8 @@
 import { ModalWForm } from "../ModalWForm/ModalWForm";
 import "./ModalRegister.css";
-
+// import { Link } from "react-router-dom/cjs/react-router-dom.min";
 // pass in arguments for events in register = ()
-export const Register = ({ handleCloseModal }) => {
+export const Register = ({ handleCloseModal, onClick }) => {
   return (
     <ModalWForm
       title={`Acquire your new assistant today!`}
@@ -40,9 +40,10 @@ export const Register = ({ handleCloseModal }) => {
         id={`confirm password`}
         required
       />
-      <div className={`register__login`}>
-        {/* create <Link></Link> to login modal */}
-      </div>
+      {/* <div className={`register__login`}> */}
+      {/* create <Link></Link> to login modal */}
+      <button onClick={() => onClick("login")}>Or Login</button>
+      {/* </div> */}
     </ModalWForm>
   );
 };

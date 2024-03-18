@@ -45,10 +45,6 @@ function App() {
           <Main onClick={handleOpenModal} />
         </Route>
 
-        <Route path="/login">
-          <Login />
-        </Route>
-
         <Route path="/profile">
           <Profile />
         </Route>
@@ -58,8 +54,12 @@ function App() {
       </Switch>
       <Footer />
       {activeModal === "register" && (
-        <Register handleCloseModal={handleCloseModal} />
+        <Register
+          handleCloseModal={handleCloseModal}
+          onClick={handleOpenModal}
+        />
       )}
+      {activeModal === "login" && <Login handleCloseModal={handleCloseModal} />}
     </div>
   );
 }

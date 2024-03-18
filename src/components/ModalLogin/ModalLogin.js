@@ -3,10 +3,10 @@ import { ModalWForm } from "../ModalWForm/ModalWForm";
 // import { Link, useHistory } from "react-router-dom";
 // need to import authentication here
 import "./ModalLogin.css";
-export const Login = () => {
+export const Login = ({ handleCloseModal }) => {
   return (
     // title={`Login`} removed from <ModalWForm/>
-    <ModalWForm name={`login`} buttonText={`Login`}>
+    <ModalWForm name={`login`} buttonText={`Login`} onClose={handleCloseModal}>
       <label htmlFor={`email`}>Email :</label>
       <input
         className={`login__form-input`}
