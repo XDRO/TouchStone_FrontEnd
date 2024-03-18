@@ -21,7 +21,12 @@ export const Login = ({ handleCloseModal, onClick }) => {
         id={`password`}
         required
       />
-      <button onClick={() => onClick("register")}>Or register</button>
+      <button
+        className={`login__form-register`}
+        onClick={() => onClick("register")}
+      >
+        Or register
+      </button>
     </ModalWForm>
   );
 };

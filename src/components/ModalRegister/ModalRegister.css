@@ -35,3 +35,13 @@
   height: 30px;
   color: #dfbd69;
 }
+
+.register__form-login {
+  font-family: "Roboto Slab";
+  background-color: #1e2f48;
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  color: #dfbd69;
+  cursor: pointer;
+}

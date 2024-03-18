@@ -5,6 +5,7 @@ export const ModalWForm = ({
   name,
   title,
   buttonText,
+  formOptions,
   children,
   onClose,
   onSubmit,
@@ -22,6 +23,9 @@ export const ModalWForm = ({
           type="submit"
         >
           {buttonText}
+        </button>
+        <button className={`modal__button modal__button_${name}`}>
+          {formOptions}
         </button>
       </form>
     </Modal>

@@ -8,6 +8,7 @@ export const Register = ({ handleCloseModal, onClick }) => {
       title={`Acquire your new assistant today!`}
       name={`register`}
       buttonText={`Join Now`}
+      formOptions={`Or Login`}
       onClose={handleCloseModal}
     >
       <label htmlFor={`name`}>Name :</label>
@@ -40,7 +41,12 @@ export const Register = ({ handleCloseModal, onClick }) => {
         id={`confirm password`}
         required
       />
-      <button onClick={() => onClick("login")}>Or Login</button>
+      {/* <button
+        className={`register__form-login`}
+        onClick={() => onClick("login")}
+      >
+        or Login
+      </button> */}
     </ModalWForm>
   );
 };
