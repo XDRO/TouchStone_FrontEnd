@@ -59,7 +59,9 @@ function App() {
           onClick={handleOpenModal}
         />
       )}
-      {activeModal === "login" && <Login handleCloseModal={handleCloseModal} />}
+      {activeModal === "login" && (
+        <Login handleCloseModal={handleCloseModal} onClick={handleOpenModal} />
+      )}
     </div>
   );
 }

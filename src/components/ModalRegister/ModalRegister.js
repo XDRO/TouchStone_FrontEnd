@@ -40,10 +40,7 @@ export const Register = ({ handleCloseModal, onClick }) => {
         id={`confirm password`}
         required
       />
-      {/* <div className={`register__login`}> */}
-      {/* create <Link></Link> to login modal */}
       <button onClick={() => onClick("login")}>Or Login</button>
-      {/* </div> */}
     </ModalWForm>
   );
 };

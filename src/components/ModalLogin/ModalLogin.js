@@ -3,7 +3,7 @@ import { ModalWForm } from "../ModalWForm/ModalWForm";
 // import { Link, useHistory } from "react-router-dom";
 // need to import authentication here
 import "./ModalLogin.css";
-export const Login = ({ handleCloseModal }) => {
+export const Login = ({ handleCloseModal, onClick }) => {
   return (
     // title={`Login`} removed from <ModalWForm/>
     <ModalWForm name={`login`} buttonText={`Login`} onClose={handleCloseModal}>
@@ -21,9 +21,7 @@ export const Login = ({ handleCloseModal }) => {
         id={`password`}
         required
       />
-      <div className={`login__signup`}>
-        {/* create <Link></Link> to register modal */}
-      </div>
+      <button onClick={() => onClick("register")}>Or register</button>
     </ModalWForm>
   );
 };
