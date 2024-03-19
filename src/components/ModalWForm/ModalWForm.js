@@ -4,8 +4,6 @@ import "../Modal/Modal.css";
 export const ModalWForm = ({
   name,
   title,
-  buttonText,
-  formOptions,
   children,
   onClose,
   onSubmit,
@@ -17,16 +15,6 @@ export const ModalWForm = ({
       <h3 className={`modal__title modal__title_${name}`}>{title}</h3>
       <form className={`modal__form modal__form_${name}`} onSubmit={onSubmit}>
         {children}
-        <button
-          className={`modal__button modal__button_${name}`}
-          // disabled={state}
-          type="submit"
-        >
-          {buttonText}
-        </button>
-        <button className={`modal__button modal__button_${name}`}>
-          {formOptions}
-        </button>
       </form>
     </Modal>
   );

@@ -1,3 +1,7 @@
+/* .modal__content_register {
+  height: 455px;
+} */
+
 .modal__title_register {
   font-family: "Roboto Slab";
   margin-top: 0;
@@ -14,18 +18,6 @@
   gap: 10px;
 }
 
-.modal__button_register {
-  font-family: "Roboto Slab";
-  background-color: #1e2f48;
-  color: #dfbd69;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  position: relative;
-  bottom: 10px;
-  width: 100%;
-}
-
 /* potentially change this to .modal__form_register-input BEM */
 .register__form-input {
   font-family: "Roboto Slab";
@@ -36,12 +28,57 @@
   color: #dfbd69;
 }
 
-.register__form-login {
+.register__form-button_container {
   font-family: "Roboto Slab";
+  display: flex;
+  flex-wrap: wrap;
+  height: 80px;
+  justify-content: space-between;
+  align-content: flex-end;
+}
+
+.register__form-button {
   background-color: #1e2f48;
+  color: #dfbd69;
+  font-family: "Roboto Slab";
+  border: none;
+  border-radius: 5px;
+}
+
+.register__form-button:hover {
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.register__form-button_text {
+  font-family: "Roboto Slab";
+  margin: 0px;
+  padding: 10px;
+}
+
+/* .register__form-login {
+  background-color: #1e2f48;
+  color: #dfbd69;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  bottom: 10px;
+  width: 100%;
   border: none;
   border-radius: 5px;
   height: 25px;
-  color: #dfbd69;
   cursor: pointer;
-}
+} */
+
+/* .modal__button_register {
+  font-family: "Roboto Slab";
+  background-color: #1e2f48;
+  color: #dfbd69;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  bottom: 10px;
+  width: 100%;
+} */

@@ -1,5 +1,5 @@
 .modal__content_login {
-  height: 275px;
+  height: 290px;
 }
 
 .modal__form_login {
@@ -31,4 +31,47 @@
   border: none;
   border-radius: 5px;
   height: 30px;
+}
+
+.login__form-register {
+  font-family: "Roboto Slab";
+  background-color: #1e2f48;
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  color: #dfbd69;
+  cursor: pointer;
+}
+
+.login__form-register:hover {
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.login__form-button_container {
+  font-family: "Roboto Slab";
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-end;
+  height: 100px;
+}
+
+.login__form-button {
+  background-color: #1e2f48;
+  color: #dfbd69;
+  font-family: "Roboto Slab";
+  border: none;
+  border-radius: 5px;
+}
+
+.login__form-button:hover {
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.login__form-button_text {
+  font-family: "Roboto Slab";
+  margin: 0px;
+  padding: 10px;
 }

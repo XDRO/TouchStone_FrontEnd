@@ -6,7 +6,7 @@ import "./ModalLogin.css";
 export const Login = ({ handleCloseModal, onClick }) => {
   return (
     // title={`Login`} removed from <ModalWForm/>
-    <ModalWForm name={`login`} buttonText={`Login`} onClose={handleCloseModal}>
+    <ModalWForm name={`login`} onClose={handleCloseModal}>
       <label htmlFor={`email`}>Email :</label>
       <input
         className={`login__form-input`}
@@ -21,12 +21,17 @@ export const Login = ({ handleCloseModal, onClick }) => {
         id={`password`}
         required
       />
-      <button
-        className={`login__form-register`}
-        onClick={() => onClick("register")}
-      >
-        Or register
-      </button>
+      <div className={`login__form-button_container`}>
+        <button className={`login__form-button`}>
+          <p className={`login__form-button_text`}>Login</p>
+        </button>
+        <button
+          className={`login__form-button`}
+          onClick={() => onClick("register")}
+        >
+          <p className={`login__form-button_text`}>Register</p>
+        </button>
+      </div>
     </ModalWForm>
   );
 };
