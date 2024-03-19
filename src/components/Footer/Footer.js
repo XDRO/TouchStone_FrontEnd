@@ -1,13 +1,20 @@
 import "./Footer.css";
 import X from "../../images/twitter-x.svg";
-export const Footer = () => {
+// import { Link } from "react-router-dom/cjs/react-router-dom.min";
+export const Footer = ({ onClick }) => {
   return (
     <footer className="footer">
       <div className="footer__options">
-        <div className="footer_about">About Us</div>
-        <div className="footer_contact">Contact</div>
+        <div onClick={() => onClick("about")} className="footer_about">
+          About Us
+        </div>
+        <div onClick={() => onClick("contact")} className="footer_contact">
+          Contact
+        </div>
       </div>
+      {/* <Link to="https://twitter.com/?lang=en"> */}
       <img className="footer_X" src={X} alt="Twitter-X"></img>
+      {/* </Link> */}
       {/* if logged in add headphones vector */}
     </footer>
   );

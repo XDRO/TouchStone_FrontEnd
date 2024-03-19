@@ -11,6 +11,8 @@ import { Footer } from "../Footer/Footer";
 import { Profile } from "../Profile/Profile";
 import { Register } from "../ModalRegister/ModalRegister";
 import { Login } from "../ModalLogin/ModalLogin";
+import { ModalContact } from "../ModalContact/ModalContact";
+import { ModalAbout } from "../ModalAbout/ModalAbout";
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 // import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
@@ -52,7 +54,7 @@ function App() {
           <NothingFound />
         </Route>
       </Switch>
-      <Footer />
+      <Footer onClick={handleOpenModal} />
       {activeModal === "register" && (
         <Register
           handleCloseModal={handleCloseModal}
@@ -61,6 +63,12 @@ function App() {
       )}
       {activeModal === "login" && (
         <Login handleCloseModal={handleCloseModal} onClick={handleOpenModal} />
+      )}
+      {activeModal === "contact" && (
+        <ModalContact handleCloseModal={handleCloseModal} />
+      )}
+      {activeModal === "about" && (
+        <ModalAbout handleCloseModal={handleCloseModal} />
       )}
     </div>
   );
