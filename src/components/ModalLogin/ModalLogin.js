@@ -5,7 +5,6 @@ import { ModalWForm } from "../ModalWForm/ModalWForm";
 import "./ModalLogin.css";
 export const Login = ({ handleCloseModal, onClick }) => {
   return (
-    // title={`Login`} removed from <ModalWForm/>
     <ModalWForm name={`login`} onClose={handleCloseModal}>
       <label htmlFor={`email`}>Email :</label>
       <input
