@@ -13,6 +13,7 @@ import { Register } from "../ModalRegister/ModalRegister";
 import { Login } from "../ModalLogin/ModalLogin";
 import { ModalContact } from "../ModalContact/ModalContact";
 import { ModalAbout } from "../ModalAbout/ModalAbout";
+import { ModalDiscover } from "../ModalDiscover/ModalDiscover";
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 // import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
@@ -69,6 +70,9 @@ function App() {
       )}
       {activeModal === "about" && (
         <ModalAbout handleCloseModal={handleCloseModal} />
+      )}
+      {activeModal === "discover" && (
+        <ModalDiscover handleCloseModal={handleCloseModal} />
       )}
     </div>
   );

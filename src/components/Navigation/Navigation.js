@@ -5,7 +5,10 @@ export const Navigation = ({ onClick }) => {
       {/* Currently navigation__content is not being used in css */}
       <div className="navigation__content">
         <div className="navigation__options">
-          <button className="navigation__options-discover">
+          <button
+            onClick={() => onClick("discover")}
+            className="navigation__options-discover"
+          >
             Discover your new assistant
           </button>
           <button
