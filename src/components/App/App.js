@@ -55,7 +55,9 @@ function App() {
           <NothingFound />
         </Route>
       </Switch>
+
       <Footer onClick={handleOpenModal} />
+
       {activeModal === "register" && (
         <Register
           handleCloseModal={handleCloseModal}
