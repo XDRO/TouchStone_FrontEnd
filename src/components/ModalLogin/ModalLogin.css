@@ -26,8 +26,10 @@
 /*  potentially change this to .modal__form_login-input BEM */
 .login__form-input {
   font-family: "Roboto Slab";
-  color: #dfbd69;
-  background-color: #1e2f48;
+  /* color: #dfbd69; */
+  color: #1e2f48;
+  /* background-color: #1e2f48; */
+  background-color: #dfbd69;
   border: none;
   border-radius: 5px;
   height: 30px;

@@ -1,5 +1,6 @@
 .modal__content_contact {
   height: 120px;
+  /* remove color if continuing forward with background-color for all modals */
   background-color: #1e2f48;
 }
 

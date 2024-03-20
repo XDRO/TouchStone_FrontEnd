@@ -21,11 +21,13 @@
 /* potentially change this to .modal__form_register-input BEM */
 .register__form-input {
   font-family: "Roboto Slab";
-  background-color: #1e2f48;
+  /* background-color: #1e2f48; */
+  background-color: #dfbd69;
   border: none;
   border-radius: 5px;
   height: 30px;
-  color: #dfbd69;
+  /* color: #dfbd69; */
+  color: #1e2f48;
 }
 
 .register__form-button_container {

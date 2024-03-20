@@ -47,7 +47,7 @@ export const Register = ({ handleCloseModal, onClick }) => {
           className={`register__form-button`}
           onClick={() => onClick("login")}
         >
-          <p className={`register__form-button_text`}>Or Login</p>
+          <p className={`register__form-button_text`}>Login</p>
         </button>
       </div>
     </ModalWForm>
