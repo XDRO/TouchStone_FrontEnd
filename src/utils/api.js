@@ -5,6 +5,7 @@ export const baseUrl = "http://localhost:3001";
 
 export async function getItems() {
   const res = await fetch(`${baseUrl}/items`, {
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
