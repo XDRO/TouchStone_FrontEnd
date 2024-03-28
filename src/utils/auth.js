@@ -1,7 +1,7 @@
 import { baseUrl } from "./api";
 import { processServerResponse } from "./res";
 
-export const register = async ({ name, email, password, confirmPassword }) => {
+export const register = async ({ name, email, password, confirm_password }) => {
   try {
     const res = await fetch(`${baseUrl}/signup`, {
       method: "POST",
@@ -9,7 +9,7 @@ export const register = async ({ name, email, password, confirmPassword }) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, password, confirmPassword }),
+      body: JSON.stringify({ name, email, password, confirm_password }),
     });
 
     const userData = await processServerResponse(res);
