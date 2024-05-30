@@ -4,7 +4,7 @@ import { processServerResponse } from "./res";
 export const baseUrl = "http://localhost:3001";
 
 export async function getItems() {
-  const res = await fetch(`${baseUrl}/items`, {
+  const res = await fetch(`${baseUrl}/message`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -15,11 +15,11 @@ export async function getItems() {
 }
 
 export async function postItems(values, token) {
-  const res = await fetch(`${baseUrl}/items`, {
+  const res = await fetch(`${baseUrl}/message`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      // Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(values),
   });

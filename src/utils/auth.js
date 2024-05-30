@@ -27,3 +27,59 @@ export const register = async ({ name, email, password, confirm_password }) => {
     throw error;
   }
 };
+
+export const authorize = async (email, password) => {
+  try {
+    const res = await fetch(`${baseUrl}/signin`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const userData = await processServerResponse(res);
+
+    if (userData.token) {
+      localStorage.setItem("token", userData.token);
+      return userData.token;
+    } else {
+      throw new Error("Error from authorize: ", userData);
+    }
+  } catch (error) {
+    console.error("Error from authorize: ", error);
+    throw error;
+  }
+};
+
+export const checkToken = async () => {
+  const storedToken = localStorage.getItem("token");
+
+  if (storedToken) {
+    try {
+      const res = await fetch(`${baseUrl}/users/me`, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${storedToken}`,
+        },
+      });
+
+      const userData = await processServerResponse(res);
+      console.log("User data recieved after token check: ", userData);
+
+      if (userData) {
+        return userData;
+      } else {
+        throw new Error("Invalid token");
+      }
+    } catch (error) {
+      console.error("Error while checking token: ", error);
+      throw error;
+    }
+  } else {
+    throw new Error("Token not found");
+  }
+};
