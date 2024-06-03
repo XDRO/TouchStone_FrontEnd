@@ -39,11 +39,14 @@ function App() {
   };
 
   // useEffect for logged in state
+  // before useEffect, make sure to import all arguments needed
+  // for registering and loging in
   useEffect(() => {
     if (token) {
       auth
         .checkToken(token)
         .then((userData) => {
+          console.log(userData);
           setCurrentUser(userData);
           isLoggedIn(true);
         })
@@ -83,6 +86,8 @@ function App() {
         <Register
           handleCloseModal={handleCloseModal}
           onClick={handleOpenModal}
+          isLoggedIn={isLoggedIn}
+          setCurrentUser={setCurrentUser}
         />
       )}
       {activeModal === "login" && (
