@@ -29,7 +29,6 @@ function App() {
 
   const handleOpenModal = (modalType) => {
     setActiveModal(modalType);
-    console.log(modalType);
   };
 
   const handleCloseModal = () => {
@@ -41,9 +40,9 @@ function App() {
       auth
         .checkToken(token)
         .then((userData) => {
-          console.log(userData);
           setCurrentUser(userData);
           isLoggedIn(true);
+          handleCloseModal("register");
         })
         .catch((error) => {
           console.log(error);

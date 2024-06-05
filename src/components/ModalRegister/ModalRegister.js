@@ -26,6 +26,7 @@ export const Register = ({
   };
 
   const handleSubmit = async (e) => {
+    // create loading state
     e.preventDefault();
     console.log("Values before registration:", values);
     try {

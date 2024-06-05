@@ -17,9 +17,9 @@ export const Login = ({ handleCloseModal, onClick, isLoggedIn }) => {
   };
 
   const handleSubmit = async (e) => {
+    // create loading state
     e.preventDefault();
     try {
-      // setIsLoading(true);
       const token = await auth.authorize(values.email, values.password);
       if (!values.email || !values.password) {
         return;
@@ -31,7 +31,6 @@ export const Login = ({ handleCloseModal, onClick, isLoggedIn }) => {
     } catch (error) {
       console.error("Login failed: ", error);
     } finally {
-      // finally setisloading (false)
       handleCloseModal();
     }
   };
