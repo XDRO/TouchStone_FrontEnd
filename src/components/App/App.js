@@ -5,7 +5,7 @@ import {
   withRouter,
 } from "react-router-dom/cjs/react-router-dom.min";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-// import { LoadingContext } from "../../contexts/LoadingContext";
+import { LoadingContext } from "../../contexts/LoadingContext";
 import { NothingFound } from "../NothingFoundWPreloader/NothingFound";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
