@@ -1,15 +1,15 @@
 import { ModalWForm } from "../ModalWForm/ModalWForm";
-// import React, { useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import * as auth from "../../utils/auth";
 import "./ModalLogin.css";
 export const Login = ({ handleCloseModal, onClick, isLoggedIn }) => {
   const history = useHistory();
 
-  const [values, setValues] = {
+  const [values, setValues] = useState({
     email: "",
     password: "",
-  };
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,12 +26,14 @@ export const Login = ({ handleCloseModal, onClick, isLoggedIn }) => {
       }
       console.log("Login successful. Token: ", token);
       isLoggedIn(true);
-      history.push("/profile");
+      const email = values.email;
+      history.push(`/profile/${email}`);
     } catch (error) {
       console.error("Login failed: ", error);
-      history.push("/register");
+    } finally {
+      // finally setisloading (false)
+      handleCloseModal();
     }
-    // finally setisloading (false)
   };
   return (
     <ModalWForm
@@ -44,6 +46,8 @@ export const Login = ({ handleCloseModal, onClick, isLoggedIn }) => {
         className={`login__form-input`}
         name={`email`}
         id={`email`}
+        onChange={handleChange}
+        value={values.email}
         required
       />
       <label htmlFor={`password`}>Password :</label>
@@ -51,6 +55,8 @@ export const Login = ({ handleCloseModal, onClick, isLoggedIn }) => {
         className={`login__form-input`}
         name={`password`}
         id={`password`}
+        onChange={handleChange}
+        value={values.password}
         required
       />
       <div className={`login__form-button_container`}>

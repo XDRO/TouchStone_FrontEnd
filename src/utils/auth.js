@@ -3,7 +3,6 @@ import { processServerResponse } from "./res";
 
 export const register = async ({ name, email, password, confirm_password }) => {
   try {
-    debugger;
     const res = await fetch(`${baseUrl}/signup`, {
       method: "POST",
       headers: {
@@ -59,7 +58,6 @@ export const checkToken = async () => {
 
   if (storedToken) {
     try {
-      debugger;
       const res = await fetch(
         `${baseUrl}/users/me`,
         {

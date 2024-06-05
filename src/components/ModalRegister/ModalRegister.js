@@ -3,12 +3,11 @@ import { ModalWForm } from "../ModalWForm/ModalWForm";
 import * as auth from "../../utils/auth";
 import React, { useState } from "react";
 import "./ModalRegister.css";
-// import { Link } from "react-router-dom/cjs/react-router-dom.min";
-// pass in arguments for events in register = ()
+// it'd be nice to have a 409 conflict error handler
 export const Register = ({
   handleCloseModal,
   onClick,
-  setCurrentuser,
+  setCurrentUser,
   isLoggedIn,
 }) => {
   const history = useHistory();
@@ -31,17 +30,20 @@ export const Register = ({
     console.log("Values before registration:", values);
     try {
       const userData = auth.register(values);
-      console.log("userData after registration:", userData);
-      setCurrentuser(userData.newUser);
+      setCurrentUser(userData.newUser);
       isLoggedIn(true);
       const email = values.email;
       history.push(`/profile/${email}`);
     } catch (error) {
       console.error("Error during registration:", error);
+    } finally {
+      handleCloseModal();
     }
-    // create finally block to setIsLoading to false
+    // in finally block set setIsLoading to false
     // will create loader until the response from network is received
   };
+  // {/* send an email to user to verify user email */}
+
   return (
     <ModalWForm
       title={`Acquire your new assistant today!`}
@@ -57,7 +59,6 @@ export const Register = ({
         id={`name`}
         required
       />
-      {/* send an email to user to verify user email */}
       <label htmlFor={`email`}>Email :</label>
       <input
         onChange={handleChange}
@@ -75,12 +76,12 @@ export const Register = ({
         required
       />
 
-      <label htmlFor={`confirm password`}>Confirm Password :</label>
+      <label htmlFor={`confirm_password`}>Confirm Password :</label>
       <input
         onChange={handleChange}
         className={`register__form-input`}
-        name={`confirm password`}
-        id={`confirm password`}
+        name={`confirm_password`}
+        id={`confirm_password`}
         required
       />
       <div className={`register__form-button_container`}>
