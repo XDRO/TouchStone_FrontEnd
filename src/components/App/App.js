@@ -55,61 +55,59 @@ function App() {
       value={{ setCurrentUser, currentUser }}
       path="/profile"
     >
-      <div className="App">
-        <Switch>
-          <Route exact path="/">
-            <Header />
+      <Switch>
+        <Route exact path="/">
+          <Header />
 
-            <Main onClick={handleOpenModal} />
-          </Route>
+          <Main onClick={handleOpenModal} />
+        </Route>
 
-          <ProtectedRoute
-            path="/profile"
-            loggedIn={loggedIn}
-            redirect={() => handleOpenModal("register")}
-          >
-            <Profile
-              // use currentUser to get the values of the history chats
-              currentUser={currentUser}
-              setCurrentUser={setCurrentUser}
-              loggedIn={loggedIn}
-              isLoggedIn={isLoggedIn}
-            />
-          </ProtectedRoute>
-
-          <Route path="/nothingfound">
-            <NothingFound />
-          </Route>
-        </Switch>
-
-        <Footer onClick={handleOpenModal} />
-
-        {activeModal === "register" && (
-          <Register
-            handleCloseModal={handleCloseModal}
-            onClick={handleOpenModal}
-            isLoggedIn={isLoggedIn}
+        <ProtectedRoute
+          path="/profile"
+          loggedIn={loggedIn}
+          redirect={() => handleOpenModal("register")}
+        >
+          <Profile
+            // use currentUser to get the values of the history chats
+            currentUser={currentUser}
             setCurrentUser={setCurrentUser}
-          />
-        )}
-        {activeModal === "login" && (
-          <Login
-            handleCloseModal={handleCloseModal}
-            onClick={handleOpenModal}
+            loggedIn={loggedIn}
             isLoggedIn={isLoggedIn}
           />
-          // add redirect to profile after token check on log in
-        )}
-        {activeModal === "contact" && (
-          <ModalContact handleCloseModal={handleCloseModal} />
-        )}
-        {activeModal === "about" && (
-          <ModalAbout handleCloseModal={handleCloseModal} />
-        )}
-        {activeModal === "discover" && (
-          <ModalDiscover handleCloseModal={handleCloseModal} />
-        )}
-      </div>
+        </ProtectedRoute>
+
+        <Route path="/nothingfound">
+          <NothingFound />
+        </Route>
+      </Switch>
+
+      <Footer onClick={handleOpenModal} />
+
+      {activeModal === "register" && (
+        <Register
+          handleCloseModal={handleCloseModal}
+          onClick={handleOpenModal}
+          isLoggedIn={isLoggedIn}
+          setCurrentUser={setCurrentUser}
+        />
+      )}
+      {activeModal === "login" && (
+        <Login
+          handleCloseModal={handleCloseModal}
+          onClick={handleOpenModal}
+          isLoggedIn={isLoggedIn}
+        />
+        // add redirect to profile after token check on log in
+      )}
+      {activeModal === "contact" && (
+        <ModalContact handleCloseModal={handleCloseModal} />
+      )}
+      {activeModal === "about" && (
+        <ModalAbout handleCloseModal={handleCloseModal} />
+      )}
+      {activeModal === "discover" && (
+        <ModalDiscover handleCloseModal={handleCloseModal} />
+      )}
     </CurrentUserContext.Provider>
   );
 }
