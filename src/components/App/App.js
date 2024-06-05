@@ -90,6 +90,9 @@ function App() {
           onClick={handleOpenModal}
           isLoggedIn={isLoggedIn}
           setCurrentUser={setCurrentUser}
+          //
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
         />
       )}
       {activeModal === "login" && (
@@ -97,8 +100,10 @@ function App() {
           handleCloseModal={handleCloseModal}
           onClick={handleOpenModal}
           isLoggedIn={isLoggedIn}
+          //
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
         />
-        // add redirect to profile after token check on log in
       )}
       {activeModal === "contact" && (
         <ModalContact handleCloseModal={handleCloseModal} />
