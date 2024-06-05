@@ -5,7 +5,6 @@ import {
   withRouter,
 } from "react-router-dom/cjs/react-router-dom.min";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { LoadingContext } from "../../contexts/LoadingContext";
 import { NothingFound } from "../NothingFoundWPreloader/NothingFound";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
@@ -57,7 +56,6 @@ function App() {
       value={{ setCurrentUser, currentUser }}
       path="/profile"
     >
-      {/* <LoadingContext.Provider value={{ isLoading, setIsLoading }}> */}
       <Switch>
         <Route exact path="/">
           <Header />
@@ -111,7 +109,6 @@ function App() {
       {activeModal === "discover" && (
         <ModalDiscover handleCloseModal={handleCloseModal} />
       )}
-      {/* </LoadingContext.Provider> */}
     </CurrentUserContext.Provider>
   );
 }
