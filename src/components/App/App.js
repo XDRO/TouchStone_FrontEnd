@@ -5,6 +5,7 @@ import {
   withRouter,
 } from "react-router-dom/cjs/react-router-dom.min";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+// import { LoadingContext } from "../../contexts/LoadingContext";
 import { NothingFound } from "../NothingFoundWPreloader/NothingFound";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
@@ -15,16 +16,17 @@ import { Login } from "../ModalLogin/ModalLogin";
 import { ModalContact } from "../ModalContact/ModalContact";
 import { ModalAbout } from "../ModalAbout/ModalAbout";
 import { ModalDiscover } from "../ModalDiscover/ModalDiscover";
-// import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
-// import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
 
+// import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
+// import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [loggedIn, isLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
   const token = localStorage.getItem("token");
 
   const handleOpenModal = (modalType) => {
@@ -55,6 +57,7 @@ function App() {
       value={{ setCurrentUser, currentUser }}
       path="/profile"
     >
+      {/* <LoadingContext.Provider value={{ isLoading, setIsLoading }}> */}
       <Switch>
         <Route exact path="/">
           <Header />
@@ -108,6 +111,7 @@ function App() {
       {activeModal === "discover" && (
         <ModalDiscover handleCloseModal={handleCloseModal} />
       )}
+      {/* </LoadingContext.Provider> */}
     </CurrentUserContext.Provider>
   );
 }
