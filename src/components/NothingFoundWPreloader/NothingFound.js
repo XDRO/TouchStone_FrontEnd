@@ -1,5 +1,6 @@
 import "./NothingFound.css";
 import { Preloader } from "../../Preloader/Preloader";
+// import link to main
 export const NothingFound = () => {
   return (
     <div className="nothing__found">

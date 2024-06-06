@@ -5,6 +5,7 @@ import {
   withRouter,
 } from "react-router-dom/cjs/react-router-dom.min";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { Preloader } from "../../Preloader/Preloader";
 import { NothingFound } from "../NothingFoundWPreloader/NothingFound";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
@@ -37,6 +38,7 @@ function App() {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     if (token) {
       auth
         .checkToken(token)
@@ -47,11 +49,16 @@ function App() {
         })
         .catch((error) => {
           console.log(error);
+        })
+        .finally(() => {
+          setIsLoading(false);
         });
     }
   }, [loggedIn, token]);
 
-  return (
+  return isLoading ? (
+    <Preloader></Preloader>
+  ) : (
     <CurrentUserContext.Provider
       value={{ setCurrentUser, currentUser }}
       path="/profile"
@@ -59,7 +66,6 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Header />
-
           <Main onClick={handleOpenModal} />
         </Route>
 
@@ -81,18 +87,13 @@ function App() {
           <NothingFound />
         </Route>
       </Switch>
-
       <Footer onClick={handleOpenModal} />
-
       {activeModal === "register" && (
         <Register
           handleCloseModal={handleCloseModal}
           onClick={handleOpenModal}
           isLoggedIn={isLoggedIn}
           setCurrentUser={setCurrentUser}
-          //
-          isLoading={isLoading}
-          setIsLoading={setIsLoading}
         />
       )}
       {activeModal === "login" && (
@@ -100,9 +101,6 @@ function App() {
           handleCloseModal={handleCloseModal}
           onClick={handleOpenModal}
           isLoggedIn={isLoggedIn}
-          //
-          isLoading={isLoading}
-          setIsLoading={setIsLoading}
         />
       )}
       {activeModal === "contact" && (

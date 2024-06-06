@@ -1,8 +1,5 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { ModalWForm } from "../ModalWForm/ModalWForm";
-
-import { Preloader } from "../../Preloader/Preloader";
-
 import * as auth from "../../utils/auth";
 import React, { useState } from "react";
 import "./ModalRegister.css";
@@ -12,8 +9,6 @@ export const Register = ({
   onClick,
   setCurrentUser,
   isLoggedIn,
-  isLoading,
-  setIsLoading,
 }) => {
   const history = useHistory();
 
@@ -35,7 +30,6 @@ export const Register = ({
     e.preventDefault();
     console.log("Values before registration:", values);
     try {
-      setIsLoading(true);
       const userData = auth.register(values);
       setCurrentUser(userData.newUser);
       isLoggedIn(true);
@@ -44,18 +38,12 @@ export const Register = ({
     } catch (error) {
       console.error("Error during registration:", error);
     } finally {
-      setIsLoading(false);
       handleCloseModal();
     }
-    // in finally block set setIsLoading to false
-    // will create loader until the response from network is received
   };
   // {/* send an email to user to verify user email */}
-  // {/* {isLoading ? <Preloader /> : !(<Preloader></Preloader>)} */}
 
-  return isLoading ? (
-    <Preloader />
-  ) : (
+  return (
     <ModalWForm
       title={`Acquire your new assistant today!`}
       name={`register`}
