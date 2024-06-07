@@ -19,7 +19,7 @@ import { ModalDiscover } from "../ModalDiscover/ModalDiscover";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
-import { getOpenAIResponse } from "../../utils/openaiapi";
+import { generateResponse } from "../../utils/openaiapi";
 
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
@@ -40,10 +40,10 @@ function App() {
     setActiveModal("");
   };
 
-  const onAddUserMessage = async (values) => {
+  const onAddUserMessage = async () => {
     try {
-      const res = await getOpenAIResponse(values, token);
-      setResponse((prevItems) => [res, ...prevItems]);
+      const res = await generateResponse(token);
+      setResponse((prevResponses) => [res, ...prevResponses]);
     } catch (error) {
       console.error(error.message);
     }
