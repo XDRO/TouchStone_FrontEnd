@@ -15,7 +15,6 @@ export async function getItems() {
       "Content-Type": "application/json",
     },
   });
-  //   implement preLoader until res is received
   return processServerResponse(res);
 }
 

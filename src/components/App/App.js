@@ -19,6 +19,7 @@ import { ModalDiscover } from "../ModalDiscover/ModalDiscover";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
+import { getOpenAIResponse } from "../../utils/openaiapi";
 
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
@@ -27,6 +28,8 @@ function App() {
   const [loggedIn, isLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [response, setResponse] = useState("");
+
   const token = localStorage.getItem("token");
 
   const handleOpenModal = (modalType) => {
@@ -35,6 +38,15 @@ function App() {
 
   const handleCloseModal = () => {
     setActiveModal("");
+  };
+
+  const onAddUserMessage = async (values) => {
+    try {
+      const res = await getOpenAIResponse(values, token);
+      setResponse((prevItems) => [res, ...prevItems]);
+    } catch (error) {
+      console.error(error.message);
+    }
   };
 
   useEffect(() => {
@@ -76,10 +88,13 @@ function App() {
         >
           <Profile
             // use currentUser to get the values of the history chats
+
             currentUser={currentUser}
             setCurrentUser={setCurrentUser}
             loggedIn={loggedIn}
             isLoggedIn={isLoggedIn}
+            onAddUserMessage={onAddUserMessage}
+            response={response}
           />
         </ProtectedRoute>
 
