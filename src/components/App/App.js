@@ -51,8 +51,8 @@ function App() {
   };
 
   useEffect(() => {
-    setIsLoading(true);
     if (token) {
+      setIsLoading(true);
       auth
         .checkToken(token)
         .then((userData) => {
