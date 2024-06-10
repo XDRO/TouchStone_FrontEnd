@@ -23,6 +23,7 @@ import { generateResponse } from "../../utils/openaiapi";
 
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
+// add new line
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [loggedIn, isLoggedIn] = useState(false);
