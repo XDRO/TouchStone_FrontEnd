@@ -41,12 +41,24 @@ function App() {
     setActiveModal("");
   };
 
-  const onAddUserMessage = async () => {
-    try {
-      const res = await generateResponse(token);
-      setResponse((prevResponses) => [res, ...prevResponses]);
-    } catch (error) {
-      console.error(error.message);
+  // const onAddUserMessage = async () => {
+  //   try {
+  //     const res = await generateResponse(token);
+  //     setResponse((prevResponses) => [res, ...prevResponses]);
+  //   } catch (error) {
+  //     console.error(error.message);
+  //   }
+  // };
+
+  const onAddUserMessage = () => {
+    if (token) {
+      generateResponse(token)
+        .then((userData) => {
+          setResponse(userData);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   };
 

@@ -8,17 +8,12 @@ export const ProfileSearchBar = (onAddUserMessage, response) => {
     console.log(e.target.value);
   };
 
-  // const onKeyDown={(e) => {
-  //   if (e.key === "Enter")
-  //       handlerFuntion();
-  //   }}
-
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      await onAddUserMessage({
-        message,
-      });
+      // await onAddUserMessage({
+      //   message,
+      // });
     } catch (error) {
       console.error("Error from handleSubmit in profileSearchBar :", error);
     }
@@ -27,6 +22,7 @@ export const ProfileSearchBar = (onAddUserMessage, response) => {
   const onKeyDown = (e) => {
     if (e.key === "Enter") {
       handleSubmit(e);
+      console.log("Enter Key Press");
     }
   };
 
