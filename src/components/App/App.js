@@ -41,26 +41,33 @@ function App() {
     setActiveModal("");
   };
 
-  // const onAddUserMessage = async () => {
-  //   try {
-  //     const res = await generateResponse(token);
-  //     setResponse((prevResponses) => [res, ...prevResponses]);
-  //   } catch (error) {
-  //     console.error(error.message);
-  //   }
+  // const onAddUserMessage = () => {
+  //   console.log("function called");
+  //   return Promise.resolve();
   // };
 
-  const onAddUserMessage = () => {
+  const onAddUserMessage = async () => {
     if (token) {
-      generateResponse(token)
-        .then((userData) => {
-          setResponse(userData);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      try {
+        const res = await generateResponse(token);
+        setResponse((prevResponses) => [res, ...prevResponses]);
+      } catch (error) {
+        console.error(error.message);
+      }
     }
   };
+
+  // const onAddUserMessage = () => {
+  //   if (token) {
+  //     generateResponse(token)
+  //       .then((userData) => {
+  //         setResponse(userData);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   }
+  // };
 
   useEffect(() => {
     if (token) {

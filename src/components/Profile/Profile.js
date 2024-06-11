@@ -2,8 +2,8 @@ import "./Profile.css";
 import { ProfileSideBar } from "./ProfileSideBar";
 import { ProfileSearchBar } from "./ProfileSearchBar";
 import { ProfileResult } from "./ProfileResult";
-export const Profile = (onAddUserMessage) => {
-  console.log(onAddUserMessage);
+export const Profile = ({ onAddUserMessage }) => {
+  // console.log(onAddUserMessage);
   return (
     <div className="profile">
       {/* create sidebar.js for profile questions */}

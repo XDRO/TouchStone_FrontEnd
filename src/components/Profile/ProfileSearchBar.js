@@ -1,6 +1,6 @@
 import SoundWaves from "../../images/TouchStone-Sound-Waves.svg";
 import React, { useState } from "react";
-export const ProfileSearchBar = (onAddUserMessage, response) => {
+export const ProfileSearchBar = ({ onAddUserMessage, response }) => {
   const [message, setMessage] = useState("");
 
   const handleMessageChange = (e) => {
@@ -8,14 +8,27 @@ export const ProfileSearchBar = (onAddUserMessage, response) => {
     console.log(e.target.value);
   };
 
+  // const handleSubmit = async (e) => {
+  //   try {
+  //     e.preventDefault();
+  //     console.log("onAddUserMessage :", onAddUserMessage);
+  //     await onAddUserMessage();
+  //   } catch (error) {
+  //     console.error("Error from handleSubmit in profileSearchBar :", error);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      // await onAddUserMessage({
-      //   message,
-      // });
+      console.log("onAddUserMessage:", onAddUserMessage); // Log the prop to ensure it's being received correctly
+      if (typeof onAddUserMessage === "function") {
+        await onAddUserMessage();
+      } else {
+        console.error("onAddUserMessage is not a function");
+      }
     } catch (error) {
-      console.error("Error from handleSubmit in profileSearchBar :", error);
+      console.error("Error from handleSubmit in ProfileSearchBar:", error);
     }
   };
 
