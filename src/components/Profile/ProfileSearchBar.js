@@ -1,34 +1,23 @@
 import SoundWaves from "../../images/TouchStone-Sound-Waves.svg";
 import React, { useState } from "react";
-export const ProfileSearchBar = ({ onAddUserMessage, response }) => {
+export const ProfileSearchBar = ({ ...props }) => {
   const [message, setMessage] = useState("");
 
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
-
-  // const handleSubmit = async (e) => {
-  //   try {
-  //     e.preventDefault();
-  //     console.log("onAddUserMessage :", onAddUserMessage);
-  //     await onAddUserMessage();
-  //   } catch (error) {
-  //     console.error("Error from handleSubmit in profileSearchBar :", error);
-  //   }
-  // };
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      console.log("onAddUserMessage:", onAddUserMessage); // Log the prop to ensure it's being received correctly
-      if (typeof onAddUserMessage === "function") {
-        await onAddUserMessage();
-      } else {
-        console.error("onAddUserMessage is not a function");
-      }
+      await props.onAddUserMessage({
+        text: message,
+      });
+      setMessage("");
+      // return response;
     } catch (error) {
-      console.error("Error from handleSubmit in ProfileSearchBar:", error);
+      console.error("Error from handleSubmit in profileSearchBar :", error);
     }
   };
 
@@ -42,14 +31,15 @@ export const ProfileSearchBar = ({ onAddUserMessage, response }) => {
   return (
     <div className="profile__searchbar">
       <div className="profile__searchbar-content">
+        {/* possibly change textarea to input with the 
+      type="text", if done restyle */}
         <textarea
           placeholder="Ask TouchStone:"
           className="profile__searchbar-text"
-          rows={1}
-          cols={30}
           onSubmit={handleSubmit}
           onChange={handleMessageChange}
           onKeyDown={onKeyDown}
+          value={message}
         ></textarea>
         <button className="profile__searchbar-speach">
           {/* conditionally render sound waves or 

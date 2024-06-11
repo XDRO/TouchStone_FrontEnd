@@ -18,7 +18,7 @@ export async function getItems() {
   return processServerResponse(res);
 }
 
-export async function postItems(values, token) {
+export async function postMessage(values, token) {
   const res = await fetch(`${baseUrl}/message`, {
     method: "POST",
     headers: {
