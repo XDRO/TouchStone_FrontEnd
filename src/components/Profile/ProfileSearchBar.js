@@ -5,7 +5,6 @@ export const ProfileSearchBar = ({ ...props }) => {
 
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
-    // console.log(e.target.value);
   };
 
   const handleSubmit = async (e) => {
@@ -15,7 +14,6 @@ export const ProfileSearchBar = ({ ...props }) => {
         text: message,
       });
       setMessage("");
-      // return response;
     } catch (error) {
       console.error("Error from handleSubmit in profileSearchBar :", error);
     }

@@ -43,11 +43,9 @@ function App() {
 
   const onAddUserMessage = async (values) => {
     try {
-      console.log(values);
       await postMessage(values, token);
       const res = await generateResponse(token);
       setResponse(res);
-      console.log(generateResponse());
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
