@@ -28,6 +28,8 @@ export const ProfileSearchBar = ({ ...props }) => {
 
   return (
     <div className="profile__searchbar">
+      <div className="profile__searchbar-result"></div>
+
       <div className="profile__searchbar-content">
         {/* possibly change textarea to input with the 
       type="text", if done restyle */}
@@ -41,7 +43,8 @@ export const ProfileSearchBar = ({ ...props }) => {
         ></textarea>
         <button className="profile__searchbar-speach">
           {/* conditionally render sound waves or 
-          submit button based on if text is in textarea */}
+          submit button based on if text is in textarea
+          if message does not equal '' then send button else soundwaves */}
           <img src={SoundWaves} alt="Voice Commands"></img>
         </button>
       </div>

@@ -101,6 +101,16 @@
   width: 70vw;
 }
 
+.profile__searchbar-result {
+  font-family: "Roboto Slab";
+  border-radius: 10px;
+  border: 1px solid #dfbd69;
+  height: 70vh;
+  background: none;
+  display: grid;
+  justify-content: start;
+}
+
 .profile__searchbar-content {
   font-family: "Roboto Slab";
   display: flex;
@@ -141,29 +151,4 @@
   margin-right: 10px;
   padding: 0;
   cursor: pointer;
-}
-
-/* Profile Result */
-/* come back to this */
-/* in order to make sure that Roboto Slab is rendering on this as well */
-.profile__result {
-  background: none;
-  position: fixed;
-  display: grid;
-  justify-content: start;
-  width: 60vw;
-  height: 75vmin;
-}
-
-.profile__result-container {
-  display: grid;
-  justify-content: center;
-  width: 70vw;
-}
-
-.profile__result-text {
-  font-family: "Roboto Slab";
-  border-radius: 10px;
-  border: 1px solid #dfbd69;
-  width: 100vmin;
 }
