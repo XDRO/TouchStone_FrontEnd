@@ -2,6 +2,7 @@ import SoundWaves from "../../images/TouchStone-Sound-Waves.svg";
 import React, { useState } from "react";
 export const ProfileSearchBar = ({ ...props }) => {
   const [message, setMessage] = useState("");
+  // use props.response.text to get openai response
 
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
@@ -13,6 +14,13 @@ export const ProfileSearchBar = ({ ...props }) => {
       await props.onAddUserMessage({
         text: message,
       });
+
+      const resultsForm = {
+        response: props.response.text,
+      };
+
+      console.log(resultsForm);
+      props.onSubmit(resultsForm);
       setMessage("");
     } catch (error) {
       console.error("Error from handleSubmit in profileSearchBar :", error);
@@ -28,6 +36,7 @@ export const ProfileSearchBar = ({ ...props }) => {
 
   return (
     <div className="profile__searchbar">
+      {/* get the result to render */}
       <div className="profile__searchbar-result"></div>
 
       <div className="profile__searchbar-content">

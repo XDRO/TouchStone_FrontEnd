@@ -46,6 +46,7 @@ function App() {
       await postMessage(values, token);
       const res = await generateResponse(token);
       setResponse(res);
+      console.log(response);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }

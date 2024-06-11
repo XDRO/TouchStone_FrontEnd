@@ -5,7 +5,6 @@ import { ProfileSearchBar } from "./ProfileSearchBar";
 export const Profile = ({ onAddUserMessage, response }) => {
   return (
     <div className="profile">
-      {/* create sidebar.js for profile questions */}
       <div className="profile__content">
         <ProfileSideBar></ProfileSideBar>
         <ProfileSearchBar
