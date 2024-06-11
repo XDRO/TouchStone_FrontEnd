@@ -108,7 +108,13 @@
   height: 70vh;
   background: none;
   display: grid;
-  justify-content: start;
+  justify-content: center;
+  padding: 20px;
+}
+
+.profile__searchbar-result_text {
+  font-size: 20px;
+  color: #dfbd69;
 }
 
 .profile__searchbar-content {

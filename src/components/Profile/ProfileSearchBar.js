@@ -2,10 +2,19 @@ import SoundWaves from "../../images/TouchStone-Sound-Waves.svg";
 import React, { useState } from "react";
 export const ProfileSearchBar = ({ ...props }) => {
   const [message, setMessage] = useState("");
+
   const result = props.response.text;
+  const chatHistory = props.getMessageHistory;
 
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
+  };
+
+  const storeCurrentChat = async () => {
+    try {
+    } catch (error) {
+      console.error("Error from storeCurrentChat :", error);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -14,8 +23,9 @@ export const ProfileSearchBar = ({ ...props }) => {
       await props.onAddUserMessage({
         text: message,
       });
-
+      console.log(chatHistory());
       setMessage("");
+      storeCurrentChat();
     } catch (error) {
       console.error("Error from handleSubmit in profileSearchBar :", error);
     }
@@ -30,8 +40,9 @@ export const ProfileSearchBar = ({ ...props }) => {
 
   return (
     <div className="profile__searchbar">
-      {/* get the result to render */}
-      <div className="profile__searchbar-result">{result}</div>
+      <div className="profile__searchbar-result">
+        <div className="profile__searchbar-result_text">{result}</div>
+      </div>
 
       <div className="profile__searchbar-content">
         {/* possibly change textarea to input with the 

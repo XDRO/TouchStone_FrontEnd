@@ -20,7 +20,7 @@ import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
 import { generateResponse } from "../../utils/openaiapi";
-import { postMessage } from "../../utils/api";
+import { postMessage, getMessages } from "../../utils/api";
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 // add new line
@@ -30,6 +30,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [response, setResponse] = useState("");
+  const [activeChat, setActiveChat] = useState(false);
 
   const token = localStorage.getItem("token");
 
@@ -41,12 +42,21 @@ function App() {
     setActiveModal("");
   };
 
+  const getMessageHistory = async () => {
+    try {
+      const res = await getMessages();
+      setActiveChat(true);
+      console.log(res);
+    } catch (error) {
+      console.log("Error form getMessageHistory: ", error.message);
+    }
+  };
+
   const onAddUserMessage = async (values) => {
     try {
       await postMessage(values, token);
       const res = await generateResponse(token);
       setResponse(res);
-      console.log(response);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
@@ -96,6 +106,7 @@ function App() {
             loggedIn={loggedIn}
             isLoggedIn={isLoggedIn}
             onAddUserMessage={onAddUserMessage}
+            getMessageHistory={getMessageHistory}
             response={response}
           />
         </ProtectedRoute>
