@@ -2,7 +2,12 @@ import "./Profile.css";
 import { ProfileSideBar } from "./ProfileSideBar";
 import { ProfileSearchBar } from "./ProfileSearchBar";
 // import { ProfileResult } from "./ProfileResult";
-export const Profile = ({ onAddUserMessage, responses, currentUser }) => {
+export const Profile = ({
+  onAddUserMessage,
+  responses,
+  messages,
+  currentUser,
+}) => {
   return (
     <div className="profile">
       <div className="profile__content">
@@ -10,6 +15,7 @@ export const Profile = ({ onAddUserMessage, responses, currentUser }) => {
         <ProfileSearchBar
           onAddUserMessage={onAddUserMessage}
           responses={responses}
+          messages={messages}
           currentUser={currentUser}
         ></ProfileSearchBar>
       </div>
