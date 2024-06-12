@@ -110,6 +110,7 @@
   display: grid;
   justify-content: center;
   padding: 20px;
+  background-color: #1e2f48;
 }
 
 .profile__searchbar-result_text {

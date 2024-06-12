@@ -20,7 +20,7 @@ import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
 import { generateResponse } from "../../utils/openaiapi";
-import { postMessage, getMessages } from "../../utils/api";
+import { postMessage, getChats } from "../../utils/api";
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 // add new line
@@ -29,8 +29,9 @@ function App() {
   const [loggedIn, isLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [response, setResponse] = useState("");
-  const [activeChat, setActiveChat] = useState(false);
+  const [responses, setResponses] = useState([]);
+
+  // const [activeChat, setActiveChat] = useState([]);
 
   const token = localStorage.getItem("token");
 
@@ -42,21 +43,13 @@ function App() {
     setActiveModal("");
   };
 
-  const getMessageHistory = async () => {
-    try {
-      const res = await getMessages();
-      setActiveChat(true);
-      console.log(res);
-    } catch (error) {
-      console.log("Error form getMessageHistory: ", error.message);
-    }
-  };
-
   const onAddUserMessage = async (values) => {
     try {
       await postMessage(values, token);
       const res = await generateResponse(token);
-      setResponse(res);
+      // setResponse(res);
+      setResponses((prevItems) => [res, ...prevItems]);
+      console.log(responses);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
@@ -81,8 +74,22 @@ function App() {
     }
   }, [loggedIn, token]);
 
+  useEffect(() => {
+    getChats()
+      .then((items) => {
+        setResponses(
+          items.map((items) => ({
+            ...items,
+          }))
+        );
+      })
+      .catch((error) => {
+        console.error("Error from useEffect getChats :", error);
+      });
+  }, [currentUser._id]);
+
   return isLoading ? (
-    <Preloader></Preloader>
+    <Preloader />
   ) : (
     <CurrentUserContext.Provider
       value={{ setCurrentUser, currentUser }}
@@ -106,8 +113,8 @@ function App() {
             loggedIn={loggedIn}
             isLoggedIn={isLoggedIn}
             onAddUserMessage={onAddUserMessage}
-            getMessageHistory={getMessageHistory}
-            response={response}
+            responses={responses}
+            // activeChat={activeChat}
           />
         </ProtectedRoute>
 
