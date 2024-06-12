@@ -44,6 +44,7 @@ function App() {
   const onAddUserMessage = async (values) => {
     try {
       await postMessage(values, token);
+      // console.log(values);
       const res = await generateResponse(token);
       setResponses((prevItems) => [res, ...prevItems]);
     } catch (error) {

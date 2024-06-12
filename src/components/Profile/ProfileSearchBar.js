@@ -12,6 +12,10 @@ export const ProfileSearchBar = ({ onAddUserMessage, responses }) => {
       e.preventDefault();
       await onAddUserMessage({ text: message });
 
+      responses.forEach((element) => {
+        console.log(element.chatType);
+      });
+
       setMessage("");
     } catch (error) {
       console.error("Error from handleSubmit in profileSearchBar :", error);
