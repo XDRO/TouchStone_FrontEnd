@@ -30,7 +30,6 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [responses, setResponses] = useState([]);
-  const [messages, setMessages] = useState([]);
 
   const token = localStorage.getItem("token");
 
@@ -47,7 +46,6 @@ function App() {
       await postMessage(values, token);
       // console.log(values);
       const res = await generateResponse(token);
-      setMessages(values);
       setResponses((prevItems) => [res, ...prevItems]);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
@@ -113,7 +111,6 @@ function App() {
             isLoggedIn={isLoggedIn}
             onAddUserMessage={onAddUserMessage}
             responses={responses}
-            messages={messages}
           />
         </ProtectedRoute>
 

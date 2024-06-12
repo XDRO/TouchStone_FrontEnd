@@ -4,7 +4,6 @@ import React, { useState } from "react";
 export const ProfileSearchBar = ({
   onAddUserMessage,
   responses,
-  messages,
   currentUser,
 }) => {
   const [message, setMessage] = useState("");
