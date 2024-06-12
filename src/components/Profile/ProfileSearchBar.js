@@ -1,10 +1,6 @@
 import SoundWaves from "../../images/TouchStone-Sound-Waves.svg";
 import React, { useState } from "react";
-export const ProfileSearchBar = ({
-  onAddUserMessage,
-  responses,
-  activeChat,
-}) => {
+export const ProfileSearchBar = ({ onAddUserMessage, responses }) => {
   const [message, setMessage] = useState("");
 
   const handleMessageChange = (e) => {
@@ -31,8 +27,10 @@ export const ProfileSearchBar = ({
 
   return (
     <div className="profile__searchbar">
-      <div className="profile__searchbar-result">
-        <div className="profile__searchbar-result_text">{responses.text}</div>
+      <div className="profile__searchbar-result" key={responses}>
+        {responses.map((responses) => (
+          <div className="profile__searchbar-result_text">{responses.text}</div>
+        ))}
       </div>
 
       <div className="profile__searchbar-content">

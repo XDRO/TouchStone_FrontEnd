@@ -31,8 +31,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [responses, setResponses] = useState([]);
 
-  // const [activeChat, setActiveChat] = useState([]);
-
   const token = localStorage.getItem("token");
 
   const handleOpenModal = (modalType) => {
@@ -47,9 +45,7 @@ function App() {
     try {
       await postMessage(values, token);
       const res = await generateResponse(token);
-      // setResponse(res);
       setResponses((prevItems) => [res, ...prevItems]);
-      console.log(responses);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
@@ -114,7 +110,6 @@ function App() {
             isLoggedIn={isLoggedIn}
             onAddUserMessage={onAddUserMessage}
             responses={responses}
-            // activeChat={activeChat}
           />
         </ProtectedRoute>
 
