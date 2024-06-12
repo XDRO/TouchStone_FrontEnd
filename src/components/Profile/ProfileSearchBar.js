@@ -3,6 +3,8 @@ import React, { useState } from "react";
 export const ProfileSearchBar = ({ onAddUserMessage, responses }) => {
   const [message, setMessage] = useState("");
 
+  const [chatType, getChatType] = useState([]);
+
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
@@ -13,10 +15,11 @@ export const ProfileSearchBar = ({ onAddUserMessage, responses }) => {
       await onAddUserMessage({ text: message });
 
       responses.forEach((element) => {
-        console.log(element.chatType);
+        getChatType(element.chatType);
       });
 
       setMessage("");
+      console.log(chatType);
     } catch (error) {
       console.error("Error from handleSubmit in profileSearchBar :", error);
     }
@@ -32,8 +35,8 @@ export const ProfileSearchBar = ({ onAddUserMessage, responses }) => {
   return (
     <div className="profile__searchbar">
       <div className="profile__searchbar-result" key={responses}>
-        {responses.map((responses) => (
-          <div className="profile__searchbar-result_text">{responses.text}</div>
+        {responses.map((element) => (
+          <div className="profile__searchbar-result_text">{element.text}</div>
         ))}
       </div>
 
