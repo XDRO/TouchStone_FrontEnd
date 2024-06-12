@@ -25,7 +25,6 @@ export const ProfileSearchBar = ({
   const onKeyDown = (e) => {
     if (e.key === "Enter") {
       handleSubmit(e);
-      console.log("Enter Key Press");
     }
   };
 
