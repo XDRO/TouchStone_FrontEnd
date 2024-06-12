@@ -7,7 +7,6 @@ export const ProfileSearchBar = ({
   currentUser,
 }) => {
   const [message, setMessage] = useState("");
-  const [localMessages, setLocalMesssages] = useState(responses);
 
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
