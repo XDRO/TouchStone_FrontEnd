@@ -1,12 +1,13 @@
 import SoundWaves from "../../images/TouchStone-Sound-Waves.svg";
 import React, { useState } from "react";
+
 export const ProfileSearchBar = ({
   onAddUserMessage,
   responses,
   currentUser,
 }) => {
   const [message, setMessage] = useState("");
-  console.log(currentUser.name);
+  const [localMessages, setLocalMesssages] = useState(responses);
 
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
@@ -16,11 +17,6 @@ export const ProfileSearchBar = ({
     try {
       e.preventDefault();
       await onAddUserMessage({ text: message });
-
-      // responses.forEach((element) => {
-      //   console.log(element.chatType)
-      // });
-
       setMessage("");
     } catch (error) {
       console.error("Error from handleSubmit in profileSearchBar :", error);
@@ -39,14 +35,17 @@ export const ProfileSearchBar = ({
       <div className="profile__searchbar-result" key={responses._id}>
         {responses.map((element) =>
           element.chatType === "response" ? (
-            <div className="profile__searchbar-result_text">
-              TS: {element.text}
+            <div className="profile__searchbar-message_container">
+              TouchStone AI:
+              <div className="profile__searchbar-result_text">
+                {element.text}
+              </div>
             </div>
           ) : (
             <div className="profile__searchbar-message_container">
+              {currentUser.name} :
               <div className="profile__searchbar-message_text">
-                {/* change you to current user */}
-                {currentUser.name}: {element.text}
+                {element.text}
               </div>
             </div>
           )

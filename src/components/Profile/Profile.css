@@ -119,21 +119,20 @@
 .profile__searchbar-message_container {
   display: flex;
   justify-content: flex-start;
+  flex-direction: column;
+  padding: 10px;
+  gap: 2px;
+  color: #dfbd69;
 }
 
 .profile__searchbar-result_text {
   font-size: 15px;
-  color: #dfbd69;
-  padding: 10px 10px;
   border-radius: 10px;
 }
 
 .profile__searchbar-message_text {
   font-size: 15px;
-  color: #dfbd69;
   border-radius: 10px;
-  padding: 10px 10px;
-  background-color: black;
 }
 
 .profile__searchbar-content {
@@ -148,9 +147,9 @@
 }
 
 .profile__searchbar-text {
-  position: relative;
+  /* position: relative; */
   display: block;
-  top: 12px;
+  /* top: 12px; */
   color: #dfbd69;
   caret-color: #dfbd69;
   background: none;
@@ -160,8 +159,9 @@
   width: 50vw;
   height: 40px;
   margin: 10px;
-  font-size: 18px;
-  overflow: hidden;
+  font-size: 15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .profile__searchbar-text::-webkit-input-placeholder {
