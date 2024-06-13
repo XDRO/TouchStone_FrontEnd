@@ -116,7 +116,7 @@
   overflow-x: hidden;
 }
 
-.profile__searchbar-message_container {
+.profile__searchbar-chatType_container {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -125,12 +125,7 @@
   color: #dfbd69;
 }
 
-.profile__searchbar-result_text {
-  font-size: 15px;
-  border-radius: 10px;
-}
-
-.profile__searchbar-message_text {
+.profile__searchbar-chatType_text {
   font-size: 15px;
   border-radius: 10px;
 }
@@ -147,9 +142,7 @@
 }
 
 .profile__searchbar-text {
-  /* position: relative; */
   display: block;
-  /* top: 12px; */
   color: #dfbd69;
   caret-color: #dfbd69;
   background: none;
