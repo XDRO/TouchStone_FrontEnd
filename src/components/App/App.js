@@ -19,7 +19,7 @@ import { ModalDiscover } from "../ModalDiscover/ModalDiscover";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
-import { generateResponse } from "../../utils/openaiapi";
+import { generateResponse, summarizeText } from "../../utils/openaiapi";
 import { postMessage, getChats } from "../../utils/api";
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
@@ -30,6 +30,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [chatType, setChatType] = useState([]);
+  const [summary, setSummary] = useState("");
 
   const token = localStorage.getItem("token");
 
@@ -45,8 +46,14 @@ function App() {
     try {
       const userMessage = await postMessage(values, token);
       setChatType((prevItems) => [...prevItems, userMessage]);
+
       const res = await generateResponse(token);
       setChatType((prevItems) => [...prevItems, res]);
+
+      const responseSummary = await summarizeText(values, token);
+      setSummary(responseSummary);
+
+      console.log(summary);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
@@ -111,6 +118,7 @@ function App() {
             isLoggedIn={isLoggedIn}
             onAddUserMessage={onAddUserMessage}
             chatType={chatType}
+            summary={summary}
           />
         </ProtectedRoute>
 

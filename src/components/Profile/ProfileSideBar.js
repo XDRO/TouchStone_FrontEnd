@@ -1,5 +1,13 @@
 import EditButton from "../../images/TouchStone-Edit-Questions.svg";
-export const ProfileSideBar = () => {
+export const ProfileSideBar = ({
+  onAddUserMessage,
+  chatType,
+  currentUser,
+  summary,
+}) => {
+  // create function for handling message event i.e. onAddUserMessage
+  // await this function then
+
   return (
     <div className="profile__sidebar">
       {/* create onClick that takes user to new chat */}
