@@ -30,6 +30,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [chatType, setChatType] = useState([]);
+  const [currentChat, setCurrentChat] = useState({});
 
   const token = localStorage.getItem("token");
 
@@ -48,6 +49,11 @@ function App() {
 
       const res = await generateResponse(token);
       setChatType((prevItems) => [...prevItems, res]);
+
+      // setCurrentChat to the first message the user has sent
+
+      setCurrentChat(userMessage.text);
+      console.log(currentChat);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
@@ -85,6 +91,8 @@ function App() {
         console.error("Error from useEffect getChats :", error);
       });
   }, [currentUser._id]);
+
+  // later for summary will need useEffect to map values
 
   return isLoading ? (
     <Preloader />
