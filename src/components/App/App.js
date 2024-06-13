@@ -49,11 +49,6 @@ function App() {
 
       const res = await generateResponse(token);
       setChatType((prevItems) => [...prevItems, res]);
-
-      const responseSummary = await summarizeText(values, token);
-      setSummary(responseSummary);
-
-      console.log(summary);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
@@ -118,7 +113,6 @@ function App() {
             isLoggedIn={isLoggedIn}
             onAddUserMessage={onAddUserMessage}
             chatType={chatType}
-            summary={summary}
           />
         </ProtectedRoute>
 

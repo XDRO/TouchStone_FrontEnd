@@ -28,19 +28,19 @@ export async function generateResponse(token) {
  * @param {string} token - The user's authentication token
  * @returns {Promise<Object>} - The server response
  */
-
-export async function summarizeText(values, token) {
-  try {
-    const res = await fetch(`${baseUrl}/summarizer`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(values),
-    });
-    return processServerResponse(res);
-  } catch (error) {
-    console.error("Error from summerizeText :", error);
-  }
-}
+// use when you implement summary on back end
+// export async function summarizeText(values, token) {
+//   try {
+//     const res = await fetch(`${baseUrl}/summarizer`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${token}`,
+//       },
+//       body: JSON.stringify(values),
+//     });
+//     return processServerResponse(res);
+//   } catch (error) {
+//     console.error("Error from summerizeText :", error);
+//   }
+// }
