@@ -11,7 +11,6 @@ export const Profile = ({ onAddUserMessage, chat, currentUser }) => {
           onAddUserMessage={onAddUserMessage}
           chat={chat}
           currentUser={currentUser}
-          // messages={messages}
         ></ProfileSearchBar>
       </div>
     </div>
