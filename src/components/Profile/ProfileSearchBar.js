@@ -3,8 +3,8 @@ import React, { useState } from "react";
 // add code blocks for users inquireing about codiing
 export const ProfileSearchBar = ({
   onAddUserMessage,
-  responses,
-  messages,
+  chat,
+  // messages,
   currentUser,
 }) => {
   const [message, setMessage] = useState("");
@@ -31,23 +31,31 @@ export const ProfileSearchBar = ({
 
   return (
     <div className="profile__searchbar">
-      <div className="profile__searchbar-result" key={responses._id}>
-        {messages.map((element) => (
-          <div className="profile__searchbar-message_container">
-            {currentUser.name} :
-            <div className="profile__searchbar-message_text">
-              {element.text}
+      <div className="profile__searchbar-result" key={chat._id}>
+        {chat.map((element) => {
+          return element.chatType === "message" ? (
+            <div
+              className="profile__searchbar-message_container"
+              key={element._id}
+            >
+              {currentUser.name}
+              <div className="profile__searchbar-result_text">
+                {element.text}
+              </div>
             </div>
-          </div>
-        ))}
-        {responses.map((element) => (
-          <div className="profile__searchbar-message_container">
-            TouchStone AI:
-            <div className="profile__searchbar-result_text">{element.text}</div>
-          </div>
-        ))}
+          ) : (
+            <div
+              className="profile__searchbar-message_container"
+              key={element._id}
+            >
+              TouchStone AI:
+              <div className="profile__searchbar-result_text">
+                {element.text}
+              </div>
+            </div>
+          );
+        })}
       </div>
-
       <div className="profile__searchbar-content">
         {/* possibly change textarea to input with the 
       type="text", if done restyle */}

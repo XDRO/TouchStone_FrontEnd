@@ -29,8 +29,7 @@ function App() {
   const [loggedIn, isLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [responses, setResponses] = useState([]);
-  const [messages, setMessages] = useState([]);
+  const [chat, setChat] = useState([]);
 
   const token = localStorage.getItem("token");
 
@@ -45,10 +44,9 @@ function App() {
   const onAddUserMessage = async (values) => {
     try {
       const userMessage = await postMessage(values, token);
-      setMessages((prevItems) => [userMessage, ...prevItems]);
 
       const res = await generateResponse(token);
-      setResponses((prevItems) => [res, ...prevItems]);
+      setChat((prevItems) => [userMessage, res, ...prevItems]);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
@@ -76,14 +74,7 @@ function App() {
   useEffect(() => {
     getChats()
       .then((items) => {
-        setMessages(
-          items.map((items) => ({
-            ...items,
-          }))
-        );
-      })
-      .then((items) => {
-        setResponses(
+        setChat(
           items.map((items) => ({
             ...items,
           }))
@@ -119,8 +110,8 @@ function App() {
             loggedIn={loggedIn}
             isLoggedIn={isLoggedIn}
             onAddUserMessage={onAddUserMessage}
-            responses={responses}
-            messages={messages}
+            chat={chat}
+            // messages={messages}
           />
         </ProtectedRoute>
 
