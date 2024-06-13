@@ -44,9 +44,9 @@ function App() {
   const onAddUserMessage = async (values) => {
     try {
       const userMessage = await postMessage(values, token);
-
+      setChatType((prevItems) => [...prevItems, userMessage]);
       const res = await generateResponse(token);
-      setChatType((prevItems) => [userMessage, res, ...prevItems]);
+      setChatType((prevItems) => [...prevItems, res]);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
