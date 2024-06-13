@@ -32,18 +32,18 @@ export const ProfileSearchBar = ({
   return (
     <div className="profile__searchbar">
       <div className="profile__searchbar-result" key={responses._id}>
-        {responses.map((element) => (
-          <div className="profile__searchbar-message_container">
-            TouchStone AI:
-            <div className="profile__searchbar-result_text">{element.text}</div>
-          </div>
-        ))}
         {messages.map((element) => (
           <div className="profile__searchbar-message_container">
             {currentUser.name} :
             <div className="profile__searchbar-message_text">
               {element.text}
             </div>
+          </div>
+        ))}
+        {responses.map((element) => (
+          <div className="profile__searchbar-message_container">
+            TouchStone AI:
+            <div className="profile__searchbar-result_text">{element.text}</div>
           </div>
         ))}
       </div>
