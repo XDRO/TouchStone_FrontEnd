@@ -1,6 +1,6 @@
 import SoundWaves from "../../images/TouchStone-Sound-Waves.svg";
 import React, { useState } from "react";
-
+// add code blocks for users inquireing about codiing
 export const ProfileSearchBar = ({
   onAddUserMessage,
   responses,
