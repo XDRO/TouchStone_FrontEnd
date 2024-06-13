@@ -1,7 +1,6 @@
 import EditButton from "../../images/TouchStone-Edit-Questions.svg";
 export const ProfileSideBar = ({ onAddUserMessage, chatType, currentUser }) => {
-  // create function for handling message event i.e. onAddUserMessage
-  // await this function then
+  const currentChat = chatType[0]?.text;
 
   return (
     <div className="profile__sidebar">
@@ -22,7 +21,7 @@ export const ProfileSideBar = ({ onAddUserMessage, chatType, currentUser }) => {
             <li className="profile__sidebar-li_element">
               <div>
                 {/* create Link to previous chats */}
-                current question
+                {currentChat}
               </div>
             </li>
           </ol>
