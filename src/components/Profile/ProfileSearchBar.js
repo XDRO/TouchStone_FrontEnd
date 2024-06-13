@@ -1,7 +1,11 @@
 import SoundWaves from "../../images/TouchStone-Sound-Waves.svg";
 import React, { useState } from "react";
 // add code blocks for users inquireing about codiing
-export const ProfileSearchBar = ({ onAddUserMessage, chat, currentUser }) => {
+export const ProfileSearchBar = ({
+  onAddUserMessage,
+  chatType,
+  currentUser,
+}) => {
   const [message, setMessage] = useState("");
 
   const handleMessageChange = (e) => {
@@ -26,8 +30,8 @@ export const ProfileSearchBar = ({ onAddUserMessage, chat, currentUser }) => {
 
   return (
     <div className="profile__searchbar">
-      <div className="profile__searchbar-result" key={chat._id}>
-        {chat.map((element) => {
+      <div className="profile__searchbar-result" key={chatType._id}>
+        {chatType.map((element) => {
           return element.chatType === "message" ? (
             <div
               className="profile__searchbar-message_container"
