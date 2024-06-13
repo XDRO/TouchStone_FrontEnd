@@ -30,23 +30,17 @@ export const ProfileSearchBar = ({
 
   return (
     <div className="profile__searchbar">
-      <div className="profile__searchbar-result" key={chatType._id}>
+      <div className="profile__searchbar-chatType_container" key={chatType._id}>
         {chatType.map((element) => {
           return element.chatType === "message" ? (
-            <div
-              className="profile__searchbar-chatType_container"
-              key={element._id}
-            >
+            <div className="profile__searchbar-chatType" key={element._id}>
               {currentUser.name}
               <div className="profile__searchbar-chatType_text">
                 {element.text}
               </div>
             </div>
           ) : (
-            <div
-              className="profile__searchbar-chatType_container"
-              key={element._id}
-            >
+            <div className="profile__searchbar-chatType" key={element._id}>
               TouchStone AI:
               <div className="profile__searchbar-chatType_text">
                 {element.text}
@@ -55,6 +49,7 @@ export const ProfileSearchBar = ({
           );
         })}
       </div>
+
       <div className="profile__searchbar-content">
         {/* possibly change textarea to input with the 
       type="text", if done restyle */}

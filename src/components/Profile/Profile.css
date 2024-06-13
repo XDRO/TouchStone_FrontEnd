@@ -101,7 +101,7 @@
   width: 70vw;
 }
 
-.profile__searchbar-result {
+.profile__searchbar-chatType_container {
   font-family: "Roboto Slab";
   border-radius: 10px;
   border: 1px solid #dfbd69;
@@ -116,7 +116,7 @@
   overflow-x: hidden;
 }
 
-.profile__searchbar-chatType_container {
+.profile__searchbar-chatType {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
