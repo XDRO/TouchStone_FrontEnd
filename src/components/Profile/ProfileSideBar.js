@@ -1,4 +1,4 @@
-import EditButton from "../../images/TouchStone-Edit-Questions.svg";
+import NewChatButton from "../../images/TouchStone-NewChat.svg";
 export const ProfileSideBar = ({ onAddUserMessage, chatType, currentUser }) => {
   const currentChat = chatType[0]?.text;
 
@@ -9,7 +9,7 @@ export const ProfileSideBar = ({ onAddUserMessage, chatType, currentUser }) => {
       <div className="profile__sidebar-header">
         <p className="profile__sidebar-chat">Chat</p>
         <button className="profile__sidebar-edit">
-          <img src={EditButton} alt="Edit Chat"></img>
+          <img src={NewChatButton} alt="Edit Chat"></img>
         </button>
       </div>
 
