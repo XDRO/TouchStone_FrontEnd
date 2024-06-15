@@ -2,14 +2,19 @@ import "./Profile.css";
 import { ProfileSideBar } from "./ProfileSideBar";
 import { ProfileSearchBar } from "./ProfileSearchBar";
 // import { ProfileResult } from "./ProfileResult";
-export const Profile = ({ onAddUserMessage, chatType, currentUser }) => {
+export const Profile = ({
+  onAddUserMessage,
+  chatType,
+  currentUser,
+  setChatType,
+}) => {
   return (
     <div className="profile">
       <div className="profile__content">
         <ProfileSideBar
           onAddUserMessage={onAddUserMessage}
           chatType={chatType}
-          currentUser={currentUser}
+          setChatType={setChatType}
         ></ProfileSideBar>
         <ProfileSearchBar
           onAddUserMessage={onAddUserMessage}

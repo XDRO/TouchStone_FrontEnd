@@ -114,6 +114,7 @@ function App() {
             isLoggedIn={isLoggedIn}
             onAddUserMessage={onAddUserMessage}
             chatType={chatType}
+            setChatType={setChatType}
           />
         </ProtectedRoute>
 
