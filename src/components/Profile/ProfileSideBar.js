@@ -8,18 +8,15 @@ export const ProfileSideBar = ({ onAddUserMessage, chatType, setChatType }) => {
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
-      setChatType([]);
       const newChat = {};
       setChatLists(chatLists.concat(newChat));
+      setChatType([]);
       setNewChatTitle();
       console.log(newChatTitle);
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
   };
-
-  // make chatType.map dependent on createNewChatList function
-  // so it does not render new elements without the user clicking the new chat button
 
   return (
     <div className="profile__sidebar">
@@ -44,9 +41,11 @@ export const ProfileSideBar = ({ onAddUserMessage, chatType, setChatType }) => {
 
             {chatLists.map(() => {
               return createNewChatList ? (
-                <li className="profile__sidebar-li_element">
-                  {currentChatTitle}
-                </li>
+                <ol className="profile__sidebar-ol">
+                  <li className="profile__sidebar-li_element">
+                    {newChatTitle}
+                  </li>
+                </ol>
               ) : null;
             })}
           </ol>
