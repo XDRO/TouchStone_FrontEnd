@@ -51,7 +51,7 @@ export const ProfileSearchBar = ({
       </div>
 
       <div className="profile__searchbar-content">
-        {/* possibly change textarea to input with the 
+        {/* possibly change textarea to <input></input> with the 
       type="text", if done restyle */}
         <textarea
           placeholder="Ask TouchStone:"

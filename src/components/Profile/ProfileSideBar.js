@@ -5,18 +5,36 @@ export const ProfileSideBar = ({ onAddUserMessage, chatType, setChatType }) => {
   const [chatLists, setChatLists] = useState([]);
   const [newChatTitle, setNewChatTitle] = useState("");
 
+  // chat type objects
+  // potentially use as the new chat object params
+  // chatType : "message"
+  // createdAt : "2024-06-15T22:45:33.538Z"
+  // owner : "666784601d1e00031c5b9e02"
+  // text : "what year is it"
+  // __v : 0
+  // _id : "666e198d4d57ecb1c23b829f"
+
+  // chatType : "response"
+  // createdAt : "2024-06-15T22:45:34.334Z"
+  // owner : "666784601d1e00031c5b9e02"
+  // text : "It is currently 2021."
+  // __v : 0
+  // _id : "666e198e4d57ecb1c23b82a2"
+
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
       const newChat = {};
       setChatLists(chatLists.concat(newChat));
-      setChatType((prevChat) => [...prevChat, newChat]);
-      setNewChatTitle();
-      console.log(newChatTitle);
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
   };
+
+  // const some function onClick <li></li> refocus onto chat
+  // this event should show an empty chatType, setChatType([])
+  // until populated by user OnAddUserMessage
+  // then setChatType in onAddUserMessage should fire again
 
   return (
     <div className="profile__sidebar">
@@ -43,7 +61,7 @@ export const ProfileSideBar = ({ onAddUserMessage, chatType, setChatType }) => {
               return createNewChatList ? (
                 <ol className="profile__sidebar-ol" key={index}>
                   <li className="profile__sidebar-li_element">
-                    {newChatTitle}
+                    {/* {newChatTitle} */} new chat
                   </li>
                 </ol>
               ) : null;
