@@ -2,15 +2,15 @@ import { useState } from "react";
 import NewChatButton from "../../images/TouchStone-NewChat.svg";
 export const ProfileSideBar = ({ onAddUserMessage, chatType, setChatType }) => {
   const currentChatTitle = chatType[0]?.text;
-  const [newChatTitle, setNewChatTitle] = useState("");
   const [chatLists, setChatLists] = useState([]);
+  const [newChatTitle, setNewChatTitle] = useState("");
 
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
       const newChat = {};
       setChatLists(chatLists.concat(newChat));
-      setChatType([]);
+      setChatType((prevChat) => [...prevChat, newChat]);
       setNewChatTitle();
       console.log(newChatTitle);
     } catch (error) {
@@ -39,9 +39,9 @@ export const ProfileSideBar = ({ onAddUserMessage, chatType, setChatType }) => {
           <ol className="profile__sidebar-ol">
             <li className="profile__sidebar-li_element">{currentChatTitle}</li>
 
-            {chatLists.map(() => {
+            {chatLists.map((_, index) => {
               return createNewChatList ? (
-                <ol className="profile__sidebar-ol">
+                <ol className="profile__sidebar-ol" key={index}>
                   <li className="profile__sidebar-li_element">
                     {newChatTitle}
                   </li>
