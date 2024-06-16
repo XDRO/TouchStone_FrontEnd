@@ -30,6 +30,10 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [chatType, setChatType] = useState([]);
+  // rename chatType to chat, and setChat, this will then be used as
+  // collection of messages from the user
+  // possibly will need to rename the back end as well
+  // use chatList and setChatList to do what chatType currently does
 
   const token = localStorage.getItem("token");
 
