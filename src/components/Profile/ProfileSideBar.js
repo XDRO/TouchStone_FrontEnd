@@ -3,7 +3,7 @@ import NewChatButton from "../../images/TouchStone-NewChat.svg";
 export const ProfileSideBar = ({ onAddUserMessage, chatType, setChatType }) => {
   const currentChatTitle = chatType[0]?.text;
   const [chatLists, setChatLists] = useState([]);
-  const [newChatTitle, setNewChatTitle] = useState("");
+  // const [newChatTitle, setNewChatTitle] = useState("");
 
   // chat type objects
   // potentially use as the new chat object params
@@ -72,42 +72,3 @@ export const ProfileSideBar = ({ onAddUserMessage, chatType, setChatType }) => {
     </div>
   );
 };
-
-// const createNewChatList = async () => {
-//   try {
-//     setNewChatArray((newChat) => [...newChat, chatType]);
-//     console.log(newChatArray);
-//   } catch (error) {
-//     console.log("Error from create new chat list", error);
-//   }
-// };
-
-// createProject() {
-//   const item = this.state.itemArray;
-//   const title = '';
-//   const text = '';
-//   item.push({ title, text })
-//   this.setState({itemArray: item})
-// }
-
-// render() {
-//   return (
-//     <div className="Overview">
-//       <p>Overview</p>
-//       <button onClick={this.createProject.bind(this)}>New Project</button>
-//       <Project />
-//       <div>
-//         {this.state.itemArray.map((item, index) => {
-//           return (
-//             <div className="box" key={index}>
-//                 <div>
-//                  <h2>{item.title}</h2>
-//                  <p>{item.text}</p>
-//                </div>
-//             </div>
-//           )
-//         })}
-//       </div>
-//     </div>
-//   );
-// }
