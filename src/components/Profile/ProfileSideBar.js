@@ -7,11 +7,16 @@ export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
-      const newChat = {};
-      setChat(chat.concat(newChat));
+      setChat([]);
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
+  };
+
+  const handleListItemClick = (index) => {
+    console.log(chat);
+
+    setChat([]);
   };
 
   // const some function onClick <li></li> refocus onto chat
@@ -40,10 +45,13 @@ export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
           <ol className="profile__sidebar-ol">
             <li className="profile__sidebar-li_element">{currentChatTitle}</li>
 
-            {chat.map((_, index) => {
+            {chat.map((element, index) => {
               return createNewChatList ? (
                 <ol className="profile__sidebar-ol" key={index}>
-                  <li className="profile__sidebar-li_element"></li>
+                  <li
+                    className="profile__sidebar-li_element"
+                    onClick={handleListItemClick}
+                  ></li>
                 </ol>
               ) : null;
             })}
