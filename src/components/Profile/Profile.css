@@ -117,7 +117,7 @@
   overflow-x: hidden;
 }
 
-.profile__searchbar-chatType {
+.profile__searchbar-chatList {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;

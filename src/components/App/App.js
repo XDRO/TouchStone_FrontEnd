@@ -29,11 +29,7 @@ function App() {
   const [loggedIn, isLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [chatType, setChatType] = useState([]);
-  // rename chatType to chat, and setChat, this will then be used as
-  // collection of messages from the user
-  // possibly will need to rename the back end as well
-  // use chatList and setChatList to do what chatType currently does
+  const [chatList, setChatList] = useState([]);
 
   const token = localStorage.getItem("token");
 
@@ -48,10 +44,10 @@ function App() {
   const onAddUserMessage = async (values) => {
     try {
       const userMessage = await postMessage(values, token);
-      setChatType((prevItems) => [...prevItems, userMessage]);
+      setChatList((prevItems) => [...prevItems, userMessage]);
 
       const res = await generateResponse(token);
-      setChatType((prevItems) => [...prevItems, res]);
+      setChatList((prevItems) => [...prevItems, res]);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
@@ -79,7 +75,7 @@ function App() {
   useEffect(() => {
     getChats()
       .then((items) => {
-        setChatType(
+        setChatList(
           items.map((items) => ({
             ...items,
           }))
@@ -117,8 +113,8 @@ function App() {
             loggedIn={loggedIn}
             isLoggedIn={isLoggedIn}
             onAddUserMessage={onAddUserMessage}
-            chatType={chatType}
-            setChatType={setChatType}
+            chatList={chatList}
+            setChatList={setChatList}
           />
         </ProtectedRoute>
 

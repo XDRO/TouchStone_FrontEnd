@@ -3,7 +3,7 @@ import React, { useState } from "react";
 // add code blocks for users inquireing about codiing
 export const ProfileSearchBar = ({
   onAddUserMessage,
-  chatType,
+  chatList,
   currentUser,
 }) => {
   const [message, setMessage] = useState("");
@@ -30,17 +30,17 @@ export const ProfileSearchBar = ({
 
   return (
     <div className="profile__searchbar">
-      <div className="profile__searchbar-chatType_container" key={chatType._id}>
-        {chatType.map((element, index) => {
+      <div className="profile__searchbar-chatType_container" key={chatList._id}>
+        {chatList.map((element, index) => {
           return element.chatType === "message" ? (
-            <div className="profile__searchbar-chatType" key={index}>
+            <div className="profile__searchbar-chatList" key={index}>
               {currentUser.name}
               <div className="profile__searchbar-chatType_text">
                 {element.text}
               </div>
             </div>
           ) : (
-            <div className="profile__searchbar-chatType" key={index}>
+            <div className="profile__searchbar-chatList" key={index}>
               TouchStone AI:
               <div className="profile__searchbar-chatType_text">
                 {element.text}

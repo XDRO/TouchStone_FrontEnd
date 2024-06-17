@@ -4,21 +4,21 @@ import { ProfileSearchBar } from "./ProfileSearchBar";
 // import { ProfileResult } from "./ProfileResult";
 export const Profile = ({
   onAddUserMessage,
-  chatType,
+  chatList,
   currentUser,
-  setChatType,
+  setChatList,
 }) => {
   return (
     <div className="profile">
       <div className="profile__content">
         <ProfileSideBar
           onAddUserMessage={onAddUserMessage}
-          chatType={chatType}
-          setChatType={setChatType}
+          chatList={chatList}
+          setChatList={setChatList}
         ></ProfileSideBar>
         <ProfileSearchBar
           onAddUserMessage={onAddUserMessage}
-          chatType={chatType}
+          chatList={chatList}
           currentUser={currentUser}
         ></ProfileSearchBar>
       </div>
