@@ -10,14 +10,20 @@ export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
     try {
       e.preventDefault();
 
-      setChat([]);
+      setChat([
+        ...chat,
+        {
+          id: chat.length,
+          value: Math.floor(Math.random() * 10) + 1,
+        },
+      ]);
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
   };
 
   const handleListItemClick = (index) => {
-    setChat([]);
+    setChat();
   };
 
   return (
@@ -45,11 +51,10 @@ export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
               return createNewChatList ? (
                 <ol className="profile__sidebar-ol" key={index}>
                   <li
+                    key={index}
                     className="profile__sidebar-li_element"
                     onClick={handleListItemClick}
-                  >
-                    {currentChatTitle}
-                  </li>
+                  ></li>
                 </ol>
               ) : null;
             })}
