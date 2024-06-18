@@ -25,9 +25,9 @@ export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
     }
   };
 
-  // const handleListItemClick = (index) => {
-  //   setChat();
-  // };
+  const handleListItemClick = (index) => {
+    setChatList([]);
+  };
 
   useEffect(() => {
     localStorage.setItem("chat", JSON.stringify(chat));
@@ -60,12 +60,10 @@ export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
                   <li
                     key={index}
                     className="profile__sidebar-li_element"
-                    // onClick={handleListItemClick}
+                    onClick={handleListItemClick}
                   ></li>
                 </ol>
-              ) : (
-                { element }
-              );
+              ) : null;
             })}
           </ol>
         </span>
