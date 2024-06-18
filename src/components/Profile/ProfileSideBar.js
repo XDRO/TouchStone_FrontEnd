@@ -5,7 +5,6 @@ export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
   const currentChatTitle = chatList[0]?.text;
 
   const [chat, setChat] = useState([]);
-  const [message, setMessage] = useState("");
 
   const createNewChatList = async (e) => {
     try {
