@@ -1,24 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NewChatButton from "../../images/TouchStone-NewChat.svg";
 // import { getChats } from "../../utils/api";
 export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
   const currentChatTitle = chatList[0]?.text;
 
-  const [chat, setChat] = useState([]);
+  const [chat, setChat] = useState(() => {
+    const savedChats = localStorage.getItem("chat");
+    return savedChats ? JSON.parse(savedChats) : [];
+  });
 
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
-      // const responseData = await onAddUserMessage();
 
       setChat([
         ...chat,
         {
           id: chat.length,
-          // value: responseData,
+          value: chat,
         },
       ]);
-      // setMessage("");
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
@@ -27,6 +28,10 @@ export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
   // const handleListItemClick = (index) => {
   //   setChat();
   // };
+
+  useEffect(() => {
+    localStorage.setItem("chat", JSON.stringify(chat));
+  }, [chat]);
 
   return (
     <div className="profile__sidebar">
