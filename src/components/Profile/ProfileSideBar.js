@@ -5,26 +5,29 @@ export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
   const currentChatTitle = chatList[0]?.text;
 
   const [chat, setChat] = useState([]);
+  const [message, setMessage] = useState("");
 
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
+      // const responseData = await onAddUserMessage();
 
       setChat([
         ...chat,
         {
           id: chat.length,
-          value: Math.floor(Math.random() * 10) + 1,
+          // value: responseData,
         },
       ]);
+      // setMessage("");
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
   };
 
-  const handleListItemClick = (index) => {
-    setChat();
-  };
+  // const handleListItemClick = (index) => {
+  //   setChat();
+  // };
 
   return (
     <div className="profile__sidebar">
@@ -53,10 +56,12 @@ export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
                   <li
                     key={index}
                     className="profile__sidebar-li_element"
-                    onClick={handleListItemClick}
+                    // onClick={handleListItemClick}
                   ></li>
                 </ol>
-              ) : null;
+              ) : (
+                { element }
+              );
             })}
           </ol>
         </span>
