@@ -1,12 +1,15 @@
 import { useState } from "react";
 import NewChatButton from "../../images/TouchStone-NewChat.svg";
+// import { getChats } from "../../utils/api";
 export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
   const currentChatTitle = chatList[0]?.text;
+
   const [chat, setChat] = useState([]);
 
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
+
       setChat([]);
     } catch (error) {
       console.log("Error from create new chat list", error);
@@ -14,15 +17,8 @@ export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
   };
 
   const handleListItemClick = (index) => {
-    console.log(chat);
-
     setChat([]);
   };
-
-  // const some function onClick <li></li> refocus onto chat
-  // this event should show an empty chatList, setChatList([])
-  // until populated by user OnAddUserMessage
-  // then setChatList in onAddUserMessage should fire again
 
   return (
     <div className="profile__sidebar">
@@ -51,7 +47,9 @@ export const ProfileSideBar = ({ onAddUserMessage, chatList, setChatList }) => {
                   <li
                     className="profile__sidebar-li_element"
                     onClick={handleListItemClick}
-                  ></li>
+                  >
+                    {currentChatTitle}
+                  </li>
                 </ol>
               ) : null;
             })}
