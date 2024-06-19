@@ -1,11 +1,9 @@
 import SoundWaves from "../../images/TouchStone-Sound-Waves.svg";
 import React, { useState } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 // add code blocks for users inquireing about codiing
-export const ProfileSearchBar = ({
-  onAddUserMessage,
-  chatList,
-  currentUser,
-}) => {
+export const ProfileSearchBar = ({ onAddUserMessage, chatList }) => {
+  const { currentUser } = React.useContext(CurrentUserContext);
   const [message, setMessage] = useState("");
 
   const handleMessageChange = (e) => {

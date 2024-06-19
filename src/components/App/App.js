@@ -29,7 +29,18 @@ function App() {
   const [loggedIn, isLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [chatList, setChatList] = useState([]);
+  const [chatList, setChatList] = useState([]); // profileSideBar.js
+  // an outer list, I'd call it chatList. - An array containing chats
+  // the sidebar component would have to map the chatList array.
+
+  // But would only show limited info in each entry in the side bar,
+  // just the title, maybe a delete button
+
+  const [chat, setChat] = useState([]); // profileSearchBar.js
+  // The data behind this would also have to be an array, I think. A series of questions and responses
+  // a Chat component, representing an individual chat.
+  // the Chat component would need to map these messages
+  const [selectedChat, setSelectedChat] = useState({});
 
   const token = localStorage.getItem("token");
 
@@ -86,8 +97,6 @@ function App() {
       });
   }, [currentUser._id]);
 
-  // later for summary will need useEffect to map values
-
   return isLoading ? (
     <Preloader />
   ) : (
@@ -107,14 +116,10 @@ function App() {
           redirect={() => handleOpenModal("register")}
         >
           <Profile
-            // use currentUser to get the values of the history chats
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
             loggedIn={loggedIn}
             isLoggedIn={isLoggedIn}
             onAddUserMessage={onAddUserMessage}
             chatList={chatList}
-            setChatList={setChatList}
           />
         </ProtectedRoute>
 

@@ -75,15 +75,15 @@
   cursor: pointer;
 }
 
-/* add display none for users who have no history */
 .profile__sidebar-ol {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 5px; */
   border: 1px solid #dfbd69;
   border-radius: 10px;
   list-style: none;
   padding: 0;
+  margin: 5px;
 }
 
 .profile__sidebar-li_element {
