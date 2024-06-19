@@ -1,11 +1,23 @@
 // import { useState, useEffect } from "react";
 import NewChatButton from "../../images/TouchStone-NewChat.svg";
-export const ProfileSideBar = ({ chatList }) => {
+export const ProfileSideBar = ({
+  chatList,
+  setChatList,
+  selectedChat,
+  setSelectedChat,
+}) => {
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
       // When you click the button on the sidebar, I guess you'd
       // add a new chat to chatList. The title would initially be empty
+
+      const newChat = {
+        text: "",
+        chatType: "message",
+      };
+      setChatList([...chatList, newChat]);
+      setSelectedChat(newChat);
 
       // setSelectedChat to this newly added chat
       // selectedChat would then be used to populate the right of the page, I imagine
@@ -32,7 +44,7 @@ export const ProfileSideBar = ({ chatList }) => {
       <div className="profile__sidebar-content">
         <span className="profile__sidebar-questions">
           {chatList.map((element, index) => {
-            return createNewChatList && element.chatType === "message" ? (
+            return createNewChatList ? (
               <ol className="profile__sidebar-ol" key={index}>
                 <li className="profile__sidebar-li_element" key={index}>
                   {element.text.length > 10
