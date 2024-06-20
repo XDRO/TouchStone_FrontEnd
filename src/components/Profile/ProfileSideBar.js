@@ -4,8 +4,8 @@ import NewChatButton from "../../images/TouchStone-NewChat.svg";
 export const ProfileSideBar = ({
   chatList,
   setChatList,
-  selectedChat,
-  setSelectedChat,
+  // selectedChat,
+  // setSelectedChat,
   handleSelectedChat,
 }) => {
   const createNewChatList = async (e) => {
@@ -19,11 +19,10 @@ export const ProfileSideBar = ({
         messages: [{ question: "third question", response: "third response" }],
       };
       setChatList([...chatList, newChat]);
-      setSelectedChat(newChat);
+      // setSelectedChat(newChat);
 
       // setSelectedChat to this newly added chat
       // selectedChat would then be used to populate the right of the page, I imagine
-      console.log("event fired");
     } catch (error) {
       console.log("Error from create new chat list", error);
     }

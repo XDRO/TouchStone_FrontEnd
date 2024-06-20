@@ -39,7 +39,7 @@ function App() {
       messages: [{ question: "second question", response: "second response" }],
     },
   ]);
-  const [selectedChat, setSelectedChat] = useState({});
+  // const [selectedChat, setSelectedChat] = useState({});
   const [activeChat, setActiveChat] = useState([]); // profileSearchBar.js
   // The data behind this would also have to be an array, I think. A series of questions and responses
   // a Chat component, representing an individual chat.
@@ -48,13 +48,10 @@ function App() {
   const token = localStorage.getItem("token");
 
   const handleSelectedChat = (chat) => {
-    console.log("event fired", chat);
-    // setActiveChat here
-    console.log(chatList[0].messages);
-    setActiveChat(chatList[0].messages);
+    setActiveChat(chat.messages);
     // then prop drill activeChat and map it to response container
-    setSelectedChat(chat);
-    console.log(selectedChat);
+    // setSelectedChat(chat);
+    // console.log(activeChat);
   };
 
   const handleOpenModal = (modalType) => {
@@ -134,8 +131,8 @@ function App() {
             onAddUserMessage={onAddUserMessage}
             chatList={chatList}
             setChatList={setChatList}
-            selectedChat={selectedChat}
-            setSelectedChat={setSelectedChat}
+            // selectedChat={selectedChat}
+            // setSelectedChat={setSelectedChat}
             handleSelectedChat={handleSelectedChat}
             activeChat={activeChat}
           />

@@ -6,8 +6,8 @@ export const Profile = ({
   chatList,
   setChatList,
   currentUser,
-  selectedChat,
-  setSelectedChat,
+  // selectedChat,
+  // setSelectedChat,
   handleSelectedChat,
   activeChat,
 }) => {
@@ -17,8 +17,8 @@ export const Profile = ({
         <ProfileSideBar
           chatList={chatList}
           setChatList={setChatList}
-          selectedChat={selectedChat}
-          setSelectedChat={setSelectedChat}
+          // selectedChat={selectedChat}
+          // setSelectedChat={setSelectedChat}
           handleSelectedChat={handleSelectedChat}
         />
         <ProfileSearchBar
