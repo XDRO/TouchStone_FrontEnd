@@ -29,10 +29,19 @@ function App() {
   const [loggedIn, isLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [chatList, setChatList] = useState([]);
-  const [selectedChat, setSelectedChat] = useState({});
+  const [chatList, setChatList] = useState([
+    {
+      name: "First Chat",
+      messages: [{ question: "how to", response: "just do it" }],
+    },
+    {
+      name: "Second Chat",
+      messages: [{ question: "how to", response: "just do it" }],
+    },
+  ]);
+  const [selectedChat, setSelectedChat] = useState([]);
 
-  const [chat, setChat] = useState([]); // profileSearchBar.js
+  // const [chat, setChat] = useState([]); // profileSearchBar.js
   // The data behind this would also have to be an array, I think. A series of questions and responses
   // a Chat component, representing an individual chat.
   // the Chat component would need to map these messages
@@ -81,11 +90,11 @@ function App() {
   useEffect(() => {
     getChats()
       .then((items) => {
-        setChatList(
-          items.map((items) => ({
-            ...items,
-          }))
-        );
+        // setChatList(
+        //   items.map((items) => ({
+        //     ...items,
+        //   }))
+        // );
       })
       .catch((error) => {
         console.error("Error from useEffect getChats :", error);

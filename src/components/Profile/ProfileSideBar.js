@@ -44,7 +44,7 @@ export const ProfileSideBar = ({
       <div className="profile__sidebar-content">
         <span className="profile__sidebar-questions">
           {chatList.map((element, index) => {
-            return createNewChatList ? (
+            return (
               <ol className="profile__sidebar-ol" key={index}>
                 <li className="profile__sidebar-li_element" key={index}>
                   {element.text.length > 10
@@ -53,7 +53,7 @@ export const ProfileSideBar = ({
                 </li>
                 {/* add delete button */}
               </ol>
-            ) : null;
+            );
           })}
         </span>
       </div>
