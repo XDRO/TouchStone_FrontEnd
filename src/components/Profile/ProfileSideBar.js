@@ -1,39 +1,22 @@
-// import React, { useState, useEffect } from "react";
 import NewChatButton from "../../images/TouchStone-NewChat.svg";
-// import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 export const ProfileSideBar = ({
   chatList,
   setChatList,
-  // selectedChat,
-  // setSelectedChat,
   handleSelectedChat,
 }) => {
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
-      // When you click the button on the sidebar, I guess you'd
-      // add a new chat to chatList. The title would initially be empty
 
       const newChat = {
         name: "Third Chat",
         messages: [{ question: "third question", response: "third response" }],
       };
       setChatList([...chatList, newChat]);
-      // setSelectedChat(newChat);
-
-      // setSelectedChat to this newly added chat
-      // selectedChat would then be used to populate the right of the page, I imagine
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
   };
-
-  // const { currentUser } = React.useContext(CurrentUserContext);
-  // const isOwn = currentUser._id;
-
-  // const filterChats = chatList.filter((chat) => {
-  //   return chat.owner === isOwn;
-  // });
 
   return (
     <div className="profile__sidebar">
