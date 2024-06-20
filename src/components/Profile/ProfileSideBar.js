@@ -61,6 +61,19 @@ export const ProfileSideBar = ({
   );
 };
 
+// {selectedChat.map((element, index) => {
+//   return (
+//     <ol className="profile__sidebar-ol" key={index}>
+//       <li className="profile__sidebar-li_element" key={index}>
+//         {element.text.length > 10
+//           ? element.text.substring(0, 7) + "..."
+//           : element.text}
+//       </li>
+//       {/* add delete button */}
+//     </ol>
+//   );
+// })}
+
 // const [chat, setChat] = useState(() => {
 //   const savedChats = localStorage.getItem("chat");
 //   return savedChats ? JSON.parse(savedChats) : [];

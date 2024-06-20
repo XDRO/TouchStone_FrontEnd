@@ -30,12 +30,12 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [chatList, setChatList] = useState([]);
+  const [selectedChat, setSelectedChat] = useState({});
 
   const [chat, setChat] = useState([]); // profileSearchBar.js
   // The data behind this would also have to be an array, I think. A series of questions and responses
   // a Chat component, representing an individual chat.
   // the Chat component would need to map these messages
-  const [selectedChat, setSelectedChat] = useState({});
 
   const token = localStorage.getItem("token");
 
