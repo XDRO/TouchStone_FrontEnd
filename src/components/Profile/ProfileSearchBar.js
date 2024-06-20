@@ -29,7 +29,7 @@ export const ProfileSearchBar = ({ onAddUserMessage, chatList }) => {
   return (
     <div className="profile__searchbar">
       <div className="profile__searchbar-chatType_container" key={chatList._id}>
-        {chatList.map((element, index) => {
+        {/* {chatList.map((element, index) => {
           return element.chatType === "message" ? (
             <div className="profile__searchbar-chatList" key={index}>
               {currentUser.name}
@@ -45,7 +45,7 @@ export const ProfileSearchBar = ({ onAddUserMessage, chatList }) => {
               </div>
             </div>
           );
-        })}
+        })} */}
       </div>
 
       <div className="profile__searchbar-content">

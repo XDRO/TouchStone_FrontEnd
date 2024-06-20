@@ -13,8 +13,8 @@ export const ProfileSideBar = ({
       // add a new chat to chatList. The title would initially be empty
 
       const newChat = {
-        text: "",
-        chatType: "message",
+        name: "Third Chat",
+        messages: [{ question: "how to", response: "just do it" }],
       };
       setChatList([...chatList, newChat]);
       setSelectedChat(newChat);
@@ -25,6 +25,11 @@ export const ProfileSideBar = ({
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
+  };
+
+  const handleSelectedChat = (chat) => {
+    console.log("event fired", chat);
+    setSelectedChat(chat);
   };
 
   return (
@@ -46,10 +51,12 @@ export const ProfileSideBar = ({
           {chatList.map((element, index) => {
             return (
               <ol className="profile__sidebar-ol" key={index}>
-                <li className="profile__sidebar-li_element" key={index}>
-                  {element.text.length > 10
-                    ? element.text.substring(0, 7) + "..."
-                    : element.text}
+                <li
+                  className="profile__sidebar-li_element"
+                  key={index}
+                  onClick={handleSelectedChat}
+                >
+                  {element.name}
                 </li>
                 {/* add delete button */}
               </ol>
@@ -60,6 +67,10 @@ export const ProfileSideBar = ({
     </div>
   );
 };
+
+// {/* {element.name.length > 10
+//   ? element.name.substring(0, 7) + "..."
+//   : element.name} */}
 
 // {selectedChat.map((element, index) => {
 //   return (

@@ -39,9 +39,8 @@ function App() {
       messages: [{ question: "how to", response: "just do it" }],
     },
   ]);
-  const [selectedChat, setSelectedChat] = useState([]);
-
-  // const [chat, setChat] = useState([]); // profileSearchBar.js
+  const [selectedChat, setSelectedChat] = useState({});
+  const [activeChat, setActiveChat] = useState([]); // profileSearchBar.js
   // The data behind this would also have to be an array, I think. A series of questions and responses
   // a Chat component, representing an individual chat.
   // the Chat component would need to map these messages
