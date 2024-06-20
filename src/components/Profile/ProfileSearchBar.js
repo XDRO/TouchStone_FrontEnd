@@ -2,7 +2,11 @@ import SoundWaves from "../../images/TouchStone-Sound-Waves.svg";
 import React, { useState } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 // add code blocks for users inquireing about codiing
-export const ProfileSearchBar = ({ onAddUserMessage, chatList }) => {
+export const ProfileSearchBar = ({
+  onAddUserMessage,
+  chatList,
+  activeChat,
+}) => {
   const { currentUser } = React.useContext(CurrentUserContext);
   const [message, setMessage] = useState("");
 
@@ -28,24 +32,21 @@ export const ProfileSearchBar = ({ onAddUserMessage, chatList }) => {
 
   return (
     <div className="profile__searchbar">
-      <div className="profile__searchbar-chatType_container" key={chatList._id}>
-        {/* {chatList.map((element, index) => {
-          return element.chatType === "message" ? (
+      <div className="profile__searchbar-chatType_container">
+        {activeChat.map((element, index) => {
+          return (
             <div className="profile__searchbar-chatList" key={index}>
               {currentUser.name}
               <div className="profile__searchbar-chatType_text">
-                {element.text}
+                {element.question}
               </div>
-            </div>
-          ) : (
-            <div className="profile__searchbar-chatList" key={index}>
               TouchStone AI:
               <div className="profile__searchbar-chatType_text">
-                {element.text}
+                {element.response}
               </div>
             </div>
           );
-        })} */}
+        })}
       </div>
 
       <div className="profile__searchbar-content">
@@ -69,3 +70,21 @@ export const ProfileSearchBar = ({ onAddUserMessage, chatList }) => {
     </div>
   );
 };
+
+// {/* {chatList.map((element, index) => {
+//   return element.chatType === "message" ? (
+//     <div className="profile__searchbar-chatList" key={index}>
+//       {currentUser.name}
+//       <div className="profile__searchbar-chatType_text">
+//         {element.text}
+//       </div>
+//     </div>
+//   ) : (
+// <div className="profile__searchbar-chatList" key={index}>
+//   TouchStone AI:
+//   <div className="profile__searchbar-chatType_text">
+//     {element.text}
+//   </div>
+// </div>
+//   );
+// })} */}

@@ -5,6 +5,7 @@ export const ProfileSideBar = ({
   setChatList,
   selectedChat,
   setSelectedChat,
+  handleSelectedChat,
 }) => {
   const createNewChatList = async (e) => {
     try {
@@ -14,7 +15,7 @@ export const ProfileSideBar = ({
 
       const newChat = {
         name: "Third Chat",
-        messages: [{ question: "how to", response: "just do it" }],
+        messages: [{ question: "third question", response: "third response" }],
       };
       setChatList([...chatList, newChat]);
       setSelectedChat(newChat);
@@ -25,11 +26,6 @@ export const ProfileSideBar = ({
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
-  };
-
-  const handleSelectedChat = (chat) => {
-    console.log("event fired", chat);
-    setSelectedChat(chat);
   };
 
   return (

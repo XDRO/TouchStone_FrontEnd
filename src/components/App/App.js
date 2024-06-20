@@ -32,11 +32,11 @@ function App() {
   const [chatList, setChatList] = useState([
     {
       name: "First Chat",
-      messages: [{ question: "how to", response: "just do it" }],
+      messages: [{ question: "first question", response: "first response" }],
     },
     {
       name: "Second Chat",
-      messages: [{ question: "how to", response: "just do it" }],
+      messages: [{ question: "second question", response: "second response" }],
     },
   ]);
   const [selectedChat, setSelectedChat] = useState({});
@@ -46,6 +46,15 @@ function App() {
   // the Chat component would need to map these messages
 
   const token = localStorage.getItem("token");
+
+  const handleSelectedChat = (chat) => {
+    console.log("event fired", chat);
+    // setActiveChat here
+    console.log(chatList[2].messages);
+    setActiveChat(chatList[2].messages);
+    // then prop drill activeChat and map it to response container
+    setSelectedChat(chat);
+  };
 
   const handleOpenModal = (modalType) => {
     setActiveModal(modalType);
@@ -126,6 +135,8 @@ function App() {
             setChatList={setChatList}
             selectedChat={selectedChat}
             setSelectedChat={setSelectedChat}
+            handleSelectedChat={handleSelectedChat}
+            activeChat={activeChat}
           />
         </ProtectedRoute>
 
