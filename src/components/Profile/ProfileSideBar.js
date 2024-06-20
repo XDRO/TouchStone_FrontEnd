@@ -1,5 +1,6 @@
-// import { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 import NewChatButton from "../../images/TouchStone-NewChat.svg";
+// import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 export const ProfileSideBar = ({
   chatList,
   setChatList,
@@ -28,6 +29,13 @@ export const ProfileSideBar = ({
     }
   };
 
+  // const { currentUser } = React.useContext(CurrentUserContext);
+  // const isOwn = currentUser._id;
+
+  // const filterChats = chatList.filter((chat) => {
+  //   return chat.owner === isOwn;
+  // });
+
   return (
     <div className="profile__sidebar">
       {/* create animations for header on hover */}
@@ -50,7 +58,7 @@ export const ProfileSideBar = ({
                 <li
                   className="profile__sidebar-li_element"
                   key={index}
-                  onClick={handleSelectedChat}
+                  onClick={() => handleSelectedChat(element)}
                 >
                   {element.name}
                 </li>

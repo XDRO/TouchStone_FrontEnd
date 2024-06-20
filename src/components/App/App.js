@@ -50,10 +50,11 @@ function App() {
   const handleSelectedChat = (chat) => {
     console.log("event fired", chat);
     // setActiveChat here
-    console.log(chatList[2].messages);
-    setActiveChat(chatList[2].messages);
+    console.log(chatList[0].messages);
+    setActiveChat(chatList[0].messages);
     // then prop drill activeChat and map it to response container
     setSelectedChat(chat);
+    console.log(selectedChat);
   };
 
   const handleOpenModal = (modalType) => {
