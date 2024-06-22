@@ -3,14 +3,15 @@ export const ProfileSideBar = ({
   chatList,
   setChatList,
   handleSelectedChat,
+  onAddUserMessage,
 }) => {
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
 
       const newChat = {
-        name: "Third Chat",
-        messages: [{ question: "third question", response: "third response" }],
+        // name: "Third Chat",
+        // messages: [{ question: "third question", response: "third response" }],
       };
       setChatList([...chatList, newChat]);
     } catch (error) {
@@ -35,6 +36,7 @@ export const ProfileSideBar = ({
       <div className="profile__sidebar-content">
         <span className="profile__sidebar-questions">
           {chatList.map((element, index) => {
+            console.log(element);
             return (
               <ol className="profile__sidebar-ol" key={index}>
                 <li
@@ -42,7 +44,8 @@ export const ProfileSideBar = ({
                   key={index}
                   onClick={() => handleSelectedChat(element)}
                 >
-                  {element.name}
+                  {/* TypeError: Cannot read properties of undefined (reading 'message') */}
+                  {element.messages[0].message}
                 </li>
                 {/* add delete button */}
               </ol>

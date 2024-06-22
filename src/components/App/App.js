@@ -19,7 +19,7 @@ import { ModalDiscover } from "../ModalDiscover/ModalDiscover";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
-import { generateResponse } from "../../utils/openaiapi";
+// import { generateResponse } from "../../utils/openaiapi";
 import { postMessage, getChats } from "../../utils/api";
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
@@ -30,14 +30,14 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [chatList, setChatList] = useState([
-    {
-      name: "First Chat",
-      messages: [{ question: "first question", response: "first response" }],
-    },
-    {
-      name: "Second Chat",
-      messages: [{ question: "second question", response: "second response" }],
-    },
+    // {
+    //   name: "First Chat",
+    //   messages: [{ question: "first question", response: "first response" }],
+    // },
+    // {
+    //   name: "Second Chat",
+    //   messages: [{ question: "second question", response: "second response" }],
+    // },
   ]);
   const [activeChat, setActiveChat] = useState([]); // profileSearchBar.js
   // The data behind this would also have to be an array, I think. A series of questions and responses
@@ -45,6 +45,7 @@ function App() {
   // the Chat component would need to map these messages
 
   const token = localStorage.getItem("token");
+  // console.log(chatList);
 
   const handleSelectedChat = (chat) => {
     setActiveChat(chat.messages);
@@ -62,9 +63,6 @@ function App() {
     try {
       const userMessage = await postMessage(values, token);
       setChatList((prevItems) => [...prevItems, userMessage]);
-
-      const res = await generateResponse(token);
-      setChatList((prevItems) => [...prevItems, res]);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
@@ -92,11 +90,11 @@ function App() {
   useEffect(() => {
     getChats()
       .then((items) => {
-        // setChatList(
-        //   items.map((items) => ({
-        //     ...items,
-        //   }))
-        // );
+        setChatList(
+          items.map((items) => ({
+            ...items,
+          }))
+        );
       })
       .catch((error) => {
         console.error("Error from useEffect getChats :", error);

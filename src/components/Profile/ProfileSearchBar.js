@@ -38,7 +38,7 @@ export const ProfileSearchBar = ({
             <div className="profile__searchbar-chatList" key={index}>
               {currentUser.name}
               <div className="profile__searchbar-chatType_text">
-                {element.question}
+                {element.message}
               </div>
               TouchStone AI:
               <div className="profile__searchbar-chatType_text">
