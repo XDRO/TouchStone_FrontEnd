@@ -1,19 +1,32 @@
 import NewChatButton from "../../images/TouchStone-NewChat.svg";
+import React, { useState } from "react";
 export const ProfileSideBar = ({
   chatList,
   setChatList,
   handleSelectedChat,
   onAddUserMessage,
 }) => {
+  const [message, setMessage] = useState("");
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
+      await onAddUserMessage({ text: message });
+
+      // await onAddUserMessage({}).then populate newChat object with data from server,
+      // until then create new list element with no data
+      // const userMessage = await onAddUserMessage({ text: message });
+      // console.log(userMessage);
 
       const newChat = {
-        // name: "Third Chat",
-        // messages: [{ question: "third question", response: "third response" }],
+        text: message,
+        // messages: [
+        //   { message: userMessage.message, response: userMessage.response },
+        // ],
       };
+
+      console.log(newChat);
       setChatList([...chatList, newChat]);
+      setMessage("");
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
@@ -36,7 +49,7 @@ export const ProfileSideBar = ({
       <div className="profile__sidebar-content">
         <span className="profile__sidebar-questions">
           {chatList.map((element, index) => {
-            console.log(element);
+            // console.log(element);
             return (
               <ol className="profile__sidebar-ol" key={index}>
                 <li

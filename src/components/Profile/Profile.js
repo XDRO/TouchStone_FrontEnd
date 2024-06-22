@@ -16,6 +16,7 @@ export const Profile = ({
           chatList={chatList}
           setChatList={setChatList}
           handleSelectedChat={handleSelectedChat}
+          onAddUserMessage={onAddUserMessage}
         />
         <ProfileSearchBar
           onAddUserMessage={onAddUserMessage}
