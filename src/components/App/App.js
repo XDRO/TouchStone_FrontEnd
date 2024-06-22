@@ -19,7 +19,6 @@ import { ModalDiscover } from "../ModalDiscover/ModalDiscover";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
-// import { generateResponse } from "../../utils/openaiapi";
 import { postMessage, getChats } from "../../utils/api";
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
@@ -29,25 +28,15 @@ function App() {
   const [loggedIn, isLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [chatList, setChatList] = useState([
-    // {
-    //   name: "First Chat",
-    //   messages: [{ question: "first question", response: "first response" }],
-    // },
-    // {
-    //   name: "Second Chat",
-    //   messages: [{ question: "second question", response: "second response" }],
-    // },
-  ]);
-  const [activeChat, setActiveChat] = useState([]); // profileSearchBar.js
-  // The data behind this would also have to be an array, I think. A series of questions and responses
-  // a Chat component, representing an individual chat.
-  // the Chat component would need to map these messages
+  const [chatList, setChatList] = useState([]);
+  const [activeChat, setActiveChat] = useState([]);
+
+  const [chatTitle, setChatTitle] = useState("");
 
   const token = localStorage.getItem("token");
-  // console.log(chatList);
 
   const handleSelectedChat = (chat) => {
+    console.log(chat);
     setActiveChat(chat.messages);
   };
 
@@ -65,6 +54,15 @@ function App() {
       setChatList((prevItems) => [...prevItems, userMessage]);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
+    }
+  };
+
+  const populateChatListTitle = async () => {
+    try {
+      const userMessage = await onAddUserMessage({});
+      setChatTitle(userMessage.message);
+    } catch (error) {
+      console.log("Error from populateChatListTitle: ", error);
     }
   };
 

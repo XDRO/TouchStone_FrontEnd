@@ -1,36 +1,39 @@
 import NewChatButton from "../../images/TouchStone-NewChat.svg";
-import React, { useState } from "react";
 export const ProfileSideBar = ({
   chatList,
   setChatList,
   handleSelectedChat,
   onAddUserMessage,
 }) => {
-  const [message, setMessage] = useState("");
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
-      await onAddUserMessage({ text: message });
-
-      // await onAddUserMessage({}).then populate newChat object with data from server,
-      // until then create new list element with no data
-      // const userMessage = await onAddUserMessage({ text: message });
-      // console.log(userMessage);
 
       const newChat = {
-        text: message,
-        // messages: [
-        //   { message: userMessage.message, response: userMessage.response },
-        // ],
+        messages: [{ message: "", response: "" }],
       };
 
       console.log(newChat);
       setChatList([...chatList, newChat]);
-      setMessage("");
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
   };
+
+  // const populateChatListTitle = async (index) => {
+  //   try {
+  //     const userMessage = await onAddUserMessage({ text: message });
+  //     const updatedChatList = [...chatList];
+  //     updatedChatList[index].messages.push({
+  //       message: userMessage.message,
+  //       response: userMessage.response,
+  //     });
+  //     setChatList(updatedChatList);
+  //     console.log(updatedChatList);
+  //   } catch (error) {
+  //     console.log("Error from populateChatListTitle", error);
+  //   }
+  // };
 
   return (
     <div className="profile__sidebar">
@@ -49,16 +52,15 @@ export const ProfileSideBar = ({
       <div className="profile__sidebar-content">
         <span className="profile__sidebar-questions">
           {chatList.map((element, index) => {
-            // console.log(element);
             return (
               <ol className="profile__sidebar-ol" key={index}>
                 <li
                   className="profile__sidebar-li_element"
                   key={index}
                   onClick={() => handleSelectedChat(element)}
+                  // onKeyDown={() => populateChatListTitle(element)}
                 >
-                  {/* TypeError: Cannot read properties of undefined (reading 'message') */}
-                  {element.messages[0].message}
+                  {element.messages.length > 0 && element.messages[0].message}
                 </li>
                 {/* add delete button */}
               </ol>
