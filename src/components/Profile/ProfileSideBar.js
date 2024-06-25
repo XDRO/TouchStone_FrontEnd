@@ -4,6 +4,7 @@ export const ProfileSideBar = ({
   setChatList,
   handleSelectedChat,
   onAddUserMessage,
+  addMessageToList,
 }) => {
   const createNewChatList = async (e) => {
     try {
@@ -20,20 +21,21 @@ export const ProfileSideBar = ({
     }
   };
 
-  // const populateChatListTitle = async (index) => {
-  //   try {
-  //     const userMessage = await onAddUserMessage({ text: message });
-  //     const updatedChatList = [...chatList];
-  //     updatedChatList[index].messages.push({
-  //       message: userMessage.message,
-  //       response: userMessage.response,
-  //     });
-  //     setChatList(updatedChatList);
-  //     console.log(updatedChatList);
-  //   } catch (error) {
-  //     console.log("Error from populateChatListTitle", error);
-  //   }
-  // };
+  const handleAddMessage = () => {
+    console.log(chatList);
+    // working with array not object
+    // addMessageToList({
+    //   id: chatList._id,
+    //   hasMessage: !chatList.hasMessage,
+    // });
+
+    const updatedChatList = addMessageToList([
+      chatList._id,
+      // !chatList.hasMessage,
+    ]);
+
+    setChatList([...chatList, updatedChatList]);
+  };
 
   return (
     <div className="profile__sidebar">
@@ -58,9 +60,9 @@ export const ProfileSideBar = ({
                   className="profile__sidebar-li_element"
                   key={index}
                   onClick={() => handleSelectedChat(element)}
-                  // onKeyDown={() => populateChatListTitle(element)}
+                  onDoubleClick={() => handleAddMessage(element)}
                 >
-                  {element.messages.length > 0 && element.messages[0].message}
+                  {/* {element.messages.length > 0 && element.messages[0].message} */}
                 </li>
                 {/* add delete button */}
               </ol>

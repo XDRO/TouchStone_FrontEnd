@@ -19,7 +19,7 @@ import { ModalDiscover } from "../ModalDiscover/ModalDiscover";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
-import { postMessage, getChats } from "../../utils/api";
+import { postMessage, getChats, addMessageToChat } from "../../utils/api";
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 // add new line
@@ -31,7 +31,7 @@ function App() {
   const [chatList, setChatList] = useState([]);
   const [activeChat, setActiveChat] = useState([]);
 
-  const [chatTitle, setChatTitle] = useState("");
+  // const [message, setMessage] = useState("");
 
   const token = localStorage.getItem("token");
 
@@ -39,6 +39,10 @@ function App() {
     console.log(chat);
     setActiveChat(chat.messages);
   };
+
+  // const handleMessageChange = (e) => {
+  //   setMessage(e.target.value);
+  // };
 
   const handleOpenModal = (modalType) => {
     setActiveModal(modalType);
@@ -57,12 +61,27 @@ function App() {
     }
   };
 
-  const populateChatListTitle = async () => {
+  const addMessageToList = async ({ id, values, hasMessage }) => {
     try {
-      const userMessage = await onAddUserMessage({});
-      setChatTitle(userMessage.message);
+      console.log(hasMessage);
+      let updatedChat;
+      // if (hasMessage) {
+      //   console.log({ hasMessage });
+      //   const { data, ...props } = await addMessageToChat(id, token);
+      //   updatedChat = { data, ...props, hasMessage: true };
+      // } else {
+      //   console.log({ hasMessage });
+      // }
+      // setChatList((chats) =>
+      //   chats.map((c) => (c._id === id ? updatedChat : c))
+      // );
+      const { data, ...props } = await addMessageToChat(id, values, token);
+      updatedChat = { data, ...props };
+      setChatList((chats) =>
+        chats.map((c) => (c._id === id ? updatedChat : c))
+      );
     } catch (error) {
-      console.log("Error from populateChatListTitle: ", error);
+      console.error(error);
     }
   };
 
@@ -125,6 +144,7 @@ function App() {
             setChatList={setChatList}
             handleSelectedChat={handleSelectedChat}
             activeChat={activeChat}
+            addMessageToList={addMessageToList}
           />
         </ProtectedRoute>
 
