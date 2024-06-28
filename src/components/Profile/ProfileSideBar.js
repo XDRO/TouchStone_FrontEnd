@@ -3,8 +3,6 @@ export const ProfileSideBar = ({
   chatList,
   setChatList,
   handleSelectedChat,
-  onAddUserMessage,
-  addMessageToList,
 }) => {
   const createNewChatList = async (e) => {
     try {
@@ -19,22 +17,6 @@ export const ProfileSideBar = ({
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
-  };
-
-  const handleAddMessage = () => {
-    console.log(chatList);
-    // working with array not object
-    // addMessageToList({
-    //   id: chatList._id,
-    //   hasMessage: !chatList.hasMessage,
-    // });
-
-    const updatedChatList = addMessageToList([
-      chatList._id,
-      // !chatList.hasMessage,
-    ]);
-
-    setChatList([...chatList, updatedChatList]);
   };
 
   return (
@@ -60,9 +42,8 @@ export const ProfileSideBar = ({
                   className="profile__sidebar-li_element"
                   key={index}
                   onClick={() => handleSelectedChat(element)}
-                  onDoubleClick={() => handleAddMessage(element)}
                 >
-                  {/* {element.messages.length > 0 && element.messages[0].message} */}
+                  {element.messages.length > 0 && element.messages[0].message}
                 </li>
                 {/* add delete button */}
               </ol>

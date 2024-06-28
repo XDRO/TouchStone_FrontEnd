@@ -29,7 +29,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [chatList, setChatList] = useState([]);
-  const [activeChat, setActiveChat] = useState([]);
+  const [activeChat, setActiveChat] = useState(null);
 
   // const [message, setMessage] = useState("");
 
@@ -37,7 +37,8 @@ function App() {
 
   const handleSelectedChat = (chat) => {
     console.log(chat);
-    setActiveChat(chat.messages);
+
+    setActiveChat(chat);
   };
 
   // const handleMessageChange = (e) => {
@@ -55,33 +56,42 @@ function App() {
   const onAddUserMessage = async (values) => {
     try {
       const userMessage = await postMessage(values, token);
-      setChatList((prevItems) => [...prevItems, userMessage]);
+      // setActiveChat((prevItems) => [...prevItems, userMessage]);
+      setChatList((prevItems) => [...prevItems, userMessage.messageData]);
+      // if (userMessage.messageData._id) {
+      const matchingChat = chatList.find(
+        (chat) => chat._id === userMessage.messageData._id
+      );
+      // debugger;
+      if (matchingChat) {
+        setChatList(
+          chatList.map((chat) => {
+            return chat._id === userMessage.messageData._id
+              ? userMessage.messageData
+              : chat;
+          })
+        );
+      } else {
+        setChatList((prevItems) => [...prevItems, userMessage.messageData]);
+      }
+      setActiveChat(userMessage.messageData);
+      // }
+      console.log(userMessage);
+      console.log(chatList);
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
   };
 
-  const addMessageToList = async ({ id, values, hasMessage }) => {
+  const onAddMessageToChat = async (values, token) => {
     try {
-      console.log(hasMessage);
-      let updatedChat;
-      // if (hasMessage) {
-      //   console.log({ hasMessage });
-      //   const { data, ...props } = await addMessageToChat(id, token);
-      //   updatedChat = { data, ...props, hasMessage: true };
-      // } else {
-      //   console.log({ hasMessage });
-      // }
-      // setChatList((chats) =>
-      //   chats.map((c) => (c._id === id ? updatedChat : c))
-      // );
-      const { data, ...props } = await addMessageToChat(id, values, token);
-      updatedChat = { data, ...props };
-      setChatList((chats) =>
-        chats.map((c) => (c._id === id ? updatedChat : c))
-      );
+      // const message = await onAddUserMessage(values, token);
+      await addMessageToChat(values, token);
+      const updateChatList = await addMessageToChat(values, token);
+      console.log(values, "Value from onAddMessageToChat", token, "Token");
+      setChatList((prevItems) => [...prevItems, updateChatList]);
     } catch (error) {
-      console.error(error);
+      console.log(error, "Error from onAddMessageToChat: ", error.message);
     }
   };
 
@@ -144,7 +154,7 @@ function App() {
             setChatList={setChatList}
             handleSelectedChat={handleSelectedChat}
             activeChat={activeChat}
-            addMessageToList={addMessageToList}
+            onAddMessageToChat={onAddMessageToChat}
           />
         </ProtectedRoute>
 

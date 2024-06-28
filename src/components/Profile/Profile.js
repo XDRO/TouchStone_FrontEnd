@@ -7,7 +7,7 @@ export const Profile = ({
   setChatList,
   handleSelectedChat,
   activeChat,
-  addMessageToList,
+  onAddMessageToChat,
 }) => {
   return (
     <div className="profile">
@@ -16,12 +16,12 @@ export const Profile = ({
           chatList={chatList}
           setChatList={setChatList}
           handleSelectedChat={handleSelectedChat}
-          onAddUserMessage={onAddUserMessage}
-          addMessageToList={addMessageToList}
+          // where do I want to add message to chat?
         />
         <ProfileSearchBar
           onAddUserMessage={onAddUserMessage}
           activeChat={activeChat}
+          // where do I want to add message to chat?
         />
       </div>
     </div>

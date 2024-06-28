@@ -9,11 +9,11 @@ export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
-
+  console.log(activeChat, "activeChat");
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      await onAddUserMessage({ text: message });
+      await onAddUserMessage({ chatId: activeChat?._id, text: message });
       setMessage("");
     } catch (error) {
       console.error("Error from handleSubmit in profileSearchBar :", error);
@@ -29,7 +29,7 @@ export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
   return (
     <div className="profile__searchbar">
       <div className="profile__searchbar-chatType_container">
-        {activeChat.map((element, index) => {
+        {activeChat?.messages.map((element, index) => {
           return (
             <div className="profile__searchbar-chatList" key={index}>
               {currentUser.name}
@@ -66,21 +66,3 @@ export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
     </div>
   );
 };
-
-// {/* {chatList.map((element, index) => {
-//   return element.chatType === "message" ? (
-//     <div className="profile__searchbar-chatList" key={index}>
-//       {currentUser.name}
-//       <div className="profile__searchbar-chatType_text">
-//         {element.text}
-//       </div>
-//     </div>
-//   ) : (
-// <div className="profile__searchbar-chatList" key={index}>
-//   TouchStone AI:
-//   <div className="profile__searchbar-chatType_text">
-//     {element.text}
-//   </div>
-// </div>
-//   );
-// })} */}
