@@ -29,15 +29,15 @@ export async function postMessage(values, token) {
   });
   return processServerResponse(res);
 }
-export async function addMessageToChat(id, values, token) {
-  // console.log({ id, values, token });
-  const res = await fetch(`${baseUrl}/message${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify(values),
-  });
-  return processServerResponse(res);
-}
+// export async function addMessageToChat(id, values, token) {
+//   // console.log({ id, values, token });
+//   const res = await fetch(`${baseUrl}/message${id}`, {
+//     method: "PUT",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: `Bearer ${token}`,
+//     },
+//     body: JSON.stringify(values),
+//   });
+//   return processServerResponse(res);
+// }

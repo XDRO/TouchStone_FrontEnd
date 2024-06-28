@@ -7,7 +7,7 @@ export const Profile = ({
   setChatList,
   handleSelectedChat,
   activeChat,
-  onAddMessageToChat,
+  // onAddMessageToChat,
 }) => {
   return (
     <div className="profile">

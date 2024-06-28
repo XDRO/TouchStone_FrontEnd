@@ -9,7 +9,6 @@ export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
-  console.log(activeChat, "activeChat");
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
