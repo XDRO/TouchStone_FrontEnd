@@ -16,6 +16,7 @@ export const ProfileSideBar = ({
         <p className="profile__sidebar-chat">Chat</p>
         <button className="profile__sidebar-edit">
           <img
+            className="profile__sidebar-edit-button"
             src={NewChatButton}
             alt="Add New Chat"
             onClick={createNewChatList}

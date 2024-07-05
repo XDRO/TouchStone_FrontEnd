@@ -8,6 +8,7 @@
   justify-content: space-between;
   padding: 20px 40px 20px 40px;
   width: calc(100% - 80px);
+  border-top-style: solid;
 }
 
 .footer__options {
