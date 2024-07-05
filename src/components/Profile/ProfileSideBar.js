@@ -34,8 +34,9 @@ export const ProfileSideBar = ({
                   key={index}
                   onClick={() => handleSelectedChat(element)}
                 >
-                  {element?.messages?.length > 0 &&
-                    element?.messages[0]?.message}
+                  {element.messages[0].message.length > 10
+                    ? element.messages[0].message.substring(0, 7) + "..."
+                    : element.messages[0].message}
                 </li>
                 {/* add delete button */}
               </ol>
