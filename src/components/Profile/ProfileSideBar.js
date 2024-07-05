@@ -1,31 +1,13 @@
 import NewChatButton from "../../images/TouchStone-NewChat.svg";
-// import { useEffect, useState } from "react";
 export const ProfileSideBar = ({
   chatList,
-  setChatList,
+  setActiveChatId,
   handleSelectedChat,
-  onAddUserMessage,
-  activeChat,
 }) => {
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
-
-      const newChat = {
-        chatId: activeChat?._id,
-        messages: [{ message: "", response: "" }],
-      };
-      // setChatList((prevItems) => [...prevItems, newChat]);
-
-      const updatedChat = {
-        ...newChat,
-        chatId: "12345",
-        messages: [{ message: "hello", response: "How may I assist you?" }],
-      };
-
-      setChatList((prevItems) => [...prevItems, updatedChat]);
-
-      console.log("chatList", chatList);
+      setActiveChatId(null);
     } catch (error) {
       console.log("Error from create new chat list", error);
     }

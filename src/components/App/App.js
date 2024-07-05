@@ -127,6 +127,7 @@ function App() {
             setChatList={setChatList}
             handleSelectedChat={handleSelectedChat}
             activeChat={chatList.find((chat) => chat?._id === activeChatId)}
+            setActiveChatId={setActiveChatId}
           />
         </ProtectedRoute>
 
