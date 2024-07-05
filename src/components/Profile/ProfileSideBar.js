@@ -4,13 +4,9 @@ export const ProfileSideBar = ({
   setActiveChatId,
   handleSelectedChat,
 }) => {
-  const createNewChatList = async (e) => {
-    try {
-      e.preventDefault();
-      setActiveChatId(null);
-    } catch (error) {
-      console.log("Error from create new chat list", error);
-    }
+  const createNewChatList = (e) => {
+    e.preventDefault();
+    setActiveChatId(null);
   };
 
   return (
@@ -49,17 +45,3 @@ export const ProfileSideBar = ({
     </div>
   );
 };
-// use below to limit chat title length
-// {/* {element.name.length > 10
-//   ? element.name.substring(0, 7) + "..."
-//   : element.name} */}
-
-// use to save and get chats on the frontend
-// const [chat, setChat] = useState(() => {
-//   const savedChats = localStorage.getItem("chat");
-//   return savedChats ? JSON.parse(savedChats) : [];
-// });
-
-// useEffect(() => {
-//   localStorage.setItem("chat", JSON.stringify(chat));
-// }, [chat]);

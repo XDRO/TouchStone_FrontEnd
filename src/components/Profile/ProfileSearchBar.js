@@ -21,6 +21,7 @@ export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
 
   const onKeyDown = (e) => {
     if (e.key === "Enter") {
+      e.preventDefault();
       handleSubmit(e);
     }
   };
@@ -47,15 +48,18 @@ export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
       <div className="profile__searchbar-content">
         {/* possibly change textarea to <input></input> with the 
       type="text", if done restyle */}
-        <textarea
-          placeholder="Ask TouchStone:"
-          className="profile__searchbar-text"
-          onSubmit={handleSubmit}
-          onChange={handleMessageChange}
-          onKeyDown={onKeyDown}
-          value={message}
-        ></textarea>
-        <button className="profile__searchbar-speach">
+        <form>
+          <input
+            placeholder="Ask TouchStone:"
+            className="profile__searchbar-text"
+            onSubmit={handleSubmit}
+            onChange={handleMessageChange}
+            onKeyDown={onKeyDown}
+            value={message}
+          ></input>
+        </form>
+
+        <button className="profile__searchbar-speach" type="submit">
           {/* conditionally render sound waves or 
           submit button based on if text is in textarea
           if message does not equal '' then send button else soundwaves */}
