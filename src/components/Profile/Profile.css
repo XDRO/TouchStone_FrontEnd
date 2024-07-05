@@ -166,7 +166,7 @@
   font-family: "Roboto Slab";
 }
 
-.profile__searchbar-speach {
+.profile__searchbar-submit {
   background: none;
   border: none;
   width: 80px;
@@ -174,4 +174,24 @@
   margin-right: 10px;
   padding: 0;
   cursor: pointer;
+}
+
+.profile__searchbar-submit-button {
+  box-shadow: none;
+}
+.profile__searchbar-submit-button:active {
+  animation: pulse 0.2s 1 ease-out;
+  border-radius: 10px;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
 }
