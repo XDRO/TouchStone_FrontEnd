@@ -12,7 +12,6 @@ export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      console.log("Submitting message: ", message);
       await onAddUserMessage({ chatId: activeChat?._id, text: message });
       setMessage("");
     } catch (error) {
@@ -31,8 +30,6 @@ export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
     <div className="profile__searchbar">
       <div className="profile__searchbar-chatType_container">
         {activeChat?.messages.map((element, index) => {
-          console.log("Rendering message:", element); // Logging the rendered messages
-
           return (
             <div className="profile__searchbar-chatList" key={index}>
               {currentUser.name}
