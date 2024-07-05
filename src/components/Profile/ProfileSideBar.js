@@ -1,19 +1,31 @@
 import NewChatButton from "../../images/TouchStone-NewChat.svg";
+// import { useEffect, useState } from "react";
 export const ProfileSideBar = ({
   chatList,
   setChatList,
   handleSelectedChat,
+  onAddUserMessage,
+  activeChat,
 }) => {
   const createNewChatList = async (e) => {
     try {
       e.preventDefault();
 
       const newChat = {
+        chatId: activeChat?._id,
         messages: [{ message: "", response: "" }],
       };
+      // setChatList((prevItems) => [...prevItems, newChat]);
 
-      console.log(newChat);
-      setChatList([...chatList, newChat]);
+      const updatedChat = {
+        ...newChat,
+        chatId: "12345",
+        messages: [{ message: "hello", response: "How may I assist you?" }],
+      };
+
+      setChatList((prevItems) => [...prevItems, updatedChat]);
+
+      console.log("chatList", chatList);
     } catch (error) {
       console.log("Error from create new chat list", error);
     }
@@ -35,7 +47,7 @@ export const ProfileSideBar = ({
 
       <div className="profile__sidebar-content">
         <span className="profile__sidebar-questions">
-          {chatList.map((element, index) => {
+          {chatList?.map((element, index) => {
             return (
               <ol className="profile__sidebar-ol" key={index}>
                 <li
@@ -43,7 +55,8 @@ export const ProfileSideBar = ({
                   key={index}
                   onClick={() => handleSelectedChat(element)}
                 >
-                  {element.messages.length > 0 && element.messages[0].message}
+                  {element?.messages?.length > 0 &&
+                    element?.messages[0]?.message}
                 </li>
                 {/* add delete button */}
               </ol>
@@ -54,45 +67,17 @@ export const ProfileSideBar = ({
     </div>
   );
 };
-
+// use below to limit chat title length
 // {/* {element.name.length > 10
 //   ? element.name.substring(0, 7) + "..."
 //   : element.name} */}
 
-// {selectedChat.map((element, index) => {
-//   return (
-//     <ol className="profile__sidebar-ol" key={index}>
-//       <li className="profile__sidebar-li_element" key={index}>
-//         {element.text.length > 10
-//           ? element.text.substring(0, 7) + "..."
-//           : element.text}
-//       </li>
-//       {/* add delete button */}
-//     </ol>
-//   );
-// })}
-
+// use to save and get chats on the frontend
 // const [chat, setChat] = useState(() => {
 //   const savedChats = localStorage.getItem("chat");
 //   return savedChats ? JSON.parse(savedChats) : [];
 // });
 
-// const handleListItemClick = (index) => {
-//   setChatList([]);
-// };
-
 // useEffect(() => {
 //   localStorage.setItem("chat", JSON.stringify(chat));
 // }, [chat]);
-
-// {/* {chat.map((element, index) => {
-//   return createNewChatList ? (
-//     <ol className="profile__sidebar-ol" key={index}>
-//       <li
-//         key={index}
-//         className="profile__sidebar-li_element"
-//         onClick={handleListItemClick}
-//       ></li>
-//     </ol>
-//   ) : null;
-// })} */}

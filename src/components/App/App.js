@@ -19,7 +19,7 @@ import { ModalDiscover } from "../ModalDiscover/ModalDiscover";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
-import { postMessage, getChats, addMessageToChat } from "../../utils/api";
+import { postMessage, getChats } from "../../utils/api";
 // import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 // add new line
@@ -67,18 +67,6 @@ function App() {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
   };
-
-  // const onAddMessageToChat = async (values, token) => {
-  //   try {
-  //     // const message = await onAddUserMessage(values, token);
-  //     await addMessageToChat(values, token);
-  //     const updateChatList = await addMessageToChat(values, token);
-  //     console.log(values, "Value from onAddMessageToChat", token, "Token");
-  //     setChatList((prevItems) => [...prevItems, updateChatList]);
-  //   } catch (error) {
-  //     console.log(error, "Error from onAddMessageToChat: ", error.message);
-  //   }
-  // };
 
   useEffect(() => {
     if (token) {
@@ -138,8 +126,7 @@ function App() {
             chatList={chatList}
             setChatList={setChatList}
             handleSelectedChat={handleSelectedChat}
-            activeChat={chatList.find((chat) => chat._id === activeChatId)}
-            // onAddMessageToChat={onAddMessageToChat}
+            activeChat={chatList.find((chat) => chat?._id === activeChatId)}
           />
         </ProtectedRoute>
 
