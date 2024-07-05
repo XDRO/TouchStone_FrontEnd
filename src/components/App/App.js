@@ -48,21 +48,20 @@ function App() {
   const onAddUserMessage = async (values) => {
     try {
       const userMessage = await postMessage(values, token);
-      setChatList((prevItems) => [...prevItems, userMessage.messageData]);
-      const matchingChat = chatList.find(
-        (chat) => chat._id === userMessage.messageData._id
-      );
-      if (matchingChat) {
-        setChatList(
-          chatList.map((chat) => {
-            return chat._id === userMessage.messageData._id
-              ? userMessage.messageData
-              : chat;
-          })
+      const messageData = userMessage.messageData;
+
+      setChatList((prevItems) => {
+        const matchingChat = prevItems.find(
+          (chat) => chat._id === messageData._id
         );
-      } else {
-        setChatList((prevItems) => [...prevItems, userMessage.messageData]);
-      }
+        if (matchingChat) {
+          return prevItems.map((chat) =>
+            chat._id === messageData._id ? messageData : chat
+          );
+        } else {
+          return [...prevItems, messageData];
+        }
+      });
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }
