@@ -11,9 +11,12 @@ export const Footer = ({ onClick }) => {
         <div onClick={() => onClick("contact")} className="footer_contact">
           Contact
         </div>
+        <div className="footer_X">
+          <img className="footer_X" src={X} alt="Twitter-X"></img>
+        </div>
       </div>
+
       {/* <Link to="https://twitter.com/?lang=en"> */}
-      <img className="footer_X" src={X} alt="Twitter-X"></img>
       {/* </Link> */}
       {/* if logged in add headphones vector */}
     </footer>

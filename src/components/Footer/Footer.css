@@ -14,6 +14,7 @@
 
 .footer__options {
   display: flex;
+  width: 100%;
   gap: 244px;
 }
 
@@ -29,4 +30,13 @@
 .footer_X {
   cursor: pointer;
   padding-right: 40px;
+}
+
+@media screen and (max-width: 844px) {
+  .footer {
+    display: none;
+  }
+  .footer_X {
+    padding: 0;
+  }
 }

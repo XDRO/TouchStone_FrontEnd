@@ -207,3 +207,73 @@
     box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
   }
 }
+
+@media screen and (max-width: 844px) {
+  .profile {
+    font-size: 12px;
+  }
+
+  .profile__sidebar {
+    width: 25%;
+  }
+
+  .profile__sidebar-header {
+    width: 90%;
+  }
+
+  .profile__sidebar-edit {
+    position: relative;
+    right: 2px;
+  }
+
+  .profile__sidebar-edit-button {
+    width: 15px;
+  }
+
+  .profile__sidebar-li_element {
+    width: 80px;
+  }
+
+  /* profile searchbar */
+  .profile__searchbar {
+    justify-content: flex-start;
+  }
+
+  .profile__searchbar-chatType_container {
+    width: 50vw;
+    position: relative;
+    left: 10px;
+  }
+
+  .profile__searchbar-chatType_text {
+    font-size: 12px;
+  }
+
+  .profile__searchbar-content {
+    margin: 0 0 30px 0;
+    width: 60vw;
+    position: relative;
+    left: 10px;
+  }
+
+  .profile__searchbar-text {
+    height: 15px;
+    font-size: 12px;
+  }
+
+  .profile__searchbar-text::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+
+  .profile__searchbar-submit {
+    position: relative;
+    right: 15px;
+    top: 3px;
+  }
+
+  .profile__searchbar-submit-button {
+    position: relative;
+    left: 8px;
+    width: 15px;
+  }
+}
