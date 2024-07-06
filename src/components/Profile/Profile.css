@@ -19,7 +19,7 @@
 
 /* sidebar */
 .profile__sidebar {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
@@ -211,6 +211,8 @@
 @media screen and (max-width: 844px) {
   .profile {
     font-size: 12px;
+    justify-content: center;
+    align-items: start;
   }
 
   .profile__sidebar {
@@ -219,6 +221,10 @@
 
   .profile__sidebar-header {
     width: 90%;
+  }
+
+  .profile__sidebar-questions {
+    margin: 0;
   }
 
   .profile__sidebar-edit {
@@ -231,7 +237,7 @@
   }
 
   .profile__sidebar-li_element {
-    width: 80px;
+    /* width: 80px; */
   }
 
   /* profile searchbar */
@@ -240,9 +246,11 @@
   }
 
   .profile__searchbar-chatType_container {
-    width: 50vw;
+    width: 95vw;
     position: relative;
     left: 10px;
+    height: 100vh;
+    margin: 10px 0 0 0;
   }
 
   .profile__searchbar-chatType_text {
@@ -250,8 +258,8 @@
   }
 
   .profile__searchbar-content {
-    margin: 0 0 30px 0;
-    width: 60vw;
+    margin: 30px 0 0 0;
+    width: 100%;
     position: relative;
     left: 10px;
   }
@@ -259,6 +267,7 @@
   .profile__searchbar-text {
     height: 15px;
     font-size: 12px;
+    width: -webkit-fill-available;
   }
 
   .profile__searchbar-text::-webkit-input-placeholder {
@@ -267,7 +276,7 @@
 
   .profile__searchbar-submit {
     position: relative;
-    right: 15px;
+    left: 15px;
     top: 3px;
   }
 

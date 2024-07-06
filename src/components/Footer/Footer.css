@@ -16,6 +16,7 @@
   display: flex;
   width: 100%;
   gap: 244px;
+  align-items: center;
 }
 
 .footer_about {
@@ -34,9 +35,24 @@
 
 @media screen and (max-width: 844px) {
   .footer {
-    display: none;
+    width: fit-content;
+    height: 20px;
+    /* position: fixed; */
+    top: 165%;
+  }
+
+  .footer__options {
+    font-size: 12px;
+  }
+
+  .footer_about {
+  }
+
+  .footer_contact {
   }
   .footer_X {
     padding: 0;
+    position: relative;
+    right: 10px;
   }
 }
