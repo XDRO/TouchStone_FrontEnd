@@ -1,8 +1,11 @@
+// import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import NewChatButton from "../../images/TouchStone-NewChat.svg";
+import DeleteButton from "../../images/delete.svg";
 export const ProfileSideBar = ({
   chatList,
   setActiveChatId,
   handleSelectedChat,
+  onClick,
 }) => {
   const createNewChatList = (e) => {
     e.preventDefault();
@@ -28,17 +31,22 @@ export const ProfileSideBar = ({
         <span className="profile__sidebar-questions">
           {chatList?.map((element, index) => {
             return (
-              <ol className="profile__sidebar-ol" key={index}>
-                <li
-                  className="profile__sidebar-li_element"
-                  key={index}
-                  onClick={() => handleSelectedChat(element)}
-                >
+              <ol
+                className="profile__sidebar-ol"
+                key={index}
+                onClick={() => handleSelectedChat(element)}
+              >
+                <li className="profile__sidebar-li_element" key={index}>
                   {element.messages[0].message.length > 10
                     ? element.messages[0].message.substring(0, 7) + "..."
                     : element.messages[0].message}
                 </li>
-                {/* add delete button */}
+                <img
+                  onClick={() => onClick("delete")}
+                  className="profile__sidebar-delete_button"
+                  src={DeleteButton}
+                  alt="Delete Button"
+                ></img>
               </ol>
             );
           })}

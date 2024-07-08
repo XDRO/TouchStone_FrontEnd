@@ -3,13 +3,13 @@
   display: flex;
   margin: 0;
   padding: 10px;
+  color: #dfbd69;
 }
 
 .modal__options_delete {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 10px;
   gap: 10px;
 }
 

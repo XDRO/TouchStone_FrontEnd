@@ -7,11 +7,13 @@ export const Profile = ({
   handleSelectedChat,
   activeChat,
   setActiveChatId,
+  onClick,
 }) => {
   return (
     <div className="profile">
       <div className="profile__content">
         <ProfileSideBar
+          onClick={onClick}
           chatList={chatList}
           handleSelectedChat={handleSelectedChat}
           setActiveChatId={setActiveChatId}

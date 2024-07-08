@@ -20,7 +20,7 @@ import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
 import { postMessage, getChats } from "../../utils/api";
-// import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
+import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 // add new line
 function App() {
@@ -119,6 +119,7 @@ function App() {
           redirect={() => handleOpenModal("register")}
         >
           <Profile
+            onClick={handleOpenModal}
             loggedIn={loggedIn}
             isLoggedIn={isLoggedIn}
             onAddUserMessage={onAddUserMessage}
@@ -158,6 +159,9 @@ function App() {
       )}
       {activeModal === "discover" && (
         <ModalDiscover handleCloseModal={handleCloseModal} />
+      )}
+      {activeModal === "delete" && (
+        <ModalDeleteItem handleCloseModal={handleCloseModal} />
       )}
     </CurrentUserContext.Provider>
   );

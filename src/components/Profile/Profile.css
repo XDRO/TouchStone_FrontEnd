@@ -68,6 +68,11 @@
   animation: scale 0.4s ease-in-out alternate-reverse;
 }
 
+.profile__sidebar-edit-button:hover {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.5;
+}
+
 @keyframes scale {
   0% {
     transform: scale(1);
@@ -94,6 +99,10 @@
 }
 
 .profile__sidebar-ol {
+  background: #1e2f48;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border: 1px solid #dfbd69;
   border-radius: 10px;
   list-style: none;
@@ -102,14 +111,24 @@
 }
 
 .profile__sidebar-li_element {
-  background: #1e2f48;
+  position: relative;
+  left: 10px;
   color: #dfbd69;
-  border-radius: 10px;
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
+}
+
+.profile__sidebar-delete_button {
+  height: 20px;
+  padding-right: 3px;
+}
+
+.profile__sidebar-delete_button:hover {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.5;
 }
 
 /* profile searchbar */
@@ -234,10 +253,6 @@
 
   .profile__sidebar-edit-button {
     width: 15px;
-  }
-
-  .profile__sidebar-li_element {
-    /* width: 80px; */
   }
 
   /* profile searchbar */
