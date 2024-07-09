@@ -23,7 +23,6 @@ export const ProfileSearchBar = ({
           chatId: activeChat?._id,
           text: message,
         });
-        // console.log(res);
         setActiveChatId(res._id);
       }
 
