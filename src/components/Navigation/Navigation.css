@@ -37,8 +37,12 @@
 
 .navigation__options-discover:hover {
   cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.5;
 }
 
 .navigation__options-start:hover {
   cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.5;
 }
