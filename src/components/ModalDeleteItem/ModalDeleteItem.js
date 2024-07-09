@@ -1,6 +1,6 @@
 import "./ModalDeleteItem.css";
 import { Modal } from "../Modal/Modal";
-export const ModalDeleteItem = ({ handleCloseModal }) => {
+export const ModalDeleteItem = ({ handleCloseModal, handleDeleteMessage }) => {
   return (
     <Modal onClose={handleCloseModal} name={`delete`}>
       {/* wondering if I can use this buttonText={`Delete`} */}
@@ -12,7 +12,9 @@ export const ModalDeleteItem = ({ handleCloseModal }) => {
         <button className="modal__button_cancel" onClick={handleCloseModal}>
           Cancel
         </button>
-        <button className="modal__button_delete">Delete</button>
+        <button className="modal__button_delete" onClick={handleDeleteMessage}>
+          Delete
+        </button>
       </div>
     </Modal>
   );

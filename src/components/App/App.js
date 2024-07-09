@@ -19,7 +19,7 @@ import { ModalDiscover } from "../ModalDiscover/ModalDiscover";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
-import { postMessage, getChats } from "../../utils/api";
+import { postMessage, getChats, deleteMessage } from "../../utils/api";
 import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 // add new line
@@ -64,6 +64,19 @@ function App() {
       });
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
+    }
+  };
+
+  const handleDeleteMessage = async () => {
+    try {
+      await deleteMessage(activeChatId, token);
+      console.log(activeChatId, "activeChatId from delete message");
+      setChatList((prevItems) =>
+        prevItems.filter((item) => item._id !== activeChatId)
+      );
+      setActiveModal("");
+    } catch (error) {
+      console.log("Error from handleDeleteMessage: ", error, error.message);
     }
   };
 
@@ -161,7 +174,10 @@ function App() {
         <ModalDiscover handleCloseModal={handleCloseModal} />
       )}
       {activeModal === "delete" && (
-        <ModalDeleteItem handleCloseModal={handleCloseModal} />
+        <ModalDeleteItem
+          handleCloseModal={handleCloseModal}
+          handleDeleteMessage={handleDeleteMessage}
+        />
       )}
     </CurrentUserContext.Provider>
   );
