@@ -1,0 +1,19 @@
+.modal__title_about {
+  color: #e1be86;
+  font-family: "Roboto Slab";
+}
+
+.modal__text_about {
+  font-family: "Roboto Slab";
+  color: #e1be86;
+  font-size: 13px;
+}
+
+.modal__link_about {
+  font-family: "Roboto Slab";
+  color: #e1be86;
+  font-size: 13px;
+  position: relative;
+  left: 5px;
+  text-decoration: none;
+}

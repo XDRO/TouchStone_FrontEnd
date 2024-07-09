@@ -2,7 +2,12 @@ import SubmitButton from "../../images/Submit-Button.svg";
 import React, { useState } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 // add code blocks for users inquireing about codiing
-export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
+export const ProfileSearchBar = ({
+  onAddUserMessage,
+  activeChat,
+  setActiveChatId,
+  handleSelectedChat,
+}) => {
   const { currentUser } = React.useContext(CurrentUserContext);
   const [message, setMessage] = useState("");
 
@@ -17,6 +22,7 @@ export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
       } else {
         await onAddUserMessage({ chatId: activeChat?._id, text: message });
       }
+
       setMessage("");
     } catch (error) {
       console.error("Error from handleSubmit in profileSearchBar :", error);
@@ -50,8 +56,6 @@ export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
       </div>
 
       <div className="profile__searchbar-content">
-        {/* possibly change textarea to <input></input> with the 
-      type="text", if done restyle */}
         <form>
           <input
             placeholder="Ask TouchStone:"
@@ -59,6 +63,9 @@ export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
             onChange={handleMessageChange}
             onKeyDown={onKeyDown}
             value={message}
+            // onSubmit={() =>
+            //   handleSelectedChat(activeChat.find((chat) => chat?._id))
+            // }
           ></input>
         </form>
 
@@ -69,7 +76,7 @@ export const ProfileSearchBar = ({ onAddUserMessage, activeChat }) => {
           <img
             className="profile__searchbar-submit-button"
             src={SubmitButton}
-            alt="Voice Commands"
+            alt="submit button"
             type="submit"
             onClick={handleSubmit}
           ></img>
