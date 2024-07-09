@@ -64,3 +64,15 @@
   flex-direction: column;
   gap: 10px;
 }
+
+@media screen and (max-width: 844px) {
+  .modal__title_delete {
+    padding: 5px;
+  }
+
+  .modal__content_delete {
+    height: 30vmin;
+    justify-content: center;
+    align-items: center;
+  }
+}

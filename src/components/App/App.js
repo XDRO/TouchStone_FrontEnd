@@ -70,7 +70,6 @@ function App() {
   const handleDeleteMessage = async () => {
     try {
       await deleteMessage(activeChatId, token);
-      console.log(activeChatId, "activeChatId from delete message");
       setChatList((prevItems) =>
         prevItems.filter((item) => item._id !== activeChatId)
       );
