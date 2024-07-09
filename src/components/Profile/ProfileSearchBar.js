@@ -6,7 +6,6 @@ export const ProfileSearchBar = ({
   onAddUserMessage,
   activeChat,
   setActiveChatId,
-  handleSelectedChat,
 }) => {
   const { currentUser } = React.useContext(CurrentUserContext);
   const [message, setMessage] = useState("");
@@ -20,7 +19,12 @@ export const ProfileSearchBar = ({
       if (message === "") {
         console.log("Please enter a message to send");
       } else {
-        await onAddUserMessage({ chatId: activeChat?._id, text: message });
+        const res = await onAddUserMessage({
+          chatId: activeChat?._id,
+          text: message,
+        });
+        // console.log(res);
+        setActiveChatId(res._id);
       }
 
       setMessage("");

@@ -62,6 +62,7 @@ function App() {
           return [...prevItems, messageData];
         }
       });
+      return messageData;
     } catch (error) {
       console.log("Error from onAddUserMessage: ", error, error.message);
     }

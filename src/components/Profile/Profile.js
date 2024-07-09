@@ -22,7 +22,6 @@ export const Profile = ({
           onAddUserMessage={onAddUserMessage}
           activeChat={activeChat}
           setActiveChatId={setActiveChatId}
-          handleSelectedChat={handleSelectedChat}
         />
       </div>
     </div>
