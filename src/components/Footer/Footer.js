@@ -1,6 +1,5 @@
 import "./Footer.css";
 import X from "../../images/twitter-x.svg";
-// import { Link } from "react-router-dom/cjs/react-router-dom.min";
 export const Footer = ({ onClick }) => {
   return (
     <footer className="footer">
@@ -13,14 +12,12 @@ export const Footer = ({ onClick }) => {
         </div>
 
         <div className="footer_X">
-          {/* <Link to="https://twitter.com/?lang=en"> */}
-          <img className="footer_X" src={X} alt="Twitter-X"></img>
-          {/* </Link> */}
+          <a href="https://twitter.com/?lang=en">
+            <img className="footer_X" src={X} alt="Twitter-X"></img>
+          </a>
         </div>
       </div>
 
-      {/* <Link to="https://twitter.com/?lang=en"> */}
-      {/* </Link> */}
       {/* if logged in add headphones vector */}
     </footer>
   );
