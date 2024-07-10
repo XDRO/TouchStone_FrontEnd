@@ -45,7 +45,7 @@ export const ProfileSearchBar = ({
         {activeChat?.messages.map((element, index) => {
           return (
             <div className="profile__searchbar-chatList" key={index}>
-              {currentUser.name}
+              {currentUser?.name}
               <div className="profile__searchbar-chatType_text">
                 {element.message}
               </div>

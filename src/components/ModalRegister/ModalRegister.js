@@ -30,7 +30,7 @@ export const Register = ({
     e.preventDefault();
     console.log("Values before registration:", values);
     try {
-      const userData = auth.register(values);
+      const userData = await auth.register(values);
       setCurrentUser(userData.newUser);
       isLoggedIn(true);
       const email = values.email;

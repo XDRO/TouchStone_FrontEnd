@@ -58,18 +58,14 @@ export const checkToken = async () => {
 
   if (storedToken) {
     try {
-      const res = await fetch(
-        `${baseUrl}/users/me`,
-        {
-          method: "GET",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${storedToken}`,
-          },
+      const res = await fetch(`${baseUrl}/users/me`, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${storedToken}`,
         },
-        console.log(checkToken.res)
-      );
+      });
 
       const userData = await processServerResponse(res);
       console.log("User data recieved after token check: ", userData);

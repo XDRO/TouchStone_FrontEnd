@@ -86,6 +86,7 @@ function App() {
       auth
         .checkToken(token)
         .then((userData) => {
+          console.log(userData);
           setCurrentUser(userData);
           isLoggedIn(true);
           handleCloseModal("register");
@@ -111,7 +112,7 @@ function App() {
       .catch((error) => {
         console.error("Error from useEffect getChats :", error);
       });
-  }, [currentUser._id]);
+  }, [currentUser?._id]);
 
   return isLoading ? (
     <Preloader />
