@@ -51,3 +51,12 @@
   filter: invert(50%) hue-rotate(180deg);
   opacity: 1;
 }
+
+@media screen and (max-width: 844px) {
+  .modal__content {
+    max-width: 275px;
+  }
+  .modal__close-button {
+    margin: 8px 0 5px 245px;
+  }
+}

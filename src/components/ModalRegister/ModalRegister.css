@@ -1,7 +1,3 @@
-/* .modal__content_register {
-  height: 455px;
-} */
-
 .modal__title_register {
   font-family: "Roboto Slab";
   margin-top: 0;
@@ -58,29 +54,11 @@
   padding: 10px;
 }
 
-/* .register__form-login {
-  background-color: #1e2f48;
-  color: #dfbd69;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  position: relative;
-  bottom: 10px;
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  height: 25px;
-  cursor: pointer;
-} */
-
-/* .modal__button_register {
-  font-family: "Roboto Slab";
-  background-color: #1e2f48;
-  color: #dfbd69;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  position: relative;
-  bottom: 10px;
-  width: 100%;
-} */
+@media screen and (max-width: 844px) {
+  .modal__title_register {
+    font-size: 17px;
+  }
+  .modal__form_register {
+    font-size: 14px;
+  }
+}
