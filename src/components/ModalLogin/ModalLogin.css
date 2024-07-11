@@ -77,3 +77,15 @@
   margin: 0px;
   padding: 10px;
 }
+
+@media screen and (max-width: 844px) {
+  .modal__content_login {
+    height: 250px;
+  }
+  .modal__form_login {
+    font-size: 14px;
+  }
+  .login__form-button_container {
+    height: 70px;
+  }
+}
