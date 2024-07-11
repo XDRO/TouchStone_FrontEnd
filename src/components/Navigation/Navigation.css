@@ -46,3 +46,19 @@
   transition: opacity 0.3s ease-in-out;
   opacity: 0.5;
 }
+
+@media screen and (max-width: 844px) {
+  .navigation__options {
+    width: 40%;
+  }
+  .navigation__options-discover {
+    margin: 50px 10px 10px 10px;
+    font-size: 12px;
+    height: 40px;
+  }
+  .navigation__options-start {
+    margin: 10px;
+    font-size: 12px;
+    height: 40px;
+  }
+}

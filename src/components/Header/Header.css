@@ -20,3 +20,9 @@
   color: #e1be86;
   height: 20px;
 }
+
+@media screen and (max-width: 844px) {
+  .header {
+    padding: 10px 0 0 5px;
+  }
+}

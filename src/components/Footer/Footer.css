@@ -1,23 +1,29 @@
 .footer {
-  font-family: "Roboto Slab";
   background-color: #1e2f48;
-  color: #e1be86;
-  display: flex;
+  position: relative;
+  margin-top: 100vh;
+  /* display: flex;
   position: absolute;
   top: 100%;
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
   width: 100%;
-  border-top-style: solid;
+  border-top-style: solid; */
+  /*  */
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .footer__options {
+  font-family: "Roboto Slab";
+  color: #e1be86;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: 244px;
+  /* gap: 244px; */
 }
 
 .footer_about {
@@ -59,21 +65,14 @@
 }
 
 @media screen and (max-width: 844px) {
-  .footer {
-    width: fit-content;
-    height: 20px;
-    /* position: fixed; */
-    top: 165%;
-  }
-
   .footer__options {
     font-size: 12px;
-    gap: 150px;
   }
-
+  .footer_about {
+    padding-left: 10px;
+  }
   .footer_X {
-    padding: 0;
-    position: relative;
-    right: 10px;
+    padding-right: 10px;
+    height: 12px;
   }
 }

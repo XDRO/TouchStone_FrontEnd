@@ -150,6 +150,7 @@ function App() {
           <NothingFound />
         </Route>
       </Switch>
+
       <Footer
         onClick={handleOpenModal}
         loggedIn={loggedIn}
