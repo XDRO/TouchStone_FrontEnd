@@ -39,6 +39,15 @@
   opacity: 0.5;
 }
 
+.footer_logout {
+  cursor: pointer;
+}
+
+.footer_logout:hover {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.5;
+}
+
 .footer_X {
   cursor: pointer;
   padding-right: 40px;

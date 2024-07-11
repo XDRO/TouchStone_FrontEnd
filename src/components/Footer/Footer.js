@@ -1,6 +1,15 @@
 import "./Footer.css";
 import X from "../../images/twitter-x.svg";
-export const Footer = ({ onClick }) => {
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+export const Footer = ({ onClick, loggedIn, isLoggedIn }) => {
+  // create function to logout
+  const history = useHistory();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    isLoggedIn(false);
+    history.push("/");
+  };
+
   return (
     <footer className="footer">
       <div className="footer__options">
@@ -10,6 +19,11 @@ export const Footer = ({ onClick }) => {
         <div onClick={() => onClick("contact")} className="footer_contact">
           Contact
         </div>
+        {loggedIn ? (
+          <div className="footer_logout" onClick={handleLogout}>
+            Logout
+          </div>
+        ) : null}
 
         <div className="footer_X">
           <a href="https://twitter.com/?lang=en">

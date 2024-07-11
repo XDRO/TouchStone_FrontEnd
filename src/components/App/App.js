@@ -149,7 +149,11 @@ function App() {
           <NothingFound />
         </Route>
       </Switch>
-      <Footer onClick={handleOpenModal} />
+      <Footer
+        onClick={handleOpenModal}
+        loggedIn={loggedIn}
+        isLoggedIn={isLoggedIn}
+      />
       {activeModal === "register" && (
         <Register
           handleCloseModal={handleCloseModal}
