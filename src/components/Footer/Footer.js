@@ -1,15 +1,6 @@
 import "./Footer.css";
 import X from "../../images/twitter-x.svg";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-export const Footer = ({ onClick, loggedIn, isLoggedIn }) => {
-  // create function to logout
-  const history = useHistory();
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    isLoggedIn(false);
-    history.push("/");
-  };
-
+export const Footer = ({ onClick, loggedIn, handleOpenModal }) => {
   return (
     <footer className="footer">
       <div className="footer__options">
@@ -20,7 +11,10 @@ export const Footer = ({ onClick, loggedIn, isLoggedIn }) => {
           Contact
         </div>
         {loggedIn ? (
-          <div className="footer_logout" onClick={handleLogout}>
+          <div
+            className="footer_logout"
+            onClick={() => handleOpenModal("logout")}
+          >
             Logout
           </div>
         ) : null}

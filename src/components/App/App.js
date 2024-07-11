@@ -21,6 +21,7 @@ import React, { useEffect, useState } from "react";
 import * as auth from "../../utils/auth";
 import { postMessage, getChats, deleteMessage } from "../../utils/api";
 import { ModalDeleteItem } from "../ModalDeleteItem/ModalDeleteItem";
+import { ModalLogout } from "../ModalLogout/ModalLogout";
 // import { ModalEditProfile } from "../ModalEditProfile/ModalEditProfile";
 // add new line
 function App() {
@@ -152,7 +153,7 @@ function App() {
       <Footer
         onClick={handleOpenModal}
         loggedIn={loggedIn}
-        isLoggedIn={isLoggedIn}
+        handleOpenModal={handleOpenModal}
       />
       {activeModal === "register" && (
         <Register
@@ -182,6 +183,12 @@ function App() {
         <ModalDeleteItem
           handleCloseModal={handleCloseModal}
           handleDeleteMessage={handleDeleteMessage}
+        />
+      )}
+      {activeModal === "logout" && (
+        <ModalLogout
+          handleCloseModal={handleCloseModal}
+          isLoggedIn={isLoggedIn}
         />
       )}
     </CurrentUserContext.Provider>
