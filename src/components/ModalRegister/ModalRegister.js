@@ -26,17 +26,24 @@ export const Register = ({
   };
 
   const handleSubmit = async (e) => {
-    // create loading state
     e.preventDefault();
     console.log("Values before registration:", values);
     try {
       const userData = await auth.register(values);
       setCurrentUser(userData.newUser);
-      isLoggedIn(true);
-      const email = values.email;
-      history.push(`/profile/${email}`);
+
+      const token = await auth.authorize(values.email, values.password);
+      if (token) {
+        setCurrentUser(userData.newUser);
+        isLoggedIn(true);
+        history.push(`/profile/${values.email}`);
+      }
     } catch (error) {
-      console.error("Error during registration:", error);
+      if (error.response && error.response.status === 409) {
+        console.error("Conflict error: User already exists.");
+      } else {
+        console.error("Error during registration:", error);
+      }
     } finally {
       handleCloseModal();
     }

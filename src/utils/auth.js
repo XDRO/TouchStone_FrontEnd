@@ -13,8 +13,6 @@ export const register = async ({ name, email, password, confirm_password }) => {
     });
 
     const userData = await processServerResponse(res);
-
-    console.log("Full response from server:", res);
     console.log("User data received after registration:", userData);
 
     if (!userData) {
@@ -40,6 +38,10 @@ export const authorize = async (email, password) => {
     });
 
     const userData = await processServerResponse(res);
+
+    console.log("User data received after authorization: ", userData);
+    // this contains the token
+    // {token: ...}
 
     if (userData.token) {
       localStorage.setItem("token", userData.token);

@@ -19,6 +19,7 @@ export async function getChats() {
 }
 
 export async function postMessage(values, token) {
+  console.log(token, "token from postMessage");
   const res = await fetch(`${baseUrl}/message`, {
     method: "POST",
     headers: {
