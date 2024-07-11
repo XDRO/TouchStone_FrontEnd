@@ -1,8 +1,13 @@
+.navigation__content {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .navigation__options {
   display: inline-grid;
-  position: absolute;
+  /* position: absolute; */
   width: 30%;
-  height: 100%;
+  height: 100vh;
   align-content: space-between;
   right: 0%;
   background: linear-gradient(

@@ -1,7 +1,7 @@
 .footer {
   background-color: #1e2f48;
   position: relative;
-  margin-top: 100vh;
+  /* margin-top: 100vh; */
   display: flex;
   justify-content: space-between;
   padding: 10px;

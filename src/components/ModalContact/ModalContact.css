@@ -9,3 +9,12 @@
 .modal__contact-number {
   color: #dfbd69;
 }
+
+@media screen and (max-width: 844px) {
+  .modal__contact-title {
+    font-size: 17px;
+  }
+  .modal__contact-number {
+    font-size: 12px;
+  }
+}
