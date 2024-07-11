@@ -1,12 +1,14 @@
-// import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import React from "react";
 import NewChatButton from "../../images/TouchStone-NewChat.svg";
 import DeleteButton from "../../images/delete.svg";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 export const ProfileSideBar = ({
   chatList,
   setActiveChatId,
   handleSelectedChat,
   onClick,
 }) => {
+  const { currentUser } = React.useContext(CurrentUserContext);
   const createNewChatList = (e) => {
     e.preventDefault();
     setActiveChatId(null);
@@ -30,25 +32,29 @@ export const ProfileSideBar = ({
       <div className="profile__sidebar-content">
         <span className="profile__sidebar-questions">
           {chatList?.map((element, index) => {
-            return (
-              <ol
-                className="profile__sidebar-ol"
-                key={index}
-                onClick={() => handleSelectedChat(element)}
-              >
-                <li className="profile__sidebar-li_element" key={index}>
-                  {element.messages[0].message.length > 10
-                    ? element.messages[0].message.substring(0, 7) + "..."
-                    : element.messages[0].message}
-                </li>
-                <img
-                  onClick={() => onClick("delete")}
-                  className="profile__sidebar-delete_button"
-                  src={DeleteButton}
-                  alt="Delete Button"
-                ></img>
-              </ol>
-            );
+            if (currentUser._id === element.owner) {
+              return (
+                <ol
+                  className="profile__sidebar-ol"
+                  key={index}
+                  onClick={() => handleSelectedChat(element)}
+                >
+                  <li className="profile__sidebar-li_element" key={index}>
+                    {element.messages[0].message.length > 10
+                      ? element.messages[0].message.substring(0, 7) + "..."
+                      : element.messages[0].message}
+                  </li>
+                  <img
+                    onClick={() => onClick("delete")}
+                    className="profile__sidebar-delete_button"
+                    src={DeleteButton}
+                    alt="Delete Button"
+                  ></img>
+                </ol>
+              );
+            } else {
+              return null;
+            }
           })}
         </span>
       </div>
