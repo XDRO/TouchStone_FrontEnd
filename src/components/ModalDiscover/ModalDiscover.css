@@ -8,3 +8,12 @@
   color: #e1be86;
   font-size: 13px;
 }
+
+@media screen and (max-width: 844px) {
+  .modal__title_discover {
+    font-size: 17px;
+  }
+  .modal__text_discover {
+    font-size: 12px;
+  }
+}
