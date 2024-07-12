@@ -29,26 +29,25 @@ export const ModalAbout = ({ handleCloseModal }) => {
         </p>
 
         <p className={`modal__text modal__text_${"about"}`}>
-          To dive deeper into this project, please visit my GitHub repositories:{" "}
+          To dive deeper into this project, please visit my GitHub repositories:
           <br></br>
-          <p className={`modal__text modal__text_${"about"}`}>
-            Frontend repository:
-            <a
-              className={`modal__link_${"about"}`}
-              href="https://github.com/XDRO/TouchStone_FrontEnd"
-            >
-              https://github.com/XDRO/TouchStone_FrontEnd
-            </a>
-          </p>
-          <p className={`modal__text modal__text_${"about"}`}>
-            Backend repository:
-            <a
-              className={`modal__link_${"about"}`}
-              href="https://github.com/XDRO/TouchStone_BackEnd"
-            >
-              https://github.com/XDRO/TouchStone_BackEnd
-            </a>
-          </p>
+        </p>
+
+        <p className={`modal__text modal__text_${"about"}`}>
+          <a
+            className={`modal__link_${"about"}`}
+            href="https://github.com/XDRO/TouchStone_FrontEnd"
+          >
+            https://github.com/XDRO/TouchStone_FrontEnd
+          </a>
+        </p>
+        <p className={`modal__text modal__text_${"about"}`}>
+          <a
+            className={`modal__link_${"about"}`}
+            href="https://github.com/XDRO/TouchStone_BackEnd"
+          >
+            https://github.com/XDRO/TouchStone_BackEnd
+          </a>
         </p>
       </div>
     </Modal>

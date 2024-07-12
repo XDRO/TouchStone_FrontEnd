@@ -17,3 +17,20 @@
   left: 5px;
   text-decoration: none;
 }
+
+@media screen and (max-width: 844px) {
+  .modal__content_about {
+    height: 485px;
+  }
+
+  .modal__title_about {
+    font-size: 17px;
+  }
+
+  .modal__text_about {
+    font-size: 12px;
+  }
+  .modal__link_about {
+    font-size: 12px;
+  }
+}

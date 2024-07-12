@@ -1,3 +1,7 @@
+# link to server
+
+[Touchstone AI server](https://touchstone.ai.zanity.net/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
