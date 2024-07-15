@@ -266,7 +266,6 @@
     justify-content: flex-start;
     position: relative;
     padding: 0 0 0 10px;
-    /* left: 60px; */
   }
 
   .profile__searchbar-chatType_text {
@@ -299,5 +298,86 @@
     position: relative;
     left: 8px;
     width: 15px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile {
+    font-size: 10px;
+  }
+
+  .profile__sidebar {
+    width: 45vw;
+  }
+
+  .profile__sidebar-chat {
+    margin: 10px 0 0 5px;
+  }
+
+  .profile__sidebar-header {
+    margin: 10px 0 0 0;
+    width: 25vw;
+  }
+
+  .profile__sidebar-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile__sidebar-questions {
+    width: 25vw;
+  }
+
+  .profile__sidebar-ol {
+    margin: 0 0 5px 0;
+  }
+
+  .profile__sidebar-li_element {
+    padding: 0 5px 0 5px;
+    left: 0;
+  }
+
+  .profile__sidebar-edit {
+    margin: 10px 0 10px 0;
+  }
+
+  .profile__sidebar-edit-button {
+    width: 10px;
+  }
+
+  .profile__sidebar-delete_button {
+    height: 8px;
+  }
+
+  /* profile searchbar */
+  .profile__searchbar {
+    justify-content: center;
+    padding: 0;
+  }
+  .profile__searchbar-chatType_container {
+    width: 50vw;
+  }
+
+  .profile__searchbar-chatType_text {
+    font-size: 10px;
+  }
+
+  .profile__searchbar-content {
+    margin: 0;
+    width: min-content;
+    width: 61vw;
+  }
+
+  .profile__searchbar-text {
+    font-size: 10px;
+  }
+
+  .profile__searchbar-text::-webkit-input-placeholder {
+    font-size: 10px;
+  }
+
+  .profile__searchbar-submit {
+    left: 3px;
+    top: 1px;
   }
 }
