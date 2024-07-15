@@ -20,7 +20,11 @@ export const Footer = ({ onClick, loggedIn, handleOpenModal }) => {
         ) : null}
 
         <div className="footer_X">
-          <a href="https://twitter.com/?lang=en">
+          <a
+            href="https://twitter.com/?lang=en"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img className="footer_X" src={X} alt="Twitter-X"></img>
           </a>
         </div>

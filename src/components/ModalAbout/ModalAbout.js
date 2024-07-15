@@ -12,7 +12,12 @@ export const ModalAbout = ({ handleCloseModal }) => {
           graduation. If you're curious about TripleTen, passionate about
           learning to code, or eager to enter the tech industry, feel free to
           explore more at:
-          <a className={`modal__link_${"about"}`} href="https://tripleten.com/">
+          <a
+            className={`modal__link_${"about"}`}
+            href="https://tripleten.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
             https://tripleten.com/
           </a>
         </p>
@@ -23,6 +28,8 @@ export const ModalAbout = ({ handleCloseModal }) => {
           <a
             className={`modal__link_${"about"}`}
             href="https://platform.openai.com/docs/api-reference/introduction"
+            target="_blank"
+            rel="noreferrer"
           >
             https://platform.openai.com/docs/api-reference/introduction
           </a>
@@ -37,6 +44,8 @@ export const ModalAbout = ({ handleCloseModal }) => {
           <a
             className={`modal__link_${"about"}`}
             href="https://github.com/XDRO/TouchStone_FrontEnd"
+            target="_blank"
+            rel="noreferrer"
           >
             https://github.com/XDRO/TouchStone_FrontEnd
           </a>
@@ -45,6 +54,8 @@ export const ModalAbout = ({ handleCloseModal }) => {
           <a
             className={`modal__link_${"about"}`}
             href="https://github.com/XDRO/TouchStone_BackEnd"
+            target="_blank"
+            rel="noreferrer"
           >
             https://github.com/XDRO/TouchStone_BackEnd
           </a>
