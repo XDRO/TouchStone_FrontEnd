@@ -17,3 +17,16 @@
     font-size: 12px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .modal__content-discover {
+    width: 225px;
+    height: 400px;
+  }
+  .modal__title_discover {
+    font-size: 15px;
+  }
+  .modal__text_discover {
+    font-size: 10px;
+  }
+}
