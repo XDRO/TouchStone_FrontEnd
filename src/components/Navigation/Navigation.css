@@ -67,3 +67,9 @@
     height: 40px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .navigation__options {
+    width: 40vw;
+  }
+}
