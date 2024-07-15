@@ -1,5 +1,5 @@
 .profile {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -141,7 +141,7 @@
 }
 
 .profile__searchbar-chatType_container {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   border-radius: 10px;
   border: 1px solid #dfbd69;
   height: 70vh;
@@ -170,7 +170,7 @@
 }
 
 .profile__searchbar-content {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   display: flex;
   height: 50px;
   justify-content: space-between;
@@ -198,7 +198,7 @@
 
 .profile__searchbar-text::-webkit-input-placeholder {
   font-size: 18px;
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
 }
 
 .profile__searchbar-submit {

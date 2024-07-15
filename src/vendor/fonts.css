@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-display: swap;
   src: url(./fonts/RobotoSlab-Black.ttf) format("woff2"),
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-display: swap;
   src: url(./fonts/RobotoSlab-Bold.ttf) format("woff2"),
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-display: swap;
   src: url(./fonts/RobotoSlab-ExtraBold.ttf) format("woff2"),
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-display: swap;
   src: url(./fonts/RobotoSlab-ExtraLight.ttf) format("woff2"),
@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-display: swap;
   src: url(./fonts/RobotoSlab-Light.ttf) format("woff2"),
@@ -39,7 +39,7 @@
 }
 
 @font-face {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-display: swap;
   src: url(./fonts/RobotoSlab-Medium.ttf) format("woff2"),
@@ -47,7 +47,7 @@
 }
 
 @font-face {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-display: swap;
   src: url(./fonts/RobotoSlab-Regular.ttf) format("woff2"),
@@ -55,7 +55,7 @@
 }
 
 @font-face {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-display: swap;
   src: url(./fonts/RobotoSlab-SemiBold.ttf) format("woff2"),
@@ -63,7 +63,7 @@
 }
 
 @font-face {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-display: swap;
   src: url(./fonts/RobotoSlab-Thin.ttf) format("woff2"),
@@ -71,7 +71,7 @@
 }
 
 @font-face {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-display: swap;
   src: url(./fonts/RobotoSlab-VariableFont_wght.ttf) format("woff2"),

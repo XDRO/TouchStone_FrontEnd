@@ -21,7 +21,7 @@
 }
 
 .navigation__options-discover {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   margin: 70px 30px 10px 30px;
   height: 45px;
   color: #dfbd69;
@@ -31,7 +31,7 @@
 }
 
 .navigation__options-start {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   margin: 10px 30px 50px 30px;
   height: 45px;
   color: #dfbd69;

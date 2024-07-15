@@ -1,5 +1,5 @@
 .modal__title_delete {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   display: flex;
   margin: 0;
   padding: 10px;
@@ -14,7 +14,7 @@
 }
 
 .modal__button_delete {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,7 @@
 }
 
 .modal__button_cancel {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;

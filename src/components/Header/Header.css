@@ -6,7 +6,7 @@
   background-color: #000;
   justify-content: space-between;
   z-index: 99;
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
 }
 
 .header__logo {

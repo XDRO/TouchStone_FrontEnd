@@ -1,10 +1,10 @@
 .modal__title_discover {
   color: #e1be86;
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
 }
 
 .modal__text_discover {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   color: #e1be86;
   font-size: 13px;
 }
