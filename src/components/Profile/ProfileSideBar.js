@@ -34,26 +34,26 @@ export const ProfileSideBar = ({
           {chatList?.map((element, index) => {
             if (currentUser._id === element.owner) {
               return (
-                <ol
+                <div
                   className="profile__sidebar-ol"
                   key={index}
                   onClick={() => handleSelectedChat(element)}
                 >
-                  <li
+                  <div
                     className="profile__sidebar-li profile__sidebar-li_element"
                     key={index}
                   >
                     {element.messages[0].message.length > 10
                       ? element.messages[0].message.substring(0, 7) + "..."
                       : element.messages[0].message}
-                  </li>
+                  </div>
                   <img
                     onClick={() => onClick("delete")}
                     className="profile__sidebar-delete profile__sidebar-delete_button"
                     src={DeleteButton}
                     alt="Delete Button"
                   ></img>
-                </ol>
+                </div>
               );
             } else {
               return null;
