@@ -16,7 +16,7 @@ export const Register = ({
     name: "",
     email: "",
     password: "",
-    confirm_password: "",
+    confirmPassword: "",
   });
 
   const handleChange = (e) => {
@@ -85,12 +85,12 @@ export const Register = ({
         required
       />
 
-      <label htmlFor={`confirm_password`}>Confirm Password :</label>
+      <label htmlFor={`confirmPassword`}>Confirm Password :</label>
       <input
         onChange={handleChange}
         className={`register__form-input`}
-        name={`confirm_password`}
-        id={`confirm_password`}
+        name={`confirmPassword`}
+        id={`confirmPassword`}
         placeholder="Confirm Password..."
         required
       />
