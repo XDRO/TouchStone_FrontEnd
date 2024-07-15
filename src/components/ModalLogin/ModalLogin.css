@@ -2,6 +2,13 @@
   height: 290px;
 }
 
+.modal__title_login {
+  font-family: "Roboto Slab";
+  margin-top: 0;
+  color: #dfbd69;
+  font-size: 24px;
+}
+
 .modal__form_login {
   font-family: "Roboto Slab";
   color: #dfbd69;
@@ -33,6 +40,11 @@
   border: none;
   border-radius: 5px;
   height: 30px;
+}
+
+.login__form-input::-webkit-input-placeholder {
+  font-family: "Roboto Slab";
+  color: #1e2f48;
 }
 
 .login__form-register {
@@ -87,5 +99,15 @@
   }
   .login__form-button_container {
     height: 70px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal__title_login {
+    font-size: 15px;
+  }
+  .modal__form_login {
+    font-size: 10px;
+    gap: 5px;
   }
 }

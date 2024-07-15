@@ -63,6 +63,7 @@ export const Register = ({
         className={`register__form-input`}
         name={`name`}
         id={`name`}
+        placeholder="Name..."
         required
       />
       <label htmlFor={`email`}>Email :</label>
@@ -71,6 +72,7 @@ export const Register = ({
         className={`register__form-input`}
         name={`email`}
         id={`email`}
+        placeholder="Email..."
         required
       />
       <label htmlFor={`password`}>Password :</label>
@@ -79,6 +81,7 @@ export const Register = ({
         className={`register__form-input`}
         name={`password`}
         id={`password`}
+        placeholder="Password..."
         required
       />
 
@@ -88,6 +91,7 @@ export const Register = ({
         className={`register__form-input`}
         name={`confirm_password`}
         id={`confirm_password`}
+        placeholder="Confirm Password..."
         required
       />
       <div className={`register__form-button_container`}>

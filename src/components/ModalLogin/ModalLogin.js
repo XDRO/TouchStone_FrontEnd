@@ -37,6 +37,7 @@ export const Login = ({ handleCloseModal, onClick, isLoggedIn }) => {
   return (
     <ModalWForm
       name={`login`}
+      title={`Welcome Back!`}
       onClose={handleCloseModal}
       onSubmit={handleSubmit}
     >
@@ -47,6 +48,7 @@ export const Login = ({ handleCloseModal, onClick, isLoggedIn }) => {
         id={`email`}
         onChange={handleChange}
         value={values.email}
+        placeholder="Email..."
         required
       />
       <label htmlFor={`password`}>Password :</label>
@@ -56,6 +58,7 @@ export const Login = ({ handleCloseModal, onClick, isLoggedIn }) => {
         id={`password`}
         onChange={handleChange}
         value={values.password}
+        placeholder="Password..."
         required
       />
       <div className={`login__form-button_container`}>

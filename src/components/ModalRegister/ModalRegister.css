@@ -26,6 +26,11 @@
   color: #1e2f48;
 }
 
+.register__form-input::-webkit-input-placeholder {
+  font-family: "Roboto Slab";
+  color: #1e2f48;
+}
+
 .register__form-button_container {
   font-family: "Roboto Slab";
   display: flex;
@@ -60,5 +65,19 @@
   }
   .modal__form_register {
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal__content_register {
+    width: 225px;
+    height: 400px;
+  }
+  .modal__title_register {
+    font-size: 15px;
+  }
+  .modal__form_register {
+    font-size: 10px;
+    gap: 5px;
   }
 }
