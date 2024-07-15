@@ -41,7 +41,7 @@ export const ProfileSearchBar = ({
 
   return (
     <div className="profile__searchbar">
-      <div className="profile__searchbar-chatType_container">
+      <div className="profile__searchbar-chatType profile__searchbar-chatType_container">
         {activeChat?.messages.map((element, index) => {
           return (
             <div className="profile__searchbar-chatList" key={index}>
@@ -66,9 +66,6 @@ export const ProfileSearchBar = ({
             onChange={handleMessageChange}
             onKeyDown={onKeyDown}
             value={message}
-            // onSubmit={() =>
-            //   handleSelectedChat(activeChat.find((chat) => chat?._id))
-            // }
           ></input>
         </form>
 

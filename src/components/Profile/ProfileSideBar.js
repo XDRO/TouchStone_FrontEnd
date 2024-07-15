@@ -39,14 +39,17 @@ export const ProfileSideBar = ({
                   key={index}
                   onClick={() => handleSelectedChat(element)}
                 >
-                  <li className="profile__sidebar-li_element" key={index}>
+                  <li
+                    className="profile__sidebar-li profile__sidebar-li_element"
+                    key={index}
+                  >
                     {element.messages[0].message.length > 10
                       ? element.messages[0].message.substring(0, 7) + "..."
                       : element.messages[0].message}
                   </li>
                   <img
                     onClick={() => onClick("delete")}
-                    className="profile__sidebar-delete_button"
+                    className="profile__sidebar-delete profile__sidebar-delete_button"
                     src={DeleteButton}
                     alt="Delete Button"
                   ></img>
