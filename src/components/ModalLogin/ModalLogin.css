@@ -68,7 +68,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: flex-end;
-  height: 100px;
+  height: 85px;
 }
 
 .login__form-button {
