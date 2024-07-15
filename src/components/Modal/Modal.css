@@ -60,3 +60,13 @@
     margin: 8px 0 5px 245px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .modal__content {
+    max-width: 225px;
+  }
+  .modal__close-button {
+    margin: 8px 0 5px 220px;
+    left: 0px;
+  }
+}

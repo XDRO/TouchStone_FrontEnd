@@ -19,7 +19,7 @@
 }
 
 @media screen and (max-width: 320px) {
-  .modal__content-discover {
+  .modal__content_discover {
     width: 225px;
     height: 400px;
   }
