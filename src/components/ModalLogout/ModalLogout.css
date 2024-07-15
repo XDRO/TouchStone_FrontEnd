@@ -71,8 +71,28 @@
   }
 
   .modal__content_logout {
-    height: 30vmin;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal__content_logout {
+    height: 35vmin;
+  }
+  .modal__title_logout {
+    font-size: 12px;
+  }
+
+  .modal__button_logout {
+    width: 50px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .modal__button_cancel {
+    width: 50px;
+    height: 20px;
+    font-size: 10px;
   }
 }
