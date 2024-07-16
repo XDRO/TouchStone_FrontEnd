@@ -87,7 +87,6 @@ function App() {
       auth
         .checkToken(token)
         .then((userData) => {
-          console.log(userData);
           setCurrentUser(userData);
           isLoggedIn(true);
           handleCloseModal("register");

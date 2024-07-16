@@ -13,7 +13,6 @@ export const register = async ({ name, email, password, confirmPassword }) => {
     });
 
     const userData = await processServerResponse(res);
-    console.log("User data received after registration:", userData);
 
     if (!userData) {
       throw new Error("Error from register");
@@ -39,7 +38,6 @@ export const authorize = async (email, password) => {
 
     const userData = await processServerResponse(res);
 
-    console.log("User data received after authorization: ", userData);
     // this contains the token
     // {token: ...}
 
@@ -70,7 +68,6 @@ export const checkToken = async () => {
       });
 
       const userData = await processServerResponse(res);
-      console.log("User data recieved after token check: ", userData);
 
       if (userData) {
         return userData;
