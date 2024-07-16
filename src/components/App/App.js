@@ -107,7 +107,6 @@ function App() {
         if (loggedIn === true) {
           await auth.checkToken(token);
           const chats = await getChats(currentUser._id, token);
-          console.log(chats);
           setChatList(() => {
             return chats.map((items) => ({
               ...items,
