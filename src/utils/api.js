@@ -8,11 +8,12 @@ export const baseUrl =
     ? "https://api.touchstone.ai.zanity.net"
     : "http://localhost:3001";
 
-export async function getChats() {
-  const res = await fetch(`${baseUrl}/message`, {
+export async function getChats(id, token) {
+  const res = await fetch(`${baseUrl}/message/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
   });
   return processServerResponse(res);

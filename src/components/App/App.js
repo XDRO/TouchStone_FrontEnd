@@ -102,18 +102,41 @@ function App() {
   }, [loggedIn, token]);
 
   useEffect(() => {
-    getChats()
-      .then((items) => {
-        setChatList(
-          items.map((items) => ({
-            ...items,
-          }))
-        );
-      })
-      .catch((error) => {
-        console.error("Error from useEffect getChats :", error);
-      });
-  }, [currentUser?._id]);
+    const handleGetChats = async () => {
+      try {
+        if (loggedIn === true) {
+          await auth.checkToken(token);
+          const chats = await getChats(currentUser._id, token);
+          console.log(chats);
+          setChatList(() => {
+            return chats.map((items) => ({
+              ...items,
+            }));
+          });
+        } else {
+          return null;
+        }
+      } catch (error) {
+        console.log("Error from getChats: ", error, error.message);
+      }
+    };
+    handleGetChats();
+  }, [currentUser._id, token, loggedIn]);
+
+  // useEffect(() => {
+  //   getChats()
+  //     .then((items) => {
+  //       console.log(items, "items");
+  //       setChatList(
+  //         items.map((items) => ({
+  //           ...items,
+  //         }))
+  //       );
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error from useEffect getChats :", error);
+  //     });
+  // }, [currentUser?._id]);
 
   return isLoading ? (
     <Preloader />
