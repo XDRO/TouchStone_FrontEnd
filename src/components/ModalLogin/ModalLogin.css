@@ -1,0 +1,113 @@
+.modal__content_login {
+  height: 290px;
+}
+
+.modal__title_login {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  margin-top: 0;
+  color: #dfbd69;
+  font-size: 24px;
+}
+
+.modal__form_login {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  color: #dfbd69;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 10px;
+}
+
+.modal__button_login {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  background-color: #1e2f48;
+  color: #dfbd69;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  bottom: 10px;
+  width: 100%;
+}
+
+/*  potentially change this to .modal__form_login-input BEM */
+.login__form-input {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  /* color: #dfbd69; */
+  color: #1e2f48;
+  /* background-color: #1e2f48; */
+  background-color: #dfbd69;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.login__form-input::-webkit-input-placeholder {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  color: #1e2f48;
+}
+
+.login__form-register {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  background-color: #1e2f48;
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  color: #dfbd69;
+  cursor: pointer;
+}
+
+.login__form-register:hover {
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.login__form-button_container {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-end;
+  height: 85px;
+}
+
+.login__form-button {
+  background-color: #1e2f48;
+  color: #dfbd69;
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  border: none;
+  border-radius: 5px;
+}
+
+.login__form-button:hover {
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.login__form-button_text {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 844px) {
+  .modal__content_login {
+    height: 250px;
+  }
+  .modal__form_login {
+    font-size: 14px;
+  }
+  .login__form-button_container {
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal__title_login {
+    font-size: 15px;
+  }
+  .modal__form_login {
+    font-size: 10px;
+    gap: 5px;
+  }
+}

@@ -1,0 +1,32 @@
+.modal__content_contact {
+  height: 120px;
+}
+
+.modal__contact-title {
+  color: #dfbd69;
+}
+
+.modal__contact-number {
+  color: #dfbd69;
+}
+
+@media screen and (max-width: 844px) {
+  .modal__contact-title {
+    font-size: 17px;
+  }
+  .modal__contact-number {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal__content_contact {
+    height: 100px;
+  }
+  .modal__contact-title {
+    font-size: 15px;
+  }
+  .modal__contact-number {
+    font-size: 12px;
+  }
+}

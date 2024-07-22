@@ -1,0 +1,48 @@
+.modal__title_about {
+  color: #e1be86;
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+}
+
+.modal__text_about {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  color: #e1be86;
+  font-size: 13px;
+}
+
+.modal__link_about {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  color: #e1be86;
+  font-size: 13px;
+  position: relative;
+  left: 5px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 844px) {
+  .modal__content_about {
+    height: 485px;
+  }
+
+  .modal__title_about {
+    font-size: 17px;
+  }
+
+  .modal__text_about {
+    font-size: 12px;
+  }
+  .modal__link_about {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal__title_about {
+    font-size: 15px;
+  }
+  .modal__text_about {
+    font-size: 10px;
+  }
+  .modal__link_about {
+    font-size: 10px;
+  }
+}

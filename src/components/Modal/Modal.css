@@ -1,0 +1,72 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__content {
+  background-color: #1e2f48;
+  /* background-color: #373736; */
+  max-width: 496px;
+  width: 100%;
+  height: 436px;
+  border-radius: 20px;
+  padding: 0 28px 36px 28px;
+  font-family: Cabinet Grotesk;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.modal__close-button {
+  background-image: url("../../images/close.svg");
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 20px 0 0 435px;
+  position: relative;
+  left: 28px;
+  filter: invert(50%) hue-rotate(180deg);
+  opacity: 1;
+}
+
+@media screen and (max-width: 844px) {
+  .modal__content {
+    max-width: 275px;
+  }
+  .modal__close-button {
+    margin: 8px 0 5px 245px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal__content {
+    max-width: 225px;
+  }
+  .modal__close-button {
+    margin: 8px 0 5px 220px;
+    left: 0px;
+  }
+}
