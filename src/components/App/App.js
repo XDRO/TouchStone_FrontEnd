@@ -121,21 +121,6 @@ function App() {
     handleGetChats();
   }, [currentUser._id, token, loggedIn]);
 
-  // useEffect(() => {
-  //   getChats()
-  //     .then((items) => {
-  //       console.log(items, "items");
-  //       setChatList(
-  //         items.map((items) => ({
-  //           ...items,
-  //         }))
-  //       );
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error from useEffect getChats :", error);
-  //     });
-  // }, [currentUser?._id]);
-
   return isLoading ? (
     <Preloader />
   ) : (
